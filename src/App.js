@@ -1,8 +1,17 @@
-import React from 'react';
+import React,{useState} from 'react';
 import './App.css';
 
 // 16-(1)
 import { Navbar , Nav ,NavDropdown , Form , FormControl, Button, Jumbotron} from 'react-bootstrap';
+
+// 17 - (1-5)
+// import mynaming from './data.js'
+
+// 17 - (1-7)
+import {naming,naming2} from './data.js'
+
+// 17-(4-1)
+import data4naming from './data4.js'
 
 
 
@@ -64,11 +73,10 @@ function App16() {
               <NavDropdown.Divider />
               <NavDropdown.Item href="#action/3.4">Separated link</NavDropdown.Item>
             </NavDropdown>
-          </Nav>
-        
+          </Nav>        
       </Navbar.Collapse>
 
-              // Jumbotron
+   // Jumbotron
      <Jumbotron>
         <h1>Hello, world!</h1>
         <p>
@@ -100,22 +108,83 @@ function App16() {
         </div>
       </div>
       </div>
-
       </Navbar>
     </div>
-
-
-
-
    </div>
   );
 }
+
+// 17 코드가 넘나 길어진다면 import / export 사용해보기
+// (1) data.js /  import / export 문법
+//src폴더에 data.js 파일 만듬
+// 너무 길어서 이걸 data.js 같은 파일을 만들어서 안에 담은 뒤에 App.js에서 data.js에 있던걸 불러와보도록 합시다.
+
+// (1-2) 코드 그냥 useState([]); 안에 넣기
+
+//(1-3) export default [ ] 
+
+// (1-4) export default mynaming
+// var naming변수 만듬
+// name이라는 변수를 다른 파일에서 쓸수 있게 함(참고로 페이지의 가장 마지막 문단에 코딩함)
+//export default mynaming2 ...이런식으로 2번 쓸 수 없음
+
+// (1-5)
+// App.js에서 data.js에서 배출한 변수를 쓰고 싶다면, 'import 변수명 from 경로' 사용
+// 경로 쓸때 ./라고 쓰는 것은 현재경로입니다.
+
+// (1-6) mynaming 데이터바인딩
+
+// (1-7) 변수 2개 export할때... array 형식 사용 , 
+
+// (1-8) naming2 데이터바인딩
+
+function App17() {
+
+  // (1-2)
+  let [shoes,shoes변경]=useState([]);
+
+  return (
+   <div className="App">
+    <div className="black-nav">  17 코드가 넘나 길어진다면 import / export 사용해보기  </div>
+
+    // (1-6)
+    mynaming
+
+    // (1-8)
+    {naming2}
+
+
+   </div>
+    );
+ }
+
+//  (4) export default
+// (4-1) data4.js / import, export
+// (4-2) 호출
+
+function App17_4() {
+
+  let [shoes,shoes변경]=useState(data4naming);
+
+  return (
+   <div className="App">
+    <div className="black-nav">  17 코드가 넘나 길어진다면 import / export 사용해보기  </div>
+
+    <div>
+    // (4-2)
+      {shoes[0].title}
+     </div>
+   </div>
+    );
+ }
 
 function App(){
   return(
     <div>
        <App15/>      
        <App16/>      
+       <App17/>      
+       <App17_4/>      
     </div>
   )
 }
