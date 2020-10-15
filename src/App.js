@@ -4,11 +4,11 @@ import './App.css';
 // 16-(1)
 import { Navbar , Nav ,NavDropdown , Form , FormControl, Button, Jumbotron} from 'react-bootstrap';
 
-// 17 - (1-5)
-// import mynaming from './data.js'
+// 17 - (2) (2-2)
+import data2mynaming from './data2.js'
 
-// 17 - (1-7)
-import {naming,naming2} from './data.js'
+// 17 - (3)
+import {naming,naming2} from './data3.js'
 
 // 17-(4-1)
 import data4naming from './data4.js'
@@ -115,68 +115,59 @@ function App16() {
 }
 
 // 17 코드가 넘나 길어진다면 import / export 사용해보기
+
 // (1) data.js /  import / export 문법
 //src폴더에 data.js 파일 만듬
-// 너무 길어서 이걸 data.js 같은 파일을 만들어서 안에 담은 뒤에 App.js에서 data.js에 있던걸 불러와보도록 합시다.
+// export default [ ] 
 
 // (1-2) 코드 그냥 useState([]); 안에 넣기
 
-//(1-3) export default [ ] 
-
-// (1-4) export default mynaming
+// (2)  data2.js / export default mynaming
 // var naming변수 만듬
 // name이라는 변수를 다른 파일에서 쓸수 있게 함(참고로 페이지의 가장 마지막 문단에 코딩함)
 //export default mynaming2 ...이런식으로 2번 쓸 수 없음
 
-// (1-5)
-// App.js에서 data.js에서 배출한 변수를 쓰고 싶다면, 'import 변수명 from 경로' 사용
+// (2-2)
+// App.js에서 data2.js에서 배출한 변수를 쓰고 싶다면, 'import 변수명 from 경로' 사용
 // 경로 쓸때 ./라고 쓰는 것은 현재경로입니다.
 
-// (1-6) mynaming 데이터바인딩
+// (2-3) mynaming 데이터바인딩
 
-// (1-7) 변수 2개 export할때... array 형식 사용 , 
+// (3) 변수 2개 export할때... array 형식 사용 , 
 
-// (1-8) naming2 데이터바인딩
+// (3-2) naming2 데이터바인딩
 
-function App17() {
-
-  // (1-2)
-  let [shoes,shoes변경]=useState([]);
-
-  return (
-   <div className="App">
-    <div className="black-nav">  17 코드가 넘나 길어진다면 import / export 사용해보기  </div>
-
-    // (1-6)
-    mynaming
-
-    // (1-8)
-    {naming2}
-
-
-   </div>
-    );
- }
 
 //  (4) export default
 // (4-1) data4.js / import, export
 // (4-2) 호출
 
-function App17_4() {
+function App17() {
 
+  // (1-2)  (4)
   let [shoes,shoes변경]=useState(data4naming);
 
   return (
    <div className="App">
     <div className="black-nav">  17 코드가 넘나 길어진다면 import / export 사용해보기  </div>
 
+    // (2-3)
+    {data2mynaming}
+
+    // (3-2)
+    {naming2}
+
     <div>
     // (4-2)
-      {shoes[0].title}
+      <h4> {shoes[0].title} </h4> 
+      <h4> {shoes[1].content} </h4> 
+      <h4> {shoes[2].price} </h4> 
      </div>
+
    </div>
     );
  }
+
 
 function App(){
   return(
@@ -184,7 +175,7 @@ function App(){
        <App15/>      
        <App16/>      
        <App17/>      
-       <App17_4/>      
+         
     </div>
   )
 }
