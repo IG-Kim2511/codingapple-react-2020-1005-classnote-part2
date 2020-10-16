@@ -206,7 +206,6 @@ function App17() {
 
 // (4-3) 둘 다 맞는 코딩
 
-
 // (5) src=""에 데이터바인딩하기
 
 //(5-2) src = { } ...변수명,함수명을 넣을 수 있음
@@ -219,35 +218,26 @@ function App17() {
 // 근데 i는 0,1,2가 된댔는데 우리가 필요한 숫자는 1,2,3 이잖아요
 // 그래서 (props.i + 1) 이런 변수를 집어넣은 것입니다.
 
-// 
-
-
-
 function App18() {
 
   let [shoes,shoes변경]=useState(data4naming);
 
   return (
    <div className="App">
-    <div className="black-nav">  18 숙제 해설 : 상품목록 Component 만들기 + 반복문  </div>
-
-  
+    <div className="black-nav">  18 숙제 해설 : 상품목록 Component 만들기 + 반복문  </div>  
     <div className="container">
       <div className="row">
       // (2) (2-3) (2-4)
-      <Card shoes={shoes}></Card>
-  
+      <Card shoes={shoes}></Card>  
         <div className="col-md-4">
           <img src="https://codingapple1.github.io/shop/shoes2.jpg" width="100%" />
           <h4> {shoes[1].title} </h4> 
-          <p>{shoes[1].content} & {shoes[1].price}  </p>
-          
+          <p>{shoes[1].content} & {shoes[1].price}  </p>          
         </div>
         <div className="col-md-4">
           <img src="https://codingapple1.github.io/shop/shoes3.jpg" width="100%" />
           <h4> {shoes[2].title} </h4> 
-          <p>{shoes[2].content} & {shoes[2].price}  </p>
-          
+          <p>{shoes[2].content} & {shoes[2].price}  </p>          
         </div>
       </div>
     </div>
@@ -287,8 +277,7 @@ function App18() {
     <img src="https://codingapple1.github.io/shop/shoes1.jpg" width="100%" />
     // (2-4)
     <h4> {props.shoes[0].title} </h4> 
-    <p>{props.shoes[0].content} & {props.shoes[0].price}  </p>
-    
+    <p>{props.shoes[0].content} & {props.shoes[0].price}  </p>    
   </div>
    )
 
@@ -301,12 +290,22 @@ function App18() {
     <img src={"https://codingapple1.github.io/shop/shoes"+(props.i+1)+".jpg"} width="100%" />
     // (3-3)
     <h4> {props.shoes.title} </h4> 
-    <p>{props.shoes.content} & {props.shoes.price}  </p>
-    
+    <p>{props.shoes.content} & {props.shoes.price}  </p>    
   </div>
    )
-
  }
+
+//  19 React Router 1 : 셋팅과 기본 라우팅
+// (router 라우터 ((데이터 전송시의 최적 경로를 선택하는 장치)) ) (route 루트. 길)
+
+function App19() {
+  return (
+   <div className="App">
+    <div className="black-nav">19 React Router 1 : 셋팅과 기본 라우팅 </div>
+  
+   </div>
+  );
+}
 
 
 function App(){
@@ -316,6 +315,7 @@ function App(){
        <App16/>      
        <App17/>      
        <App18/>    
+       <App19/>    
     </div>
   )
 }
