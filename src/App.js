@@ -16,7 +16,7 @@ import {naming,naming2} from './data3.js'
 // 17-(4-1)
 import data4naming from './data4.js'
 
-// 19-(3) 20-(3-3)
+// 19-(3) 20-(3-3) 20-(8-2)
 import { Link, Route, Switch } from 'react-router-dom'
 
 // 20-(2)
@@ -419,7 +419,28 @@ function Card3(){
  
 // 그럼 Detail이라는 글자를 누르면 /detail 경로, Home이라는 글자를 누르면 / 경로로 이동합니다.
 
-// (4) (5) (6) -->Detail20.js
+// (4) (5) (6) (7) -->Detail20.js
+
+
+// (8) Switch 컴포넌트에 대해 알아보자
+// 새로운 Route는 path를 /:id 라고 적었는데, 이게 뭐냐면 URL 파라미터라는 문법인데
+// 그냥 / 슬래시 뒤에 모든 문자가 오면 이 Route로 안내해주세요~를 뜻합니다. (다음 시간에 배울 예정)
+// 암튼 아무 문자나 넣어도 이 경로로 이동을 시켜주라고 코드를 짜놓았습니다.
+
+// Q. 그럼 /detail로 이동하면 어떤게 보이죠?
+// A. (1) <Detail> (2) <div>새로 만든 route입니다</div> 이거 둘다 보여줍니다.
+// (왜냐면 리액트 라우터는 그냥 URL 매치되는 것들 전부 다 보여준다니깐요)
+
+// 이런걸 방지하고 싶다, 그냥 한번에 하나의 <Route>만 보여주고 싶다 그러면
+// <Route>들을 위에서 import 해온 <Switch> 태그로 감싸면 됩니다.
+
+// (8-2)
+//1. import { Switch } from 'react-router-dom' 추가
+//2. <Switch> 태그로  전부 감쌈
+//  다 감싸면 이제 여러개의 Route가 매칭이 되어도 맨 위의 Route 하나만 보여줍니다.
+// 이걸 응용하시면 이전시간에 겪었던 / 경로 문제도 exact 쓰지않고 해결할 수 있습니다.
+// 일반적으로 switch로 감싸고 사용함 (exact사용할 필요 없어짐)
+
 
 function App20() {
   return (
@@ -459,16 +480,36 @@ function App20() {
      </Jumbotron>
     </Route>
 
-    // (1)
-    <Route path="/detail">
-      <Detail20></Detail20>
+
+ 
+      // (1)
+      <Route path="/detail">
+        <Detail20></Detail20>
       </Route>
 
-      // (2-3)
-    <Route path="/detail">
-    <Detail20_2></Detail20_2>     
+        // (2-3)
+      <Route path="/detail">
+        <Detail20_2></Detail20_2>     
       </Route>
-    
+
+     
+
+      // (8-2)
+    <Switch>    
+      <Route path="/detail">
+        <Detail20></Detail20>
+      </Route>
+   
+      <Route path="/detail">
+        <Detail20_2></Detail20_2>     
+      </Route>
+
+      //  (8)
+      <Route path="/:id">
+      <div>아무거나 적었을때 이거 보여주세요.</div>
+      </Route>
+    </Switch>
+
    </div>
   );
 }

@@ -33,8 +33,7 @@
 // go back(); : 외울 수 없음
 // -> 구글검색 react router library
 
-
-
+// (7) push("/~~~")  : 특정경로로 이동시킴
 
 
 // // 20-(2)
@@ -49,20 +48,23 @@ function Detail20(){
 
     return(  
       <div className="container">
-      <div className="row">
-        <div className="col-md-6">
-          <img src="https://codingapple1.github.io/shop/shoes1.jpg" width="100%" />
-        </div>
-        <div className="col-md-6 mt-4">
-          <h4 className="pt-5">상품명</h4>
-          <p>상품설명</p>
-          <p>120000원</p>
-          <button className="btn btn-danger">주문하기</button> 
+        <div className="row">
+            <div className="col-md-6">
+            <img src="https://codingapple1.github.io/shop/shoes1.jpg" width="100%" />
+            </div>
+            <div className="col-md-6 mt-4">
+            <h4 className="pt-5">상품명</h4>
+            <p>상품설명</p>
+            <p>120000원</p>
+            <button className="btn btn-danger">주문하기</button> 
 
-        //  20-(4)  (6)
-          <button className="btn btn-danger" onClick={()=>{history.goBack()}}>뒤로가기</button> 
+            //  20-(4)  (6)
+            <button className="btn btn-danger" onClick={()=>{history.goBack()}}>뒤로가기</button> 
+            
+            //   (7)
+            <button className="btn btn-danger" onClick={()=>{history.push("/home")}}>뒤로가기</button> 
+            </div>
         </div>
-      </div>
     </div> 
   
     )
