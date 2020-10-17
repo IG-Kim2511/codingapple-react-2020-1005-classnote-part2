@@ -16,11 +16,14 @@ import {naming,naming2} from './data3.js'
 // 17-(4-1)
 import data4naming from './data4.js'
 
-// 19-(3)
-import {Link, Route, Switch} from 'react-router-dom'
+// 19-(3) 20-(3-3)
+import { Link, Route, Switch } from 'react-router-dom'
+
+// 20-(2)
+import Detail20_2 from './Detail20'
 
 
-// ⭐⚡😀💀🦄🍉🍒🍀🌈🔥
+// ⭐⚡😀🦄👻👽🍉🍒🌈🔥
 
 // 15 쇼핑몰 프로젝트 : 프로젝트 생성 & Bootstrap 설치
 //(1)yarn
@@ -176,7 +179,7 @@ function App17() {
     );
  }
 
-// ⭐18 숙제 해설 : 상품목록 Component 만들기 + 반복문
+// 🦄18 숙제 해설 : 상품목록 Component 만들기 + 반복문
 // (1)일단 터미널창에 뜨는 warning부터 해결합시다. 이런 잔소리가 귀찮다면, 페이지 맨 위에 /*eslint-disable*/ 이라는 코드를 추가합니다.
 
 // (2) 1번째 상품목록 Component 만들기 
@@ -228,7 +231,7 @@ function App18() {
 
   return (
    <div className="App">
-    <div className="black-nav">  18 숙제 해설 : 상품목록 Component 만들기 + 반복문  </div>  
+    <div className="black-nav">  🦄18 숙제 해설 : 상품목록 Component 만들기 + 반복문  </div>  
     <div className="container">
       <div className="row">
       // (2) (2-3) (2-4)
@@ -299,7 +302,7 @@ function App18() {
    )
  }
 
-// 🍀19 React Router 1 : 셋팅과 기본 라우팅
+// 🦄19 React Router 1 : 셋팅과 기본 라우팅
 // (router 라우터 ((데이터 전송시의 최적 경로를 선택하는 장치)) ) (route 루트. 길)
 // React-Router 특징 : 각각 페이지마다 다른 HTML 파일을 보여주는게 아닙니다.
 // HTML 내부의 내용을 갈아치워서 다른 페이지처럼 흉내내는 것일 뿐입니다.
@@ -333,7 +336,7 @@ function App18() {
 function App19() {
   return (
    <div className="App">
-    <div className="black-nav">🍀19 React Router 1 : 셋팅과 기본 라우팅 </div>
+    <div className="black-nav">🦄19 React Router 1 : 셋팅과 기본 라우팅 </div>
   
     // (4-2) (4-3)
     <Route path="/">메인페이지⭐</Route>
@@ -389,13 +392,60 @@ function Card3(){
   )
 }
 
-// 🍀20 React Router 2 : Link, Switch, history 기능
+// 🦄20 React Router 2 : Link, Switch, history 기능
+// (1)Component Detail20에 넣음
+
+// (2)  -->Detail20.js (src 폴더 내에 Detail20.js )
+
+// (2-3) 호출
+// (2-4) src폴더내에 component파일만 모아놓은 폴더를 만들기도 함
+
+
+//(3) Link 태그로 페이지 이동버튼 만들기 
+// 메인페이지, 상세페이지 이동버튼을 만들어봅시다.
+
+// (3-2) 일단 (href="#home" 삭제)(link사용할 예정)
+
+//(3-3) ‘react-router-dom’ library 에서 가져온 Link 쓸수 있음.
+// 일종의 component.
+// html 태그처럼 사용
+
+//(3-4) 페이지 이동버튼으로 바꾸길 원하는 글자들에 <Link> 태그를 감싸보시길 바랍니다.
+// 첫글자 대문자
+// 그 다음에 to 라는 속성을 이용해서 경로를 적어주시면 페이지 이동버튼이 완성됩니다.
+
+// Link 태그를 사용하고 to 속성을 이용해 경로만 지정해주면 됩니다.
+// 어찌보면 <a> 태그 만드는 것과 매우 유사합니다.
+ 
+// 그럼 Detail이라는 글자를 누르면 /detail 경로, Home이라는 글자를 누르면 / 경로로 이동합니다.
+
+// (4) (5) (6) -->Detail20.js
 
 function App20() {
   return (
    <div className="App">
-    <div className="black-nav">🍀20 React Router 2 : Link, Switch, history 기능 </div>
-  
+    <div className="black-nav">🦄20 React Router 2 : Link, Switch, history 기능 </div>
+
+    <Navbar bg="light" expand="lg" className='background'>
+      <Navbar.Brand href="#home">React-Bootstrap</Navbar.Brand>
+      <Navbar.Toggle aria-controls="basic-navbar-nav" />
+      <Navbar.Collapse id="basic-navbar-nav">
+        <Nav className="mr-auto">
+        // (3-2) (3-4)
+          <Nav.Link> <Link to='/'>Home</Link></Nav.Link>
+          <Nav.Link><Link to='/detail'>Detail</Link> </Nav.Link>
+
+          <NavDropdown title="Dropdown" id="basic-nav-dropdown">
+            <NavDropdown.Item href="#action/3.1">Action</NavDropdown.Item>
+            <NavDropdown.Item href="#action/3.2">Another action</NavDropdown.Item>
+            <NavDropdown.Item href="#action/3.3">Something</NavDropdown.Item>
+            <NavDropdown.Divider />
+            <NavDropdown.Item href="#action/3.4">Separated link</NavDropdown.Item>
+          </NavDropdown>
+        </Nav>        
+      </Navbar.Collapse>
+    </Navbar>
+    
     <Route path="/">     
       <Jumbotron>
       <h1>Hello, world!</h1>
@@ -409,24 +459,38 @@ function App20() {
      </Jumbotron>
     </Route>
 
+    // (1)
     <Route path="/detail">
-        <div className="container">
-        <div className="row">
-          <div className="col-md-6">
-            <img src="https://codingapple1.github.io/shop/shoes1.jpg" width="100%" />
-          </div>
-          <div className="col-md-6 mt-4">
-            <h4 className="pt-5">상품명</h4>
-            <p>상품설명</p>
-            <p>120000원</p>
-            <button className="btn btn-danger">주문하기</button> 
-          </div>
-        </div>
-          </div> 
+      <Detail20></Detail20>
+      </Route>
+
+      // (2-3)
+    <Route path="/detail">
+    <Detail20_2></Detail20_2>     
       </Route>
     
    </div>
   );
+}
+// (1)
+function Detail20(){
+  return(
+
+    <div className="container">
+    <div className="row">
+      <div className="col-md-6">
+        <img src="https://codingapple1.github.io/shop/shoes1.jpg" width="100%" />
+      </div>
+      <div className="col-md-6 mt-4">
+        <h4 className="pt-5">상품명</h4>
+        <p>상품설명</p>
+        <p>120000원</p>
+        <button className="btn btn-danger">주문하기</button> 
+      </div>
+    </div>
+  </div> 
+
+  )
 }
 
 function App(){
