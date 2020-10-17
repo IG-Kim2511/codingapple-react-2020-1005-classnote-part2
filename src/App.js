@@ -16,7 +16,11 @@ import {naming,naming2} from './data3.js'
 // 17-(4-1)
 import data4naming from './data4.js'
 
+// 19-(3)
+import {Link, Route, Switch} from 'react-router-dom'
 
+
+// ⭐⚡😀💀🦄🍉🍒🍀🌈🔥
 
 // 15 쇼핑몰 프로젝트 : 프로젝트 생성 & Bootstrap 설치
 //(1)yarn
@@ -172,7 +176,7 @@ function App17() {
     );
  }
 
-//18 숙제 해설 : 상품목록 Component 만들기 + 반복문
+// ⭐18 숙제 해설 : 상품목록 Component 만들기 + 반복문
 // (1)일단 터미널창에 뜨는 warning부터 해결합시다. 이런 잔소리가 귀찮다면, 페이지 맨 위에 /*eslint-disable*/ 이라는 코드를 추가합니다.
 
 // (2) 1번째 상품목록 Component 만들기 
@@ -280,9 +284,9 @@ function App18() {
     <p>{props.shoes[0].content} & {props.shoes[0].price}  </p>    
   </div>
    )
-
- // (3)
  }
+
+  // (3)
  function Card2(props){
    return(
     <div className="col-md-4">
@@ -295,18 +299,135 @@ function App18() {
    )
  }
 
-//  19 React Router 1 : 셋팅과 기본 라우팅
+// 🍀19 React Router 1 : 셋팅과 기본 라우팅
 // (router 라우터 ((데이터 전송시의 최적 경로를 선택하는 장치)) ) (route 루트. 길)
+// React-Router 특징 : 각각 페이지마다 다른 HTML 파일을 보여주는게 아닙니다.
+// HTML 내부의 내용을 갈아치워서 다른 페이지처럼 흉내내는 것일 뿐입니다.
+
+// react-router-dom이라는 공식 라이브러리를 설치해서 이용하시면 됩니다.
+//설치: 터미널을 여시고 npm install react-router-dom
+
+// (2) index.js 파일에 방문합니다.
+
+// (3) 상단에 Route 라는 태그를 import 해오십시오.  
+// Link, Switch는 다음시간에 쓸거라 미리 해놨습니다.
+// import { Link, Route, Switch } from 'react-router-dom';
+
+// (4)라우팅하려면 
+// (4-2). 원하는 곳에 <Route></Route>  , <Route/>태그를 작성합니다.
+// (4-3). <Route>안에 path와 path 방문시 보여줄 HTML 을 적으시면 됩니다. 
+// 계속 추가 끝없이 가능
+
+// (4-4) component 호출 2way
+
+// (5) Q: 나는 /detail로 접속했는데 왜 상세페이지, 메인페이지 둘다 보여주죠? 
+// 왜냐면 /detail이라고 적으면 /라는 경로도 포함되어있으니까요.
+// 그래서 / 경로로 접속했다고 생각하고 메인페이지
+// /detail 경로도 접속했다고 생각하고 상세페이지 둘다 보여주는 것입니다.
+
+// a: 그런게 싫으시면 / 경로에 exact라는 속성을 부여해주시면 됩니다.
+
+// (6) /main2 , /deteail2 경로에 <Jumbotron> html 추가
+//  /deteail2 경로에 상세페이지 html 추가
 
 function App19() {
   return (
    <div className="App">
-    <div className="black-nav">19 React Router 1 : 셋팅과 기본 라우팅 </div>
+    <div className="black-nav">🍀19 React Router 1 : 셋팅과 기본 라우팅 </div>
   
+    // (4-2) (4-3)
+    <Route path="/">메인페이지⭐</Route>
+    <Route path="/detail">상세페이지😎 </Route>
+    <Route pate="/4-2"/>4-2
+    <Route path="/ㄴㄻㄴㄹㅇ">계속 추가 끝없이 가능</Route>
+
+    // (4-4)
+    <Route path="/component" component={Card3}></Route>
+    <Route path="/component2" > <Card3/> </Route>
+
+    // (5)
+    <Route exact path="/">메인페이지⭐</Route>
+
+    // (6)
+    <Route path="/main2">     
+      <Jumbotron>
+      <h1>Hello, world!</h1>
+      <p>
+        This is a simple hero unit, a simple jumbotron-style component for calling
+        extra attention to featured content or information.
+      </p>
+      <p>
+        <Button variant="primary">Learn more</Button>
+      </p>
+     </Jumbotron>
+    </Route>
+
+    <Route path="/detail2">
+        <div className="container">
+        <div className="row">
+          <div className="col-md-6">
+            <img src="https://codingapple1.github.io/shop/shoes1.jpg" width="100%" />
+          </div>
+          <div className="col-md-6 mt-4">
+            <h4 className="pt-5">상품명</h4>
+            <p>상품설명</p>
+            <p>120000원</p>
+            <button className="btn btn-danger">주문하기</button> 
+          </div>
+        </div>
+          </div> 
+      </Route>
+    
    </div>
   );
 }
 
+// (4-4)
+function Card3(){
+  return(
+  <div>Component 🙄</div>
+  )
+}
+
+// 🍀20 React Router 2 : Link, Switch, history 기능
+
+function App20() {
+  return (
+   <div className="App">
+    <div className="black-nav">🍀20 React Router 2 : Link, Switch, history 기능 </div>
+  
+    <Route path="/">     
+      <Jumbotron>
+      <h1>Hello, world!</h1>
+      <p>
+        This is a simple hero unit, a simple jumbotron-style component for calling
+        extra attention to featured content or information.
+      </p>
+      <p>
+        <Button variant="primary">Learn more</Button>
+      </p>
+     </Jumbotron>
+    </Route>
+
+    <Route path="/detail">
+        <div className="container">
+        <div className="row">
+          <div className="col-md-6">
+            <img src="https://codingapple1.github.io/shop/shoes1.jpg" width="100%" />
+          </div>
+          <div className="col-md-6 mt-4">
+            <h4 className="pt-5">상품명</h4>
+            <p>상품설명</p>
+            <p>120000원</p>
+            <button className="btn btn-danger">주문하기</button> 
+          </div>
+        </div>
+          </div> 
+      </Route>
+    
+   </div>
+  );
+}
 
 function App(){
   return(
@@ -316,6 +437,7 @@ function App(){
        <App17/>      
        <App18/>    
        <App19/>    
+       <App20/>    
     </div>
   )
 }
