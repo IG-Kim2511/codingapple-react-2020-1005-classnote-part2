@@ -20,7 +20,7 @@ import data4naming from './data4.js'
 import { Link, Route, Switch } from 'react-router-dom'
 
 // 20-(2)
-import Detail20_2 from './Detail20'
+import Detail20_file from './Detail20'
 
 
 // ⭐⚡😀🦄👻👽🍉🍒🌈🔥
@@ -302,7 +302,7 @@ function App18() {
    )
  }
 
-// 🦄19 React Router 1 : 셋팅과 기본 라우팅
+// 🦄19 React Router 1 : 셋팅과 기본 라우팅 (router = 페이지 만들고, a태그)
 // (router 라우터 ((데이터 전송시의 최적 경로를 선택하는 장치)) ) (route 루트. 길)
 // React-Router 특징 : 각각 페이지마다 다른 HTML 파일을 보여주는게 아닙니다.
 // HTML 내부의 내용을 갈아치워서 다른 페이지처럼 흉내내는 것일 뿐입니다.
@@ -489,7 +489,7 @@ function App20() {
 
         // (2-3)
       <Route path="/detail">
-        <Detail20_2></Detail20_2>     
+        <Detail20_file></Detail20_file>     
       </Route>
 
      
@@ -501,7 +501,7 @@ function App20() {
       </Route>
    
       <Route path="/detail">
-        <Detail20_2></Detail20_2>     
+        <Detail20_file></Detail20_file>     
       </Route>
 
       //  (8)
@@ -523,7 +523,7 @@ function Detail20(){
         <img src="https://codingapple1.github.io/shop/shoes1.jpg" width="100%" />
       </div>
       <div className="col-md-6 mt-4">
-        <h4 className="pt-5">상품명</h4>
+        <h4 className="pt-5">Component상품명</h4>
         <p>상품설명</p>
         <p>120000원</p>
         <button className="btn btn-danger">주문하기</button> 
@@ -534,6 +534,81 @@ function Detail20(){
   )
 }
 
+//🦄21 React Router 3 : URL 파라미터로 상세페이지 100개 만들기
+
+function App21() {
+  return (
+   <div className="App">
+    <div className="black-nav">🦄21 React Router 3 : URL 파라미터로 상세페이지 100개 만들기</div>
+
+    <Navbar bg="light" expand="lg" className='background'>
+      <Navbar.Brand href="#home">React-Bootstrap</Navbar.Brand>
+      <Navbar.Toggle aria-controls="basic-navbar-nav" />
+      <Navbar.Collapse id="basic-navbar-nav">
+        <Nav className="mr-auto">
+            <Nav.Link> <Link to='/'>Home</Link></Nav.Link>
+          <Nav.Link><Link to='/detail'>Detail</Link> </Nav.Link>
+
+          <NavDropdown title="Dropdown" id="basic-nav-dropdown">
+            <NavDropdown.Item href="#action/3.1">Action</NavDropdown.Item>
+            <NavDropdown.Item href="#action/3.2">Another action</NavDropdown.Item>
+            <NavDropdown.Item href="#action/3.3">Something</NavDropdown.Item>
+            <NavDropdown.Divider />
+            <NavDropdown.Item href="#action/3.4">Separated link</NavDropdown.Item>
+          </NavDropdown>
+        </Nav>        
+      </Navbar.Collapse>
+    </Navbar>
+    
+    <Route path="/">     
+      <Jumbotron>
+      <h1>Hello, world!</h1>
+      <p>
+        This is a simple hero unit, a simple jumbotron-style component for calling
+        extra attention to featured content or information.
+      </p>
+      <p>
+        <Button variant="primary">Learn more</Button>
+      </p>
+     </Jumbotron>
+    </Route>
+
+
+     <Switch>    
+      <Route path="/detail">
+        <Detail21></Detail21>
+      </Route>
+     
+      <Route path="/:id">
+      <div>아무거나 적었을때 이거 보여주세요.</div>
+      </Route>
+    </Switch>
+
+   </div>
+  );
+}
+// (1)
+function Detail21(){
+  return(
+
+    <div className="container">
+    <div className="row">
+      <div className="col-md-6">
+        <img src="https://codingapple1.github.io/shop/shoes1.jpg" width="100%" />
+      </div>
+      <div className="col-md-6 mt-4">
+        <h4 className="pt-5">Component상품명</h4>
+        <p>상품설명</p>
+        <p>120000원</p>
+        <button className="btn btn-danger">주문하기</button> 
+      </div>
+    </div>
+  </div> 
+
+  )
+}
+
+
 function App(){
   return(
     <div>
@@ -543,6 +618,7 @@ function App(){
        <App18/>    
        <App19/>    
        <App20/>    
+       <App21/>    
     </div>
   )
 }
