@@ -4,6 +4,8 @@
 import React,{useState} from 'react';
 import './App.css';
 
+import Data from './data.js'
+
 // 16-(1)
 import { Navbar , Nav ,NavDropdown , Form , FormControl, Button, Jumbotron} from 'react-bootstrap';
 
@@ -21,6 +23,10 @@ import { Link, Route, Switch } from 'react-router-dom'
 
 // 20-(2)
 import Detail20_file from './Detail20'
+
+// 21 - (1)
+import Data21 from './data21.js'
+import Detail21_file from './Detail_file21'
 
 
 // ⭐⚡😀🦄👻👽🍉🍒🌈🔥
@@ -400,7 +406,6 @@ function Card3(){
 // (2-3) 호출
 // (2-4) src폴더내에 component파일만 모아놓은 폴더를 만들기도 함
 
-
 //(3) Link 태그로 페이지 이동버튼 만들기 
 // 메인페이지, 상세페이지 이동버튼을 만들어봅시다.
 
@@ -479,8 +484,6 @@ function App20() {
       </p>
      </Jumbotron>
     </Route>
-
-
  
       // (1)
       <Route path="/detail">
@@ -490,9 +493,7 @@ function App20() {
         // (2-3)
       <Route path="/detail">
         <Detail20_file></Detail20_file>     
-      </Route>
-
-     
+      </Route>     
 
       // (8-2)
     <Switch>    
@@ -536,7 +537,43 @@ function Detail20(){
 
 //🦄21 React Router 3 : URL 파라미터로 상세페이지 100개 만들기
 
+// URL 파라미터에 대해 알아봅시다.
+// 상세페이지 5조 5억개 정도는 한번에 만들어낼 수 있습니다.
+// 그래서 우리도 상품 3개에 해당하는 각각의 상세페이지를 만들어주도록 합시다.
+
+// (1)Data21파일 , 
+// (1-2)state, 
+// (1-3)데이터바인딩 , 
+// (1-4)Component props
+
+//(1-2) state 만들 땐 state를 필요로하는 컴포넌트들 중 가장 최상위 컴포넌트에 보관하시길 바랍니다.
+// 다른 컴포넌트에서 안쓰는 데이터는 그냥 아무 컴포넌트에 만드셔도 되는데
+// 다양한 곳에서 쓸 것 같은 중요한 데이터는 항상 상위 컴포넌트, 혹은 귀찮으면 그냥 최상위 컴포넌트인 App 컴포넌트에 보관하도록 합시다.
+// 그냥 모든 중요한 데이터는 App Component or Redux 파일에 보관...
+
+
+// (2) 이런 식으로 3개의 페이지를 만들었습니다. 완성!
+// 하지만 이거 너무 반복적이죠 반복문을 돌리고 싶은 충동도 생기고요.
+// 근데 URL 만드실 땐 반복문은 안쓰고 보통 URL 파라미터 문법을 이용해 축약을 시켜줍니다.
+
+// (3) url 파라미터  (url parameters) ":"
+
+// :뒤에 아무이름 가능. 선생님은 id라고 작명한거임  
+// 저번시간에 잠깐 했던 : 이거 콜론기호를 쓰시면 되는데, 이게 뭔뜻이냐면
+// :id 자리에 아무 문자나 입력하면 <Detail> 컴포넌트를 보여주세요~ 입니다.
+
+// 그럼 여러분 이제 /detail/1234 아무거나 입력해도 <Detail> 컴포넌트를 보여줍니다.
+//  id라는 부분은 함수 파라미터처럼 자유롭게 작명해주시면 됩니다.
+//  파라미터는 2개 3개 몇개든 추가할 수 있습니다. /detail/:id/:name 이런 식도 가능합니다.
+// 그럼 /detail/0 혹은 /detail/1 이렇게 접속하면 이제 상세페이지가 잘 뜨죠
+// 근데 항상 같은 상품명이 뜨는게 문제입니다. 이걸 해결해봅시다.
+
+
 function App21() {
+
+// (1-2)
+  let [shoes,shoes변경] = useState(Data21);
+
   return (
    <div className="App">
     <div className="black-nav">🦄21 React Router 3 : URL 파라미터로 상세페이지 100개 만들기</div>
@@ -574,39 +611,14 @@ function App21() {
     </Route>
 
 
-     <Switch>    
-      <Route path="/detail">
-        <Detail21></Detail21>
-      </Route>
-     
-      <Route path="/:id">
-      <div>아무거나 적었을때 이거 보여주세요.</div>
-      </Route>
-    </Switch>
+  <Route path="/detail">
+  <Detail21_file></Detail21_file>     
+</Route>
 
    </div>
   );
 }
-// (1)
-function Detail21(){
-  return(
 
-    <div className="container">
-    <div className="row">
-      <div className="col-md-6">
-        <img src="https://codingapple1.github.io/shop/shoes1.jpg" width="100%" />
-      </div>
-      <div className="col-md-6 mt-4">
-        <h4 className="pt-5">Component상품명</h4>
-        <p>상품설명</p>
-        <p>120000원</p>
-        <button className="btn btn-danger">주문하기</button> 
-      </div>
-    </div>
-  </div> 
-
-  )
-}
 
 
 function App(){
