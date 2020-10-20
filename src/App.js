@@ -22,11 +22,12 @@ import data4naming from './data4.js'
 import { Link, Route, Switch } from 'react-router-dom'
 
 // 20-(2)
-import Detail20_file from './Detail20'
+import Detail20_file from './Detail20.js'
 
 // 21 - (1)
 import Data21 from './data21.js'
-import Detail21_file from './Detail_file21'
+import Detail21_file from './Detail21_file.js'
+import Detail21_2file from './Detail21_2file.js'
 
 
 // ⭐⚡😀🦄👻👽🍉🍒🌈🔥
@@ -546,7 +547,7 @@ function Detail20(){
 // (1-3)데이터바인딩 , 
 // (1-4)Component props
 
-//(1-2) state 만들 땐 state를 필요로하는 컴포넌트들 중 가장 최상위 컴포넌트에 보관하시길 바랍니다.
+//(1-5) state 만들 땐 state를 필요로하는 컴포넌트들 중 가장 최상위 컴포넌트에 보관하시길 바랍니다.
 // 다른 컴포넌트에서 안쓰는 데이터는 그냥 아무 컴포넌트에 만드셔도 되는데
 // 다양한 곳에서 쓸 것 같은 중요한 데이터는 항상 상위 컴포넌트, 혹은 귀찮으면 그냥 최상위 컴포넌트인 App 컴포넌트에 보관하도록 합시다.
 // 그냥 모든 중요한 데이터는 App Component or Redux 파일에 보관...
@@ -559,8 +560,7 @@ function Detail20(){
 // (3) url 파라미터  (url parameters) ":"
 
 // :뒤에 아무이름 가능. 선생님은 id라고 작명한거임  
-// 저번시간에 잠깐 했던 : 이거 콜론기호를 쓰시면 되는데, 이게 뭔뜻이냐면
-// :id 자리에 아무 문자나 입력하면 <Detail> 컴포넌트를 보여주세요~ 입니다.
+// 저번시간에 잠깐 했던 : 이거 콜론기호를 쓰시면 되는데, 이게 뭔뜻이냐면, :id 자리에 아무 문자나 입력하면 <Detail> 컴포넌트를 보여주세요~ 입니다.
 
 // 그럼 여러분 이제 /detail/1234 아무거나 입력해도 <Detail> 컴포넌트를 보여줍니다.
 //  id라는 부분은 함수 파라미터처럼 자유롭게 작명해주시면 됩니다.
@@ -568,6 +568,9 @@ function Detail20(){
 // 그럼 /detail/0 혹은 /detail/1 이렇게 접속하면 이제 상세페이지가 잘 뜨죠
 // 근데 항상 같은 상품명이 뜨는게 문제입니다. 이걸 해결해봅시다.
 
+// (4) (5)  --> Detail21_file.js
+
+// (6) ---> Detail21_2file.js /  find() 라는 ES6 신문법
 
 function App21() {
 
@@ -609,11 +612,36 @@ function App21() {
       </p>
      </Jumbotron>
     </Route>
+      <switch>
 
+      <Route path="/detail">
+      // (1-3)
+      <Detail21_file shoes={shoes}/>   
+    </Route>
 
-  <Route path="/detail">
-  <Detail21_file></Detail21_file>     
-</Route>
+    // (2)
+    <Route path="/detail/0">
+      <Detail21_file shoes={shoes}/>   
+    </Route>
+    <Route path="/detail/1">
+     <Detail21_file shoes={shoes}/>   
+    </Route>
+    <Route path="/detail/2">
+     <Detail21_file shoes={shoes}/>   
+    </Route>
+
+    // (3) (4) (5)
+    <Route path="/detail/:id">
+     <Detail21_file shoes={shoes}/>   
+    </Route>
+
+    // (6)
+    <Route path="/detail/:id">
+      <Detail21_2file shoes={shoes}/>   
+    </Route>
+
+    </switch>
+
 
    </div>
   );

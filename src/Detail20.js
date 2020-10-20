@@ -42,7 +42,7 @@ import React, {useState} from 'react';
 // 20-(5)
 import { useHistory } from 'react-router-dom';
 
-function Detail20(){
+function Detail20_file(){
     // 20-(5)
     let history = useHistory();
 
@@ -70,4 +70,4 @@ function Detail20(){
     )
   }
 
-export default Detail20;
+export default Detail20_file;
