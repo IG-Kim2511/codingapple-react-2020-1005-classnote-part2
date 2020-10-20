@@ -29,6 +29,8 @@ import Data21 from './data21.js'
 import Detail21_file from './Detail21_file.js'
 import Detail21_2file from './Detail21_2file.js'
 
+// 22
+import Detail22_file from './Detail22_file.js'
 
 // ⭐⚡😀🦄👻👽🍉🍒🌈🔥
 
@@ -647,6 +649,49 @@ function App21() {
   );
 }
 
+// 🦄22 styled-components를 이용한 class없는 CSS스타일링
+// ---> Detail22_file
+
+function App22() {
+
+// (1-2)
+  let [shoes,shoes변경] = useState(Data21);
+
+  return (
+   <div className="App">
+    <div className="black-nav">🦄22 styled-components를 이용한 class없는 CSS스타일링</div>
+
+    <Navbar bg="light" expand="lg" className='background'>
+      <Navbar.Brand href="#home">React-Bootstrap</Navbar.Brand>
+      <Navbar.Toggle aria-controls="basic-navbar-nav" />
+      <Navbar.Collapse id="basic-navbar-nav">
+        <Nav className="mr-auto">
+            <Nav.Link> <Link to='/'>Home</Link></Nav.Link>
+          <Nav.Link><Link to='/detail'>Detail</Link> </Nav.Link>
+   
+        </Nav>        
+      </Navbar.Collapse>
+    </Navbar>
+    
+    <Route path="/">     
+   
+    </Route>
+
+      <switch>
+ ---> Detail22_file
+
+
+      <Route path="/detail">
+      <Detail22_file />   
+    </Route>
+ 
+    </switch>
+
+
+   </div>
+  );
+}
+
 
 
 function App(){
@@ -659,6 +704,7 @@ function App(){
        <App19/>    
        <App20/>    
        <App21/>    
+       <App22/>    
     </div>
   )
 }
