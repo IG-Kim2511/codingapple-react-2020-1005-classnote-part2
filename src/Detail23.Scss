@@ -27,7 +27,7 @@
 // 심지어 반복문 이런 것도 있는데 SASS 문법에 대한 상세한 내용은 구글을 참고하도록 합시다.
 
 // 23-(4)
-@import "./reset23.scss";
+@import "./_reset23.scss";
 
 // 23-(3)
 $메인칼라: #ff0000;
@@ -56,7 +56,7 @@ div.container {
   margin: auto;
 }
 // 23-(6)
-.my-alert {
+.my-alert2 {
   @extend .my-alert;
   //   23-(6-2)
   background: yellow;

@@ -703,7 +703,6 @@ function App22() {
 
 function App23() {
 
-  // 🌈(1-2)
     let [shoes,shoes변경] = useState(Data21);
   
     return (
@@ -734,9 +733,8 @@ function App23() {
         <Detail23_file />   
       </Route>
    
-      </switch>
-  
-  
+      </switch>  
+      
      </div>
     );
   }
