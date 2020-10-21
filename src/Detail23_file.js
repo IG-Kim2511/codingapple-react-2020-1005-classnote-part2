@@ -3,13 +3,13 @@
 // 23-(1) SASS문법으로 작성하고 싶으시면 그냥 파일명만 .css →.scss로 바꿔주시면 끝입니다.→ Detail.scss 파일
 // 23-(2) import './Detail23.Scss'
 
-// 23-(3)  → Detail23.Scss
+// 23-(3)  → Detail23.scss
 
 // 23-(6)
 
 // 23-(2)
 import './Detail23.css';
-import './Detail23.Scss';
+import './Detail23.scss';
 
 import React, {useState} from 'react';
 import { useHistory ,useParams } from 'react-router-dom';
@@ -28,7 +28,7 @@ function Detail23_file(props){
       // 23-(3)
         <div className="red">
         <h4> h4 </h4>
-            <p>    Detail23.Scss  </p>      
+            <p>    Detail23.scss  </p>      
         </div>
 
         // 23-(6)
@@ -37,6 +37,9 @@ function Detail23_file(props){
         </div>
         <div className="my-alert2">
             <p>  my-alert2 </p>      
+        </div>
+        <div className="my-alert3">
+            <p>  my-alert3 </p>      
         </div>
               
     </div> 

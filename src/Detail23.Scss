@@ -49,6 +49,7 @@ div.container {
 // 23-(6)
 .my-alert {
   background: #eeeeee;
+  font-size: 2rem;
   padding: 15px;
   border-radius: 5px;
   max-width: 500px;
@@ -65,12 +66,13 @@ div.container {
 // 23-(7)
 @mixin 함수() {
   background: #eeeeee;
+  font-size: 3rem;
   padding: 15px;
   border-radius: 5px;
   max-width: 500px;
   width: 100%;
   margin: auto;
 }
-.my-alert {
+.my-alert3 {
   @include 함수();
 }
