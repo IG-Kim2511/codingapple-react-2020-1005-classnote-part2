@@ -74,7 +74,7 @@ function Detail24_file(props){
         return function 어쩌구(){}
      });
     
-    // 숙제 → 25강
+    // 숙제: 첫화면에서 2초 동안 보이는 코드 → 25강
     useEffect(()=>{ 
             let 타이머 = setTimeout(() => {                
             }, 2000);

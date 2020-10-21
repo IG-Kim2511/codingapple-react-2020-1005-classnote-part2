@@ -35,6 +35,8 @@ import Detail22_file from './Detail22_file.js'
 import Detail23_file from './Detail23_file.js'
 // 24
 import Detail24_file from './Detail24_file.js'
+// 25
+import Detail25_file from './Detail25_file.js'
 
 
 //👉🌈⚡🦄 ⭐😀👻👽🍉🍒🔥
@@ -794,6 +796,41 @@ function App24() {
     );
   }
 
+  // 🦄25 useEffect 숙제 풀이 & 나머지 기능
+  //  →🦄 Detail25_file.js  
+
+function App25() {
+
+    let [shoes,shoes변경] = useState(Data21);
+  
+    return (
+     <div className="App">
+      <div className="black-nav">🦄25 useEffect 숙제 풀이 & 나머지 기능</div>
+  
+      <Navbar bg="light" expand="lg" className='background'>
+        <Navbar.Brand href="#home">..</Navbar.Brand>
+        <Navbar.Toggle aria-controls="basic-navbar-nav" />
+        <Navbar.Collapse id="basic-navbar-nav">
+          <Nav className="mr-auto">
+              <Nav.Link> <Link to='/'>Home</Link></Nav.Link>
+            <Nav.Link><Link to='/detail'>Detail</Link> </Nav.Link>     
+          </Nav>        
+        </Navbar.Collapse>
+      </Navbar>
+      
+      <Route path="/"></Route>
+  
+        <switch>
+          →🦄 Detail25_file.js  
+          <Route path="/detail">
+          <Detail25_file />   
+        </Route>   
+      </switch>  
+      
+     </div>
+    );
+  }
+
 function App(){
   return(
     <div>
@@ -807,6 +844,7 @@ function App(){
        <App22/>    
        <App23/>    
        <App24/>    
+       <App25/>    
     </div>
   )
 }
