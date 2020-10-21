@@ -31,8 +31,11 @@ import Detail21_2file from './Detail21_2file.js'
 
 // 22
 import Detail22_file from './Detail22_file.js'
+// 23
+import Detail23_file from './Detail23_file.js'
 
-// ⭐⚡😀🦄👻👽🍉🍒🌈🔥
+
+//👉🌈⚡🦄 ⭐😀👻👽🍉🍒🔥
 
 // 15 쇼핑몰 프로젝트 : 프로젝트 생성 & Bootstrap 설치
 //(1)yarn
@@ -674,13 +677,10 @@ function App22() {
     </Navbar>
     
     <Route path="/">     
-   
     </Route>
 
       <switch>
-   ---> Detail22_file
-
-
+      →  Detail22_file.js
       <Route path="/detail">
       <Detail22_file />   
     </Route>
@@ -693,6 +693,13 @@ function App22() {
 }
 
 //🦄 23 SASS를 쓰자 (SASS 문법 10분 총정리)
+// SASS 문법으로 작성한 뒤에  --> CSS로 컴파일
+// node-sass라는 라이브러리만 설치하시면 CSS로 컴파일 알아서 해줌
+// 설치: 터미널 에서 npm install node-sass  / yarn add node-sass
+
+//   → Detail23_file.js
+ // → Detail23.Sass
+
 
 function App23() {
 
@@ -720,11 +727,11 @@ function App23() {
       </Route>
   
         <switch>
-     ---> Detail22_file
-  
+  → Detail23_file.js
+  → Detail23.Scss
   
         <Route path="/detail">
-        <Detail22_file />   
+        <Detail23_file />   
       </Route>
    
       </switch>

@@ -1,0 +1,71 @@
+// 23-(4)
+// 기본세팅은 따로 _reset.css / _reset.sass 파일 만듬
+// _reset으로 이름 짓는게 관습
+// 다른 css (혹은 scss)파일에 저장해두고 필요해질 때마다 @import 해오시면 편리합니다.
+
+// 23-(5) SASS nesting 문법
+// 1. 셀렉터 해석이 쉽고
+// 2. 관련된 class끼리 뭉텅이로 관리하기 편해서 입니다.
+
+// 23-(6) extend 문법 :   @extend .클래스이름;
+// 모든 sass코딩한것을 복사붙여넣음
+// 이제 손수 복붙 안하셔도되고 비슷한 UI 만들기도 쉬워집니다.
+
+// 23-(6-2) 바꾸고싶은부분만 추가
+
+// 23-(7)@mixin / @include 문법
+// js의 함수처럼 사용 가능
+// 함수가 위에 선언되어있어야 밑에서 사용가능합니다
+
+// 23-(8)
+// 그리고 함수에 파라미터같은것도 넣을 수 있고 여러가지 기능들을 만들어낼 수 있습니다.
+// 심지어 반복문 이런 것도 있는데 SASS 문법에 대한 상세한 내용은 구글을 참고하도록 합시다.
+
+// 23-(4)
+@import "./reset23.scss";
+
+// 23-(3)
+$메인칼라: #ff0000;
+
+.red {
+  color: $메인칼라;
+}
+
+// 23-(5)
+div.container {
+  h4 {
+    color: blue;
+  }
+  p {
+    color: green;
+  }
+}
+
+// 23-(6)
+.my-alert {
+  background: #eeeeee;
+  padding: 15px;
+  border-radius: 5px;
+  max-width: 500px;
+  width: 100%;
+  margin: auto;
+}
+// 23-(6)
+.my-alert {
+  @extend .my-alert;
+  //   23-(6-2)
+  background: yellow;
+}
+
+// 23-(7)
+@mixin 함수() {
+  background: #eeeeee;
+  padding: 15px;
+  border-radius: 5px;
+  max-width: 500px;
+  width: 100%;
+  margin: auto;
+}
+.my-alert {
+  @include 함수();
+}
