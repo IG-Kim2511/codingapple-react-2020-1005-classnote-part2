@@ -4,10 +4,6 @@
 // 23-(2) import './Detail23.Scss'
 
 // 23-(3)  → Detail23.Sass
-// SASS 문법 1.   
-// scss파일에선 변수를 사용할 수 있습니다
-// $
-
 
 // 23-(6)
 
