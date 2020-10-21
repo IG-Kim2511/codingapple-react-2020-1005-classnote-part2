@@ -654,7 +654,7 @@ function App21() {
 
 function App22() {
 
-// (1-2)
+// 🌈(1-2)
   let [shoes,shoes변경] = useState(Data21);
 
   return (
@@ -678,7 +678,7 @@ function App22() {
     </Route>
 
       <switch>
- ---> Detail22_file
+   ---> Detail22_file
 
 
       <Route path="/detail">
@@ -692,7 +692,47 @@ function App22() {
   );
 }
 
+//🦄 23 SASS를 쓰자 (SASS 문법 10분 총정리)
 
+function App23() {
+
+  // 🌈(1-2)
+    let [shoes,shoes변경] = useState(Data21);
+  
+    return (
+     <div className="App">
+      <div className="black-nav">🦄23 SASS를 쓰자 (SASS 문법 10분 총정리)</div>
+  
+      <Navbar bg="light" expand="lg" className='background'>
+        <Navbar.Brand href="#home">React-Bootstrap</Navbar.Brand>
+        <Navbar.Toggle aria-controls="basic-navbar-nav" />
+        <Navbar.Collapse id="basic-navbar-nav">
+          <Nav className="mr-auto">
+              <Nav.Link> <Link to='/'>Home</Link></Nav.Link>
+            <Nav.Link><Link to='/detail'>Detail</Link> </Nav.Link>
+     
+          </Nav>        
+        </Navbar.Collapse>
+      </Navbar>
+      
+      <Route path="/">     
+     
+      </Route>
+  
+        <switch>
+     ---> Detail22_file
+  
+  
+        <Route path="/detail">
+        <Detail22_file />   
+      </Route>
+   
+      </switch>
+  
+  
+     </div>
+    );
+  }
 
 function App(){
   return(
@@ -705,6 +745,7 @@ function App(){
        <App20/>    
        <App21/>    
        <App22/>    
+       <App23/>    
     </div>
   )
 }
