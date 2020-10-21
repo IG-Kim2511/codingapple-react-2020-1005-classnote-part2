@@ -7,13 +7,14 @@
 
 // 23-(6)
 
+import React, {useState} from 'react';
+import { useHistory ,useParams } from 'react-router-dom';
+import styled from 'styled-components'
+
 // 23-(2)
 import './Detail23.css';
 import './Detail23.scss';
 
-import React, {useState} from 'react';
-import { useHistory ,useParams } from 'react-router-dom';
-import styled from 'styled-components'
 
 function Detail23_file(props){
 

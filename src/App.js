@@ -33,6 +33,8 @@ import Detail21_2file from './Detail21_2file.js'
 import Detail22_file from './Detail22_file.js'
 // 23
 import Detail23_file from './Detail23_file.js'
+// 24
+import Detail24_file from './Detail24_file.js'
 
 
 //👉🌈⚡🦄 ⭐😀👻👽🍉🍒🔥
@@ -82,7 +84,7 @@ function App16() {
     <div>
     // (2)navbar
     <Navbar bg="light" expand="lg" className='background'>
-        <Navbar.Brand href="#home">React-Bootstrap</Navbar.Brand>
+        <Navbar.Brand href="#home">..</Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="mr-auto">
@@ -430,6 +432,16 @@ function Card3(){
  
 // 그럼 Detail이라는 글자를 누르면 /detail 경로, Home이라는 글자를 누르면 / 경로로 이동합니다.
 
+
+//(3-5) 24강에 나오는 내용 : <Nav.Link> 안에 <Link> 쓰면 브라우저 콘솔창에 warning이 뜹니다
+// 저번 Router 했을 때부터 뜨는, 
+// 콘솔창에 “a태그 안에 a태그 넣으면 안될 것 같은디요” 라고 워닝을 해결해봅시다.
+
+// as라는 것은 react-bootstrap 문법인데 
+// 그냥 기본 a태그 대신 사용할 HTML태그 혹은 컴포넌트를 집어넣을 수 있습니다.
+// 그래서 Link 태그를 집어넣은 것일 뿐입니다
+// as={Link} :  as={Link} 속해있는 태그는 link태그처럼 써달라는 의미
+
 // (4) (5) (6) (7) -->Detail20.js
 
 
@@ -459,13 +471,17 @@ function App20() {
     <div className="black-nav">🦄20 React Router 2 : Link, Switch, history 기능 </div>
 
     <Navbar bg="light" expand="lg" className='background'>
-      <Navbar.Brand href="#home">React-Bootstrap</Navbar.Brand>
+      <Navbar.Brand href="#home">..</Navbar.Brand>
       <Navbar.Toggle aria-controls="basic-navbar-nav" />
       <Navbar.Collapse id="basic-navbar-nav">
         <Nav className="mr-auto">
         // (3-2) (3-4)
           <Nav.Link> <Link to='/'>Home</Link></Nav.Link>
           <Nav.Link><Link to='/detail'>Detail</Link> </Nav.Link>
+
+          // (3-5)
+          <Nav.Link as={Link} to="/"> Home </Nav.Link> 
+          <Nav.Link as={Link} to="/detail"> Detail </Nav.Link> 
 
           <NavDropdown title="Dropdown" id="basic-nav-dropdown">
             <NavDropdown.Item href="#action/3.1">Action</NavDropdown.Item>
@@ -587,7 +603,7 @@ function App21() {
     <div className="black-nav">🦄21 React Router 3 : URL 파라미터로 상세페이지 100개 만들기</div>
 
     <Navbar bg="light" expand="lg" className='background'>
-      <Navbar.Brand href="#home">React-Bootstrap</Navbar.Brand>
+      <Navbar.Brand href="#home">..</Navbar.Brand>
       <Navbar.Toggle aria-controls="basic-navbar-nav" />
       <Navbar.Collapse id="basic-navbar-nav">
         <Nav className="mr-auto">
@@ -665,7 +681,7 @@ function App22() {
     <div className="black-nav">🦄22 styled-components를 이용한 class없는 CSS스타일링</div>
 
     <Navbar bg="light" expand="lg" className='background'>
-      <Navbar.Brand href="#home">React-Bootstrap</Navbar.Brand>
+      <Navbar.Brand href="#home">..</Navbar.Brand>
       <Navbar.Toggle aria-controls="basic-navbar-nav" />
       <Navbar.Collapse id="basic-navbar-nav">
         <Nav className="mr-auto">
@@ -710,7 +726,7 @@ function App23() {
       <div className="black-nav">🦄23 SASS를 쓰자 (SASS 문법 10분 총정리)</div>
   
       <Navbar bg="light" expand="lg" className='background'>
-        <Navbar.Brand href="#home">React-Bootstrap</Navbar.Brand>
+        <Navbar.Brand href="#home">..</Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="mr-auto">
@@ -739,6 +755,45 @@ function App23() {
     );
   }
 
+  // 🦄24 Lifecycle Hook (옛날사람) useEffect (요즘사람)
+  //  →🦄 Detail24_file.js  
+
+function App24() {
+
+    let [shoes,shoes변경] = useState(Data21);
+  
+    return (
+     <div className="App">
+      <div className="black-nav">🦄24 Lifecycle Hook (옛날사람) useEffect (요즘사람)</div>
+  
+      <Navbar bg="light" expand="lg" className='background'>
+        <Navbar.Brand href="#home">..</Navbar.Brand>
+        <Navbar.Toggle aria-controls="basic-navbar-nav" />
+        <Navbar.Collapse id="basic-navbar-nav">
+          <Nav className="mr-auto">
+              <Nav.Link> <Link to='/'>Home</Link></Nav.Link>
+            <Nav.Link><Link to='/detail'>Detail</Link> </Nav.Link>
+     
+          </Nav>        
+        </Navbar.Collapse>
+      </Navbar>
+      
+      <Route path="/">     
+     
+      </Route>
+  
+        <switch>
+        →🦄 Detail24_file.js  
+        <Route path="/detail">
+        <Detail24_file />   
+      </Route>
+   
+      </switch>  
+      
+     </div>
+    );
+  }
+
 function App(){
   return(
     <div>
@@ -751,6 +806,7 @@ function App(){
        <App21/>    
        <App22/>    
        <App23/>    
+       <App24/>    
     </div>
   )
 }
