@@ -119,8 +119,6 @@ function Detail25_file(props){
 
     {inputData}
     
-
-
     </div> 
   
     )
