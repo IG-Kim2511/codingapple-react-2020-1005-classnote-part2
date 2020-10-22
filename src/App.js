@@ -733,20 +733,16 @@ function App23() {
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="mr-auto">
               <Nav.Link> <Link to='/'>Home</Link></Nav.Link>
-            <Nav.Link><Link to='/detail'>Detail</Link> </Nav.Link>
-     
+            <Nav.Link><Link to='/detail'>Detail</Link> </Nav.Link>     
           </Nav>        
         </Navbar.Collapse>
       </Navbar>
       
-      <Route path="/">     
-     
-      </Route>
+      <Route path="/">     </Route>
   
         <switch>
   → Detail23_file.js
-  → Detail23.Scss
-  
+  → Detail23.Scss  
         <Route path="/detail">
         <Detail23_file />   
       </Route>
@@ -780,16 +776,13 @@ function App24() {
         </Navbar.Collapse>
       </Navbar>
       
-      <Route path="/">     
-     
-      </Route>
+      <Route path="/">  </Route>
   
-        <switch>
-        →🦄 Detail24_file.js  
-        <Route path="/detail">
-        <Detail24_file />   
-      </Route>
-   
+       <switch>
+          →🦄 Detail24_file.js  
+          <Route path="/detail">
+          <Detail24_file />   
+        </Route>   
       </switch>  
       
      </div>
