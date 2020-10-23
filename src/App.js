@@ -38,6 +38,9 @@ import Detail24_file from './Detail24_file.js'
 // 25
 import Detail25_file from './Detail25_file.js'
 
+// 26-(2)
+import axios from 'axios';
+
 
 //👉🌈⚡🦄 ⭐😀👻👽🍉🍒🔥
 
@@ -840,6 +843,15 @@ function App25() {
 // 근데 리액트 개발환경에선 axios 혹은 fetch()를 많이 사용합니다.
 // 우린 더 호환성이 좋고 참고할 문서도 많은 axios를 설치해서 이용합시다.
 
+// (2) 터미널에 npm install axios  / or / yarn add axios
+// 상단에 import 해오시면 axios로 ajax 요청할 준비는 끝입니다.
+// import axios from 'axios';
+
+
+// (3) button, onClick 준비
+// (4) 
+
+
 function App26() {
 
     let [shoes,shoes변경] = useState(Data21);
@@ -867,6 +879,13 @@ function App26() {
         </Route>   
       </switch>  
       
+      // (3)
+      <button className="btn btn-primary" onClick={()=>{  }}>더보기</button>
+
+      // (4)
+      <button className="btn btn-primary" onClick={()=>{
+        axios.get('GET요청할URL');  
+      }}>더보기</button>
      </div>
     );
   }
