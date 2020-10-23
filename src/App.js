@@ -823,6 +823,53 @@ function App25() {
      </div>
     );
   }
+  // 🦄26 리액트에서의 Ajax 요청방법 & Ajax는 무엇인가
+// 다음 경로로 GET 요청을 하면 상품 데이터 3개를 보내줍니다 : https://codingapple1.github.io/shop/data2.json
+
+// ● Ajax는 서버에 새로고침없이 요청을 할 수 있게 도와주는 일종의 자바스크립트 코드
+// 서버는 누군가 요청을 하면 데이터를 갖다주는 프로그램일 뿐
+ 
+// GET, POST 이런 요청방법이 있습니다.
+// GET : 데이터, 웹페이지 같은걸 읽고싶을 때 하는 요청  : 웹브라우저 검색
+// POST : 데이터를 서버로 보내고 싶을 때 하는 요청 : 로그인
+
+// ●Ajax는 
+// 1. jQuery Ajax를 쓰든가,
+// 2. axios 설치해서 쓰든가, 
+// 3. 쌩자바스크립트 fetch()를 쓰든가 하시면 됩니다.
+// 근데 리액트 개발환경에선 axios 혹은 fetch()를 많이 사용합니다.
+// 우린 더 호환성이 좋고 참고할 문서도 많은 axios를 설치해서 이용합시다.
+
+function App26() {
+
+    let [shoes,shoes변경] = useState(Data21);
+  
+    return (
+     <div className="App">
+      <div className="black-nav">🦄🦄26 리액트에서의 Ajax 요청방법 & Ajax는 무엇인가</div>
+  
+      <Navbar bg="light" expand="lg" className='background'>
+        <Navbar.Brand href="#home">..</Navbar.Brand>
+        <Navbar.Toggle aria-controls="basic-navbar-nav" />
+        <Navbar.Collapse id="basic-navbar-nav">
+          <Nav className="mr-auto">
+              <Nav.Link> <Link to='/'>Home</Link></Nav.Link>
+            <Nav.Link><Link to='/detail'>Detail</Link> </Nav.Link>     
+          </Nav>        
+        </Navbar.Collapse>
+      </Navbar>
+      
+      <Route path="/"></Route>
+  
+        <switch>
+          <Route path="/detail">
+          <Detail25_file />   
+        </Route>   
+      </switch>  
+      
+     </div>
+    );
+  }
 
 function App(){
   return(
@@ -838,6 +885,7 @@ function App(){
        <App23/>    
        <App24/>    
        <App25/>    
+       <App26/>    
     </div>
   )
 }
