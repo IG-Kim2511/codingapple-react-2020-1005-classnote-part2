@@ -827,7 +827,7 @@ function App25() {
     );
   }
   // 🦄26 리액트에서의 Ajax 요청방법 & Ajax는 무엇인가
-// 다음 경로로 GET 요청을 하면 상품 데이터 3개를 보내줍니다 : https://codingapple1.github.io/shop/data2.json
+
 
 // ● Ajax는 서버에 새로고침없이 요청을 할 수 있게 도와주는 일종의 자바스크립트 코드
 // 서버는 누군가 요청을 하면 데이터를 갖다주는 프로그램일 뿐
@@ -849,7 +849,45 @@ function App25() {
 
 
 // (3) button, onClick 준비
-// (4) 
+
+// (4) axios.get() 이라고 작성하면 GET요청을 새로고침 없이도 몰래 할 수 있습니다.
+// GET요청을 할 목적지 (URL)은 괄호안에 문자형태로 적어주시면 됩니다.
+// https://codingapple1.github.io/shop/data2.json
+// GET 요청 끝! 그럼 이제 버튼을 누를 때마다 데이터를 몰래 가져오네요.
+// 진짜 상품데이터가 오는지 확인하고 싶으면 이걸 그대로 브라우저 주소창에서 GET 요청 해보시면 됩니다.
+// 브라우저 주소창에 이 URL을 복붙하면 자료 3개가 나오죠?
+
+// (5) 가져온 데이터를 출력하고 싶으면 하단처럼 작성합니다.
+//  .then(()=>{ 요청성공시실행할코드 })
+//  .catch(()=>{ 요청실패시실행할코드 })
+ 
+//   .get() 함수 바로 뒤에 쩜찍어서 저렇게 두개의 함수를 붙일 수 있습니다. 
+//  각각 요청성공/실패시 실행할 코드를 담을 수 있습니다. 
+//  더보기를 눌렀을 때 성공/실패메세지를 띄우고 싶다면 다 저런 함수안에 담으시면 됩니다.
+
+// (5-2) 서버 없는 주소 때..console.log('실패했음');
+
+// (6) 요청 성공시 데이터를 출력해보고 싶으면 하단과 같이 작성합니다.
+// then 안의 콜백함수 안에 파라미터를 추가하면 그게 받아온 데이터입니다.
+// result ('result' x) : 받아온 모든 코드 출력 
+
+// (6-2)
+// result ('result' x) : 실제로 받아온 데이터만 출력 
+
+//  (7) vanilla JS 문법. fetch()
+// fetch(요청할URL).then() 이렇게 거의 똑같이 사용가능합니다.
+// 하지만 가져온 자료가 JSON이라면 object로 자동 변환이 안됩니다.
+
+// (참고)  JSON 
+// 우리가 요청한 데이터는 array/object 자료가 아닌 JSON이라는 자료형입니다.
+// 따옴표가 다 쳐있죠? 왜냐면 서버와 통신할 때는 텍스트만 전송할 수 있습니다.
+// 그래서 텍스트럼 보이게 하기 위해서 Object에 따옴표를 다 친겁니다.
+// 그걸 전문용어로 JSON이라고 합니다.
+
+// JSON은 Object 자료형처럼 어쩌구.title 이런 식으로 정보를 뽑지 못해서, JSON자료는 Object로 변환을 해주어야합니다.
+
+// axios라이브러리 쓰시면 JSON 자료를 가져와도 지가 알아서 따옴표를 제거한 Object로 자동으로 변환해줌 (편함)
+//  fetch()는 그런거 안해줍니다. undefined 뜸
 
 
 function App26() {
@@ -882,10 +920,50 @@ function App26() {
       // (3)
       <button className="btn btn-primary" onClick={()=>{  }}>더보기</button>
 
-      // (4)
+      // (4) console확인👉👉
       <button className="btn btn-primary" onClick={()=>{
-        axios.get('GET요청할URL');  
-      }}>더보기</button>
+        axios.get('https://codingapple1.github.io/shop/data2.json')
+         // (5)
+        .then(()=>{
+          console.log('성공했음');
+        })
+        .catch(()=>{
+          console.log('실패했음');
+        })  
+        }}>더보기</button>
+
+      // (5-2)
+      <button className="btn btn-primary" onClick={()=>{
+        axios.get('https://codingapple1.github.io/shop/data2222222222222.json')        
+        .catch(()=>{
+          console.log('실패했음');
+        })  
+        }}>더보기</button>
+       
+      <button className="btn btn-primary" onClick={()=>{
+        axios.get('https://codingapple1.github.io/shop/data2.json')
+         // (6)
+         .then((result)=>{
+          console.log(result);
+        })
+        }}>더보기</button>
+     
+      <button className="btn btn-primary" onClick={()=>{
+        axios.get('https://codingapple1.github.io/shop/data2.json')
+         .then((result)=>{
+              // (6-2)
+          console.log(result.data);
+        })
+        }}>더보기</button>
+        
+        // (7)
+        <button className="btn btn-primary" onClick={()=>{
+          fetch('https://codingapple1.github.io/shop/data2.json')
+           .then((result)=>{              
+            console.log(result.data);
+          })
+          }}>더보기</button>
+
      </div>
     );
   }
