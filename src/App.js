@@ -1170,6 +1170,12 @@ function App28() {
   );
 }
 
+// 🦄29 만든 리액트 사이트 build & Github Pages로 배포해보기
+// → 캡쳐 정리
+// npm run build / yarn build
+// build명령으로 생긴  build폴더 내용을 업로드 (폴더x, 폴더안의 내용만)
+
+
 function App(){
   return(
     <div>
