@@ -828,7 +828,6 @@ function App25() {
   }
   // 🦄26 리액트에서의 Ajax 요청방법 & Ajax는 무엇인가
 
-
 // ● Ajax는 서버에 새로고침없이 요청을 할 수 있게 도와주는 일종의 자바스크립트 코드
 // 서버는 누군가 요청을 하면 데이터를 갖다주는 프로그램일 뿐
  
@@ -896,7 +895,7 @@ function App26() {
   
     return (
      <div className="App">
-      <div className="black-nav">🦄🦄26 리액트에서의 Ajax 요청방법 & Ajax는 무엇인가</div>
+      <div className="black-nav">🦄26 리액트에서의 Ajax 요청방법 & Ajax는 무엇인가</div>
   
       <Navbar bg="light" expand="lg" className='background'>
         <Navbar.Brand href="#home">..</Navbar.Brand>
@@ -968,6 +967,67 @@ function App26() {
     );
   }
 
+//🦄 27 리액트에서의 Ajax 요청방법 2 & 숙제풀이
+
+
+function App27() {
+
+  let [shoes,shoes변경] = useState(Data21);
+
+  return (
+   <div className="App">
+    <div className="black-nav">🦄27 리액트에서의 Ajax 요청방법 2 & 숙제풀이</div>
+
+    <Navbar bg="light" expand="lg" className='background'>
+      <Navbar.Brand href="#home">..</Navbar.Brand>
+      <Navbar.Toggle aria-controls="basic-navbar-nav" />
+      <Navbar.Collapse id="basic-navbar-nav">
+        <Nav className="mr-auto">
+            <Nav.Link> <Link to='/'>Home</Link></Nav.Link>
+          <Nav.Link><Link to='/detail'>Detail</Link> </Nav.Link>     
+        </Nav>        
+      </Navbar.Collapse>
+    </Navbar>
+    
+    <Route path="/"></Route>
+
+      <switch>
+        <Route path="/detail">
+        <Detail25_file />   
+      </Route>   
+    </switch>  
+    
+    <div className="container">
+      <div className="row">
+
+      {
+        shoes.map( (a,i)=>{
+          return <Card2 shoes={shoes[i]} i={i}></Card2> 
+        }  )
+      }
+      </div>
+    </div>
+
+
+    <button className="btn btn-primary" onClick={()=>{
+      axios.get('https://codingapple1.github.io/shop/data2.json')
+       .then((result)=>{
+            // (6-2)
+        console.log(result.data);
+      })
+      .catch(()=>{
+        console.log('실패했음');
+      })  
+      }}>더보기</button>
+      
+
+     
+
+   </div>
+  );
+}
+
+
 function App(){
   return(
     <div>
@@ -983,6 +1043,7 @@ function App(){
        <App24/>    
        <App25/>    
        <App26/>    
+       <App27/>    
     </div>
   )
 }
