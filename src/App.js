@@ -41,6 +41,8 @@ import Detail25_file from './Detail25_file.js'
 // 26-(2)
 import axios from 'axios';
 
+// 27
+import Detail27_file from './Detail27_file.js'
 
 //👉🌈⚡🦄 ⭐😀👻👽🍉🍒🔥
 
@@ -968,7 +970,73 @@ function App26() {
   }
 
 //🦄 27 리액트에서의 Ajax 요청방법 2 & 숙제풀이
+// 숙제해설 : 더보기 버튼을 클릭하면, 상품레이아웃 3개 추가하기 
 
+// (1)
+// 저번 시간에 상품 데이터 3개를 요청하는건 완료했습니다. 
+// 이제 그 데이터로 레이아웃을 만들어봅시다.
+// 상품레이아웃은 <Card> 컴포넌트 + map 반복문으로 만들었습니다.
+//  shoes라는 state 갯수 만큼 <Card> 레이아웃을 생성해주세요~ 라고 코드를 짰었습니다.
+
+// HTML 생성은 생각할 필요 없습니다.
+// “shoes 라는 state에 데이터 몇개를 추가해주세요~” 데이터 조작
+// 그럼 state에 데이터 3개가 추가되면 <Card> 레이아웃은 알아서 6개가 될테니까요.
+// 리액트 환경에서 여러분이 할 일은 그냥 데이터 조작입니다. 그럼 HTML은 알아서 바뀜 ㅅㄱ
+
+// (2)
+// 그래서 더보기 버튼을 클릭하면
+// 1. ajax 요청으로 데이터 3개를 가져오고
+// 2. ajax 성공하면 shoes라는 state에 추가하도록 합시다.
+
+//  then 함수 안에서 ajax가 성공했을 때의 코드를 작성하실 수 있습니다.
+// 거기서 shoes변경() 함수로 shoes라는 state에 데이터를 추가했습니다.
+
+// ...연산자는 괄호를 벗겨줌
+
+// (3)
+// 이번엔 state 데이터를 변경하기 위해 사본을 하나 생성하는게 아니라, 약간 한번에 처리를 해봅니다.
+
+// […shoes, …result.data ]
+// 1. shoes라는 기존 state 데이터를 괄호 벗겨서 여기 넣어주시고,
+// 2. result.data라는 ajax 성공시 받아오는 데이터도 괄호 벗겨서 여기 넣어주세요
+// 3. 그리고 이걸 전부 [ ] 대괄호로 감싸서 array를 만들어주세요
+
+// 이러면 기존 state 사본생성 없이도 원하는 데이터를 쉽게 추가 가능
+
+// (지금 Array 데이터를 다루고 있지만 Object 데이터들도 마찬가지로 … 괄호벗기기 연산자 사용가능합니다)
+
+// (3-2)
+// shoes 에 .... 붙이면 데이터만 남아서 [ { }, { }, { } ]
+// result.data  에 .... 붙이면 데이터만 남아서 [ { }, { }, { } ]
+
+//  shoes변경 [ { }, { }, { } , { }, { }, { } ] 이렇게 데이터가 남음
+
+// (3-3)
+// 버튼 클릭하면, 데이터 가져와서, 추가된버전으로  shoes state 변경시킴
+// […shoes ] → shoes변경 → […shoes, …result.data ]
+
+// (3-4)
+// Q. 버튼을 2번재 클릭할때, 새로운 url로 데이터 요청하고 싶다면?
+// A. 버튼 누른 횟수를 변수나 state에 저장 후 
+// 버튼을 1회 누르면 data2.json, 
+// 2회누르면 data3.json 이 경로로 요청하도록 코드를 바꿔주시면 되겠네요.
+
+// Q. 더보기로 보여줄 상품이 3개 밖에 없습니다. 근데 사용자가 버튼을 또 클릭하면 어쩌죠
+// A. 보여줄 상품의 마지막에 도달했을 시 버튼을 숨기거나 하시면 됩니다.
+
+// Q. 실패했을 경우 어쩌죠 
+// A. catch() 함수 안에 실행 원하는 코드를 담으시면 됩니다. “요청실패시 사용자에게 알림창 UI를 보여줍니다~” 이런 코드도 괜찮겠네요.
+
+// (4) → 캡쳐정리 확인
+// Q: 버튼 클릭때 ' 로딩중 ' 띄우기 
+// A: 클릭한때  '로딩중html' 띄우게함
+// axios서버 받거나,실패시 '로딩중html' 안보이게 함
+// 이전시간에 배운 리액트 html미리 만든 후,  if문 활용하기 문법 
+
+// (5) post : 서버에 데이터 보내기
+// axios.post('url',(보낼 데이터));
+
+// (6) → Detail27_file.js
 
 function App27() {
 
@@ -988,18 +1056,17 @@ function App27() {
         </Nav>        
       </Navbar.Collapse>
     </Navbar>
-    
-    <Route path="/"></Route>
 
-      <switch>
-        <Route path="/detail">
-        <Detail25_file />   
+    <switch>
+     <Route path="/"></Route>
+      <Route path="/detail">
+        <Detail27_file />   
       </Route>   
     </switch>  
     
+    // (1)
     <div className="container">
       <div className="row">
-
       {
         shoes.map( (a,i)=>{
           return <Card2 shoes={shoes[i]} i={i}></Card2> 
@@ -1008,19 +1075,22 @@ function App27() {
       </div>
     </div>
 
-
     <button className="btn btn-primary" onClick={()=>{
+      // (3-4)
       axios.get('https://codingapple1.github.io/shop/data2.json')
        .then((result)=>{
-            // (6-2)
-        console.log(result.data);
+           console.log(result.data);
+          //  (2) (3) (3-2) (3-3)
+           shoes변경([...shoes,...result.data]);
       })
       .catch(()=>{
         console.log('실패했음');
       })  
+
+      // (5)
+      // axios.post('url',( id : 'codingapple', pw: 1234));
       }}>더보기</button>
       
-
      
 
    </div>
