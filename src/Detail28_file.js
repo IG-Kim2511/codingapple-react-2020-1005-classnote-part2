@@ -1,13 +1,4 @@
 
-// (27-6)
-// 페이지 방문하자마자 Ajax요청을 실행하고 싶을때 
-// (Ajax를 이용해서 페이지 내용을 받아오거나 그럴 때가 있습니다.)
-// useEffect() 함수안에 넣으면 됨( 컴포넌트 등장시/업데이트시 실행되는 함수)
-// 그 컴포넌트가 등장시/업데이트시 ajax 요청을 실행하겠군요.
-
-// 하지만 업데이트시 매번 ajax 요청을 하기 싫을 때도 있겠죠?
-// 그럼 위처럼 useEffect() 안에 대괄호를 추가해주시면 되겠군요.
-// 그럼 등장시에만 한번 실행되고 끝납니다.
 
 import Axios from 'axios';
 import React, {useEffect, useState} from 'react';
@@ -15,7 +6,7 @@ import { useHistory ,useParams } from 'react-router-dom';
 import styled from 'styled-components'
 
 
-function Detail27_file(props){
+function Detail28_file(props){
 
     let [ alert, alert변경 ] = useState(true);
 
@@ -23,7 +14,6 @@ function Detail27_file(props){
 
         useEffect(()=>{  
 
-        // (27-6)
         Axios.get()
         .then( (result)=>{}  )
          .catch( ()=>{}  )
@@ -56,4 +46,4 @@ function Detail27_file(props){
     )
   }
 
-export default Detail27_file;
+export default Detail28_file;

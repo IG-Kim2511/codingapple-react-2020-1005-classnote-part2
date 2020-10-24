@@ -43,6 +43,8 @@ import axios from 'axios';
 
 // 27
 import Detail27_file from './Detail27_file.js'
+// 28
+import Detail28_file from './Detail27_file.js'
 
 //👉🌈⚡🦄 ⭐😀👻👽🍉🍒🔥
 
@@ -1099,6 +1101,87 @@ function App27() {
   );
 }
 
+// 🦄28 Component를 3단계로 만들면 state 전달은 어떻게 하죠? props 두번 
+// <App> -> <Detail> -> <Info>
+// 이렇게 컴포넌트를 여러개 만들어놨는데 <App>에 있는 state 데이터를 <Info>가 쓰거나 변경하고 싶으면 어떻게 하냐는 소리입니다.
+
+// 결론부터 말하자면 App에서 Detail, 그리고 Detail에서 Info로 state를 전송하면 됩니다.
+// = 그냥 props문법 두번 쓰시면 됩니다.
+// 하위 컴포넌트들이 상위 컴포넌트의 state를 변경하고 싶을 때도 state변경함수를 props로 전달만 잘 해주시면 됩니다
+
+// (1)
+// <App>재고데이터 가져와서 <Info>에 표시하기
+// 재고데이터를 state에 저장해서 하나 만들어보도록 합시다.
+
+// (1-2)
+// 그냥 예제기 때문에 대충 [10,11,12] 이런 데이터를 저장하면 될듯요. (각각 상품 0,1,2의 재고데이터입니다)
+// let [재고, 재고변경] = useState([10,11,12]);
+
+// (1-3)
+// 이 state 데이터를 <Detail> 컴포넌트 내의 <Info> 컴포넌트에 보여주고싶습니다.
+// 연습을 위해 <Info> 컴포넌트를 <Detail> 컴포넌트 안에 우선 하나 만들어보십시오.
+// 그럼 <App> -> <Detail> -> <Info> 이렇게 데이터를 전송해야합니다.
+// 그냥 props 문법을 2번 써주시면 됩니다
+
+
+function App28() {
+
+  let [shoes,shoes변경] = useState(Data21);
+  
+  // (1-2)
+  let[재고state,재고state변경] = useState([10,11,12]);
+
+  return (
+   <div className="App">
+    <div className="black-nav">🦄28 Component를 3단계로 만들면 state 전달은 어떻게 하죠? props 두번 </div>
+
+    <Navbar bg="light" expand="lg" className='background'>
+      <Navbar.Brand href="#home">..</Navbar.Brand>
+      <Navbar.Toggle aria-controls="basic-navbar-nav" />
+      <Navbar.Collapse id="basic-navbar-nav">
+        <Nav className="mr-auto">
+            <Nav.Link> <Link to='/'>Home</Link></Nav.Link>
+          <Nav.Link><Link to='/detail'>Detail</Link> </Nav.Link>     
+        </Nav>        
+      </Navbar.Collapse>
+    </Navbar>
+
+    <switch>
+     <Route path="/"></Route>
+      <Route path="/detail">
+        <Detail28_file />   
+      </Route>   
+    </switch>  
+    
+
+    <div className="container">
+      <div className="row">
+      {
+        shoes.map( (a,i)=>{
+          return <Card2 shoes={shoes[i]} i={i}></Card2> 
+        }  )
+      }
+      </div>
+    </div>
+
+    <button className="btn btn-primary" onClick={()=>{
+    
+      axios.get('https://codingapple1.github.io/shop/data2.json')
+       .then((result)=>{
+           console.log(result.data);
+       
+           shoes변경([...shoes,...result.data]);
+      })
+      .catch(()=>{
+        console.log('실패했음');
+      })        
+      }}>더보기</button>
+      
+     
+
+   </div>
+  );
+}
 
 function App(){
   return(
@@ -1116,6 +1199,7 @@ function App(){
        <App25/>    
        <App26/>    
        <App27/>    
+       <App28/>    
     </div>
   )
 }
