@@ -44,7 +44,9 @@ import axios from 'axios';
 // 27
 import Detail27_file from './Detail27_file.js'
 // 28
-import Detail28_file from './Detail27_file.js'
+import Detail28_file from './Detail28_file.js'
+
+
 
 //👉🌈⚡🦄 ⭐😀👻👽🍉🍒🔥
 
@@ -1117,12 +1119,22 @@ function App27() {
 // 그냥 예제기 때문에 대충 [10,11,12] 이런 데이터를 저장하면 될듯요. (각각 상품 0,1,2의 재고데이터입니다)
 // let [재고, 재고변경] = useState([10,11,12]);
 
-// (1-3)
-// 이 state 데이터를 <Detail> 컴포넌트 내의 <Info> 컴포넌트에 보여주고싶습니다.
-// 연습을 위해 <Info> 컴포넌트를 <Detail> 컴포넌트 안에 우선 하나 만들어보십시오.
-// 그럼 <App> -> <Detail> -> <Info> 이렇게 데이터를 전송해야합니다.
-// 그냥 props 문법을 2번 써주시면 됩니다
+// (1-3) (1-4) → Detail28_file
 
+// (1-5)
+// props로 재고라는 state 데이터를 2번 전송했습니다.
+// <App> -> <Detail> -> <Info> 이런 순서로요.
+// 그럼 이제 Info라는 컴포넌트 내에서도 재고라는 state를 사용가능합니다.
+
+// 하위 컴포넌트가 많으면 많아질 수록 props의 양이 증가합니다.
+// 지금 props로 보낼게 하나라 그렇지 수십개면 어떡합니까.
+// 그러니 컴포넌트 만들땐 각오하고 만드는게 좋습니다. (props hell)
+
+// (2) (2-2) → Detail28_file
+
+// (3) 오늘의 교훈 : 함수든 변수든 부모가 가진걸 자식컴포넌트가 사용하려면 항상 props로 전송해서 쓸 수 있습니다.
+// 이게 귀찮으면 컴포넌트를 많이 만들지 않으면 되겠습니다.
+// 혹은 나중에 배울 Context 문법 혹은 redux를 사용하면 됩니다.
 
 function App28() {
 
@@ -1149,36 +1161,11 @@ function App28() {
     <switch>
      <Route path="/"></Route>
       <Route path="/detail">
-        <Detail28_file />   
+      // (1-4) (2-2)
+        <Detail28_file shoes={shoes} 재고state={재고state} 재고state변경={재고state변경}/>   
       </Route>   
     </switch>  
     
-
-    <div className="container">
-      <div className="row">
-      {
-        shoes.map( (a,i)=>{
-          return <Card2 shoes={shoes[i]} i={i}></Card2> 
-        }  )
-      }
-      </div>
-    </div>
-
-    <button className="btn btn-primary" onClick={()=>{
-    
-      axios.get('https://codingapple1.github.io/shop/data2.json')
-       .then((result)=>{
-           console.log(result.data);
-       
-           shoes변경([...shoes,...result.data]);
-      })
-      .catch(()=>{
-        console.log('실패했음');
-      })        
-      }}>더보기</button>
-      
-     
-
    </div>
   );
 }
