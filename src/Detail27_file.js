@@ -25,6 +25,8 @@ function Detail27_file(props){
 
         // (27-6)
         Axios.get()
+        .then( (result)=>{}  )
+         .catch( ()=>{}  )
 
         let 타이머 = setTimeout(() => {alert변경(false)}, 2000);     
         console.log('업데이트(재랜더링)될 때도 저 useEffect 계속 실행됨');

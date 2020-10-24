@@ -1089,6 +1089,8 @@ function App27() {
 
       // (5)
       // axios.post('url',( id : 'codingapple', pw: 1234));
+      // .then( (result)=>{}  )
+      // .catch( ()=>{}  )
       }}>더보기</button>
       
      
