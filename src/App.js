@@ -1145,7 +1145,8 @@ function App28() {
 
   return (
    <div className="App">
-    <div className="black-nav">🦄28 Component를 3단계로 만들면 state 전달은 어떻게 하죠? props 두번 </div>
+    <div className="black-nav">🦄28 Component를 3단계로 만들면 state 전달은 어떻게?props 두번 </div>
+    <div className="black-nav">🦄29 → 캡쳐정리</div>
 
     <Navbar bg="light" expand="lg" className='background'>
       <Navbar.Brand href="#home">..</Navbar.Brand>
@@ -1175,7 +1176,7 @@ function App28() {
 // npm run build / yarn build
 
 // 1. 깃헙에 저장소 만듬 + 배포 주소 확인
-// 2. package.json 에  깃헙에 만든 저장소 배포 주소 추가
+// 2. → package.json 에 깃헙에 만든 저장소 배포 주소 추가
 // "homepage": "https://ig-kim2511.github.io/test1024_2/"
 
 // 예시:
@@ -1187,6 +1188,44 @@ function App28() {
 
 // 3. npm run build
 // 4. build명령으로 생긴  build폴더 내용을 업로드 (폴더x, 폴더안의 내용만)
+
+
+// 🦄 30 컴포넌트 많을 때 props 쓰기 싫으면 Context API 
+
+
+function App30() {
+
+  let [shoes,shoes변경] = useState(Data21);
+    
+  let[재고state,재고state변경] = useState([10,11,12]);
+
+  return (
+   <div className="App">
+    <div className="black-nav">🦄30 컴포넌트 많을 때 props 쓰기 싫으면 Context API  </div>
+
+    <Navbar bg="light" expand="lg" className='background'>
+      <Navbar.Brand href="#home">..</Navbar.Brand>
+      <Navbar.Toggle aria-controls="basic-navbar-nav" />
+      <Navbar.Collapse id="basic-navbar-nav">
+        <Nav className="mr-auto">
+            <Nav.Link> <Link to='/'>Home</Link></Nav.Link>
+          <Nav.Link><Link to='/detail'>Detail</Link> </Nav.Link>     
+        </Nav>        
+      </Navbar.Collapse>
+    </Navbar>
+
+    <switch>
+     <Route path="/"></Route>
+      <Route path="/detail">
+        <Detail28_file shoes={shoes} 재고state={재고state} 재고state변경={재고state변경}/>   
+      </Route>   
+    </switch>  
+    
+   </div>
+  );
+}
+
+
 
 function App(){
   return(
@@ -1205,6 +1244,7 @@ function App(){
        <App26/>    
        <App27/>    
        <App28/>    
+       <App30/>    
     </div>
   )
 }
