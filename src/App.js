@@ -1,7 +1,8 @@
 // 18-(1)
 /*eslint-disable*/
 
-import React,{useState} from 'react';
+// 30-(2)-3
+import React,{useContext, useState} from 'react';
 import './App.css';
 
 import Data from './data.js'
@@ -45,6 +46,8 @@ import axios from 'axios';
 import Detail27_file from './Detail27_file.js'
 // 28
 import Detail28_file from './Detail28_file.js'
+// 30
+import Detail30_file from './Detail30_file.js'
 
 
 
@@ -1191,12 +1194,49 @@ function App28() {
 
 
 // 🦄 30 컴포넌트 많을 때 props 쓰기 싫으면 Context API 
+// props 전송 없이도 하위 컴포넌트들 끼리 state 값들을 똑같이 공유할 수 있습니다.
+// 리액트 기본 문법 Context API 사용법에 대해 알아봅시다.
+// (물론 중첩된 컴포넌트가 몇개 없으면 props가 가장 간단하고 좋습니다)
+// 이게 더 복잡해서, 선생님은 그냥 props 씀. 참고삼아 알아두자.
 
+// (2)
+// 1. 일단 같은 state 값을 공유하고 싶으면 context부터 만드십시오. 
+// createContext()라는 함수...변수로 만듬
+// 여러개 만들 수 있음
+// function 바깥에 만듬
+
+// 2. 아까만든 특별한 컴포넌트로 state 값 공유를 원하는 컴포넌트들을 <범위></범위>로 전부 감쌉니다.
+// 그리고 value={state이름} 이렇게 공유할 state를 집어넣으면 됩니다. 끝!
+// 그럼 이제 <범위></범위> 안에 있는 모든 HTML & 컴포넌트는 재고 state를 이용가능합니다.
+
+// 3. state를 사용하고 싶으면 useContext() 라는 훅을 이용해서 사용을 원하는 context를 불러오셔야합니다.
+// 위에서 쓴건 재고context에 들어있는 state를 변수로 저장해 쓰겠습니다~ 라는 문법입니다.
+// 그럼 이제 let 재고라는 변수엔 아까 지정해놨던 재고라는 state 데이터가 그대로 들어있습니다.
+// 여기까지가 props 전송없이 state를 쓰는 법이라 보시면 되겠습니다.
+// (그리고 useContext 훅을 쓰려면 상단에 ‘react’ 로부터 import 해오시면 됩니다. 쓰는순간 import에 자동 추가됨)
+
+// 4. 데이터바인딩
+
+// (3)
+// Detail.js 라는 곳에서 재고라는 state를 쓰고싶으면 ,  그냥 똑같이 하시면 됩니다. 
+// 1,2 : 똑같음.  
+// 3: Route 감싸는법. 확인 ↓ 
+
+// 4 근데 Detail.js에서 3번 말대로 useContext(범위)를 쓰려고 했으나, 재고context is not defined 라는 에러가 뜨네요.
+// 왜냐면 재고context 라는 변수는 App.js에 있으니까요.  
+// 변수를 App.js에서 export하고 Detail.js에서 import 해주시면 됩니다. 각각 export와 import 하나씩 추가해주었습니다.
+
+// (2)-1 . (3)-1
+let 재고context = React.createContext();
+
+// (3)-4
+export let 재고context2 = React.createContext();
 
 function App30() {
 
   let [shoes,shoes변경] = useState(Data21);
     
+  // (2)-2
   let[재고state,재고state변경] = useState([10,11,12]);
 
   return (
@@ -1213,16 +1253,41 @@ function App30() {
         </Nav>        
       </Navbar.Collapse>
     </Navbar>
+  // (2)-2. (3-2)
+      <재고context.Provider value={재고state}>
+        <div className="row">
+        {
+          shoes.map( (a,i)=>{       
+            return       <Card2 shoes={shoes[i]} i={i}></Card2>        
+          }  )
+        }
+        </div>
+      </재고context.Provider>
 
-    <switch>
+
+      <switch>
      <Route path="/"></Route>
       <Route path="/detail">
-        <Detail28_file shoes={shoes} 재고state={재고state} 재고state변경={재고state변경}/>   
+      // (3)-3
+      <재고context2.Provider value={재고state}>
+        <Detail30_file shoes={shoes} 재고state={재고state} 재고state변경={재고state변경}/>
+        </재고context2.Provider>   
       </Route>   
     </switch>  
     
    </div>
   );
+}
+function Card30(){
+  // (2)-3
+  let 재고c = useContext(재고context);
+  
+  return(
+    // (2)-4
+  <div>재고context: {재고c[0]}👻</div>
+  // <div>{재고c[1]}👻</div>
+  // <div>{재고c[props.i]}👻</div>
+  )
 }
 
 
