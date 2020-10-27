@@ -1,0 +1,15 @@
+
+// (6-3)
+// .wow-enter : 컴포넌트 등장시작시 적용할 CSS
+// .wow-enter-active : 컴포넌트 등장중일시 적용할 CSS입니다.
+// 저는 투명도를 0~1로 변경하기 위해 저렇게 했습니다.
+
+
+.wow-enter{
+  opacity: 0;
+}
+.wow-enter-active{
+  opacity: 1;
+  transition: all 500ms;
+
+}
