@@ -1304,6 +1304,7 @@ function Card30(props){
 }
 
 // 🦄31 Tab 만들기와 리액트에서의 애니메이션 (react-transition-group)
+// →→ Detail31.js
 
 function App31() {
 
