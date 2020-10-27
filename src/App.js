@@ -1192,7 +1192,10 @@ function App28() {
 // 3. npm run build
 // 4. build명령으로 생긴  build폴더 내용을 업로드 (폴더x, 폴더안의 내용만)
 
+function App29() {}
 
+
+// 🦄🦄🦄🦄🦄🦄🦄🦄🦄🦄🦄🦄🦄🦄🦄🦄🦄🦄🦄🦄🦄🦄🦄🦄🦄🦄🦄🦄🦄🦄🦄
 // 🦄 30 컴포넌트 많을 때 props 쓰기 싫으면 Context API 
 // props 전송 없이도 하위 컴포넌트들 끼리 state 값들을 똑같이 공유할 수 있습니다.
 // 리액트 기본 문법 Context API 사용법에 대해 알아봅시다.
@@ -1215,7 +1218,7 @@ function App28() {
 // 여기까지가 props 전송없이 state를 쓰는 법이라 보시면 되겠습니다.
 // (그리고 useContext 훅을 쓰려면 상단에 ‘react’ 로부터 import 해오시면 됩니다. 쓰는순간 import에 자동 추가됨)
 
-// 4. 데이터바인딩
+// 4. 데이터바인딩. [ ]array활용
 
 // (3)
 // Detail.js 라는 곳에서 재고라는 state를 쓰고싶으면 ,  그냥 똑같이 하시면 됩니다. 
@@ -1258,7 +1261,7 @@ function App30() {
         <div className="row">
         {
           shoes.map( (a,i)=>{       
-            return       <Card2 shoes={shoes[i]} i={i}></Card2>        
+            return  <Card30 shoes={shoes[i]} i={i}></Card30>        
           }  )
         }
         </div>
@@ -1278,15 +1281,23 @@ function App30() {
    </div>
   );
 }
-function Card30(){
+
+function Card30(props){
   // (2)-3
   let 재고c = useContext(재고context);
-  
   return(
-    // (2)-4
-  <div>재고context: {재고c[0]}👻</div>
-  // <div>{재고c[1]}👻</div>
-  // <div>{재고c[props.i]}👻</div>
+   <div className="col-md-4">
+   <img src={"https://codingapple1.github.io/shop/shoes"+(props.i+1)+".jpg"} width="100%" />
+   <h4> {props.shoes.title} </h4> 
+   <p>{props.shoes.content} & {props.shoes.price}  </p>   
+
+   // (2)-4
+   <div className="useContext">
+    <p>재고context: {재고c}👻</p>
+    <p>재고context: {재고c[1]}👻</p>
+    <p>재고context: {재고c[props.i]}👻</p>
+   </div>
+ </div>
   )
 }
 
