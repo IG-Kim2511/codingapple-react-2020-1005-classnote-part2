@@ -48,6 +48,8 @@ import Detail27_file from './Detail27_file.js'
 import Detail28_file from './Detail28_file.js'
 // 30
 import Detail30_file from './Detail30_file.js'
+// 31
+import Detail31_file from './Detail31_file.js'
 
 
 
@@ -1301,6 +1303,39 @@ function Card30(props){
   )
 }
 
+// 🦄31 Tab 만들기와 리액트에서의 애니메이션 (react-transition-group)
+
+function App31() {
+
+  let [shoes,shoes변경] = useState(Data21);
+  
+  // (1-2)
+  let[재고state,재고state변경] = useState([10,11,12]);
+
+  return (
+   <div className="App">
+    <div className="black-nav">🦄31 Tab 만들기와 리액트에서의 애니메이션 (react-transition-group)</div>
+    <Navbar bg="light" expand="lg" className='background'>
+      <Navbar.Brand href="#home">..</Navbar.Brand>
+      <Navbar.Toggle aria-controls="basic-navbar-nav" />
+      <Navbar.Collapse id="basic-navbar-nav">
+        <Nav className="mr-auto">
+            <Nav.Link> <Link to='/'>Home</Link></Nav.Link>
+          <Nav.Link><Link to='/detail'>Detail</Link> </Nav.Link>     
+        </Nav>        
+      </Navbar.Collapse>
+    </Navbar>
+
+    <switch>
+     <Route path="/"></Route>
+      <Route path="/detail">
+        <Detail31_file shoes={shoes} 재고state={재고state} 재고state변경={재고state변경}/>   
+      </Route>   
+    </switch>  
+    
+   </div>
+  );
+}
 
 
 function App(){
@@ -1321,6 +1356,7 @@ function App(){
        <App27/>    
        <App28/>    
        <App30/>    
+       <App31/>    
     </div>
   )
 }
