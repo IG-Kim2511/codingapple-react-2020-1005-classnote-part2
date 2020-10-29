@@ -50,6 +50,8 @@ import Detail28_file from './Detail28_file.js'
 import Detail30_file from './Detail30_file.js'
 // 31
 import Detail31_file from './Detail31_file.js'
+// 32-(1)
+import Cart from './Cart32.js'
 
 
 
@@ -1339,6 +1341,21 @@ function App31() {
 }
 // 🦄32 세계최고로 쉬운 Redux 1 : props 싫으면 쓰세요
 // →→ Cart32.js
+// →→ index.js
+
+
+//(1) Cart32.js만들고, import, export , route 
+
+
+// (3)
+// 데이터를 보관하기 위한 Redux 설치/셋팅 
+// redux를 이용하려면 라이브러리 2개를 설치하셔야합니다.  
+// (redux, react-redux 두개의 라이브러리입니다)
+
+// redux는 데이터를 엄격하게 관리하는 기능, react-redux는 리덕스를 리액트에서 쓸 수 있게 도와주는 기능을 제공합니다
+// 터미널 : npm install redux react-redux /  yarn add redux react-redux  둘 중 하나 하시면 됩니다.
+
+//(4) →→ index.js
 
 function App32() {
 
@@ -1357,16 +1374,15 @@ function App32() {
         <Nav className="mr-auto">
             <Nav.Link> <Link to='/'>Home</Link></Nav.Link>
           <Nav.Link><Link to='/detail'>Detail</Link> </Nav.Link>     
+          <Nav.Link><Link to='/cart'>cart32</Link> </Nav.Link>     
         </Nav>        
       </Navbar.Collapse>
     </Navbar>
 
-    <switch>
-     <Route path="/"></Route>
-      <Route path="/detail">
-        <Detail31_file shoes={shoes} 재고state={재고state} 재고state변경={재고state변경}/>   
+       //(1)
+      <Route path="/cart">
+        <Cart></Cart>
       </Route>   
-    </switch>  
     
    </div>
   );
