@@ -1337,6 +1337,40 @@ function App31() {
    </div>
   );
 }
+// 🦄32 세계최고로 쉬운 Redux 1 : props 싫으면 쓰세요
+// →→ Cart32.js
+
+function App32() {
+
+  let [shoes,shoes변경] = useState(Data21);
+  
+
+  let[재고state,재고state변경] = useState([10,11,12]);
+
+  return (
+   <div className="App">
+    <div className="black-nav">🦄32 세계최고로 쉬운 Redux 1 : props 싫으면 쓰세요</div>
+    <Navbar bg="light" expand="lg" className='background'>
+      <Navbar.Brand href="#home">..</Navbar.Brand>
+      <Navbar.Toggle aria-controls="basic-navbar-nav" />
+      <Navbar.Collapse id="basic-navbar-nav">
+        <Nav className="mr-auto">
+            <Nav.Link> <Link to='/'>Home</Link></Nav.Link>
+          <Nav.Link><Link to='/detail'>Detail</Link> </Nav.Link>     
+        </Nav>        
+      </Navbar.Collapse>
+    </Navbar>
+
+    <switch>
+     <Route path="/"></Route>
+      <Route path="/detail">
+        <Detail31_file shoes={shoes} 재고state={재고state} 재고state변경={재고state변경}/>   
+      </Route>   
+    </switch>  
+    
+   </div>
+  );
+}
 
 
 function App(){
@@ -1358,6 +1392,7 @@ function App(){
        <App28/>    
        <App30/>    
        <App31/>    
+       <App32/>    
     </div>
   )
 }
