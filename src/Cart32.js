@@ -41,6 +41,8 @@
 // 소괄호 두개붙이는건 자바스크립트 문법 맞아요? 
 // 함수()() 이렇게 쓴건,  함수() 이렇게 쓴 부분이 또 다른 함수를 return 했기 때문에 또 소괄호를 뒤에 붙여서 쓸 수 있는 것입니다. 역시 그냥 라이브러리 사용법일 뿐입니다. 
 
+// 3.props적용할때 처럼 function Cart(props) 파라미터 추가
+// data binding할곳에 props 추가
 
 // (1)
 import React from 'react';
@@ -49,7 +51,8 @@ import {Table} from 'react-bootstrap'
 // (5)
 import { connect } from 'react-redux';
 
-function Cart(){
+// (6-3)
+function Cart(props){
     return(
         <div>
         <Table responsive>
@@ -61,7 +64,8 @@ function Cart(){
         </tr>
         <tr>
           <td>1</td>
-          <td>Table cell</td>
+        //   (6-3)
+          <td>{ props.state[0].name }</td>
           <td>Table cell</td>
           <td>Table cell</td>
         </tr>

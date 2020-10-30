@@ -1346,13 +1346,13 @@ function App31() {
 
 //(1) Cart32.js만들고, import, export , route 
 
-
 // (3)
 // 데이터를 보관하기 위한 Redux 설치/셋팅 
 // redux를 이용하려면 라이브러리 2개를 설치하셔야합니다.  
 // (redux, react-redux 두개의 라이브러리입니다)
 
-// redux는 데이터를 엄격하게 관리하는 기능, react-redux는 리덕스를 리액트에서 쓸 수 있게 도와주는 기능을 제공합니다
+// redux는 데이터를 엄격하게 관리하는 기능, 
+// react-redux는 리덕스를 리액트에서 쓸 수 있게 도와주는 기능을 제공합니다
 // 터미널 : npm install redux react-redux /  yarn add redux react-redux  둘 중 하나 하시면 됩니다.
 
 //(4) →→ index.js
