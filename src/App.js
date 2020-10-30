@@ -51,7 +51,9 @@ import Detail30_file from './Detail30_file.js'
 // 31
 import Detail31_file from './Detail31_file.js'
 // 32-(1)
-import Cart from './Cart32.js'
+import Cart32 from './Cart32.js'
+// 33
+import Cart33 from './Cart33.js'
 
 
 
@@ -1339,10 +1341,9 @@ function App31() {
    </div>
   );
 }
-// 🦄32 세계최고로 쉬운 Redux 1 : props 싫으면 쓰세요
+// 🦄32 Redux 1 : props 싫으면 쓰세요
 // →→ Cart32.js
 // →→ index.js
-
 
 //(1) Cart32.js만들고, import, export , route 
 
@@ -1381,13 +1382,46 @@ function App32() {
 
        //(1)
       <Route path="/cart">
-        <Cart></Cart>
+        <Cart32></Cart32>
       </Route>   
     
    </div>
   );
 }
 
+// 🦄33 Redux 2 : reducer/dispatch로 데이터 수정하는 법
+// →→ Cart33.js
+// →→ index.js
+
+
+
+function App33() {
+
+  let [shoes,shoes변경] = useState(Data21);
+  let[재고state,재고state변경] = useState([10,11,12]);
+
+  return (
+   <div className="App">
+    <div className="black-nav">🦄33 Redux 2 : reducer/dispatch로 데이터 수정하는 법</div>
+    <Navbar bg="light" expand="lg" className='background'>
+      <Navbar.Brand href="#home">..</Navbar.Brand>
+      <Navbar.Toggle aria-controls="basic-navbar-nav" />
+      <Navbar.Collapse id="basic-navbar-nav">
+        <Nav className="mr-auto">
+            <Nav.Link> <Link to='/'>Home</Link></Nav.Link>
+          <Nav.Link><Link to='/detail'>Detail</Link> </Nav.Link>     
+          <Nav.Link><Link to='/cart'>cart33</Link> </Nav.Link>     
+        </Nav>        
+      </Navbar.Collapse>
+    </Navbar>
+     
+      <Route path="/cart">
+        <Cart33></Cart33>
+      </Route>   
+    
+   </div>
+  );
+}
 
 function App(){
   return(
@@ -1409,6 +1443,7 @@ function App(){
        <App30/>    
        <App31/>    
        <App32/>    
+       <App33/>    
     </div>
   )
 }
