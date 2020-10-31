@@ -390,14 +390,8 @@ function App19() {
     // (6)
     <Route path="/main2">     
       <Jumbotron>
-      <h1>Hello, world!</h1>
-      <p>
-        This is a simple hero unit, a simple jumbotron-style component for calling
-        extra attention to featured content or information.
-      </p>
-      <p>
-        <Button variant="primary">Learn more</Button>
-      </p>
+      <h1>Hello, world!</h1>        
+        <Button variant="primary">Learn more</Button>    
      </Jumbotron>
     </Route>
 
@@ -518,14 +512,8 @@ function App20() {
     
     <Route path="/">     
       <Jumbotron>
-      <h1>Hello, world!</h1>
-      <p>
-        This is a simple hero unit, a simple jumbotron-style component for calling
-        extra attention to featured content or information.
-      </p>
-      <p>
-        <Button variant="primary">Learn more</Button>
-      </p>
+      <h1>Hello, world!</h1>          
+        <Button variant="primary">Learn more</Button>     
      </Jumbotron>
     </Route>
  
@@ -624,64 +612,41 @@ function App21() {
    <div className="App">
     <div className="black-nav">🦄21 React Router 3 : URL 파라미터로 상세페이지 100개 만들기</div>
 
-    <Navbar bg="light" expand="lg" className='background'>
-      <Navbar.Brand href="#home">..</Navbar.Brand>
-      <Navbar.Toggle aria-controls="basic-navbar-nav" />
-      <Navbar.Collapse id="basic-navbar-nav">
-        <Nav className="mr-auto">
-            <Nav.Link> <Link to='/'>Home</Link></Nav.Link>
-          <Nav.Link><Link to='/detail'>Detail</Link> </Nav.Link>
-
-          <NavDropdown title="Dropdown" id="basic-nav-dropdown">
-            <NavDropdown.Item href="#action/3.1">Action</NavDropdown.Item>
-            <NavDropdown.Item href="#action/3.2">Another action</NavDropdown.Item>
-            <NavDropdown.Item href="#action/3.3">Something</NavDropdown.Item>
-            <NavDropdown.Divider />
-            <NavDropdown.Item href="#action/3.4">Separated link</NavDropdown.Item>
-          </NavDropdown>
-        </Nav>        
-      </Navbar.Collapse>
-    </Navbar>
+    <nav className="ig_nav">
+      <Link to='/'>Home</Link>
+      <Link to='/detail'>Detail</Link>
+     </nav>
     
-    <Route path="/">     
-      <Jumbotron>
-      <h1>Hello, world!</h1>
-      <p>
-        This is a simple hero unit, a simple jumbotron-style component for calling
-        extra attention to featured content or information.
-      </p>
-      <p>
-        <Button variant="primary">Learn more</Button>
-      </p>
-     </Jumbotron>
-    </Route>
+        <Route path="/">          
+          <h1>Hello, world!</h1>  
+        </Route>
       <switch>
 
-      <Route path="/detail">
-      // (1-3)
-      <Detail21_file shoes={shoes}/>   
-    </Route>
+            <Route path="/detail">
+            // (1-3)
+            <Detail21_file shoes={shoes}/>   
+          </Route>
 
-    // (2)
-    <Route path="/detail/0">
-      <Detail21_file shoes={shoes}/>   
-    </Route>
-    <Route path="/detail/1">
-     <Detail21_file shoes={shoes}/>   
-    </Route>
-    <Route path="/detail/2">
-     <Detail21_file shoes={shoes}/>   
-    </Route>
+          // (2)
+          <Route path="/detail/0">
+            <Detail21_file shoes={shoes}/>   
+          </Route>
+          <Route path="/detail/1">
+          <Detail21_file shoes={shoes}/>   
+          </Route>
+          <Route path="/detail/2">
+          <Detail21_file shoes={shoes}/>   
+          </Route>
 
-    // (3) (4) (5)
-    <Route path="/detail/:id">
-     <Detail21_file shoes={shoes}/>   
-    </Route>
+          // (3) (4) (5)
+          <Route path="/detail/:id">
+          <Detail21_file shoes={shoes}/>   
+          </Route>
 
-    // (6)
-    <Route path="/detail/:id">
-      <Detail21_2file shoes={shoes}/>   
-    </Route>
+          // (6)
+          <Route path="/detail/:id">
+            <Detail21_2file shoes={shoes}/>   
+          </Route>
 
     </switch>
 
