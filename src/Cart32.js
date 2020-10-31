@@ -51,7 +51,7 @@ import {Table} from 'react-bootstrap'
 // (5)
 import { connect } from 'react-redux';
 
-// (6-3)
+// (6)-3
 function Cart(props){
     return(
         <div>
@@ -72,7 +72,7 @@ function Cart(props){
       </Table></div>
     )
 }
-// (5-1) (6-1)
+// (5)-1 (6)-1
 function index의store의state를props로바꿔주는함수(state){
     return{
         state : state
@@ -83,5 +83,5 @@ function index의store의state를props로바꿔주는함수(state){
 // (1)
 // export default Cart;
 
-// (5-2) (6-2)
+// (5)-2 (6)-2
 export default connect(index의store의state를props로바꿔주는함수)(Cart)

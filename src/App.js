@@ -1393,8 +1393,6 @@ function App32() {
 // →→ Cart33.js
 // →→ index.js
 
-
-
 function App33() {
 
   let [shoes,shoes변경] = useState(Data21);

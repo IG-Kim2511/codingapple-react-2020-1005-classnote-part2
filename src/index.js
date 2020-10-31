@@ -92,25 +92,25 @@ import {createStore} from 'redux';
 // let store = createStore(()=>{ return[{ id : 0, name : '멋진신발', quan : 2 }]   });
 
 
-// 33-(4)
+// 33c-(4)
 // function reducer(){
 //   return [{id : 0, name : '멋진신발', quan : 2}, { id : 1, name : '멋진신발22', quan : 3 }]
 // }
 // let store = createStore(reducer);
 
-// (5)
+// 33c-(5)
 let 기본State = [ {id : 0, name : '멋진신발', quan : 2}, 
 { id : 1, name : '멋진신발22', quan : 3 } ];
 
-// (5)-2
+// 33c-(5)-2
 function reducer( state = 기본State, 액션){  
-// (6) (6)-2
+// 33c-(6) (6)-2
  if(액션.type ==='수량증가'){
  let copy = [...state];
  copy[0].quan++;
  return copy 
  }
-//  (8)
+//  33c-(8)
 else if (액션.type ==='수량감소'){
   let copy = [...state];
   copy[0].quan--;
