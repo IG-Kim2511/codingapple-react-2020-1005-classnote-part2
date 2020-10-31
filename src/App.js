@@ -1323,6 +1323,9 @@ function App33() {
 }
 
 // 🦄34 Redux 3 : state와 reducer가 더 필요하면
+// →→ Cart34.js
+// →→ index.js
+
 function App34() {
 
   let [shoes,shoes변경] = useState(Data21);

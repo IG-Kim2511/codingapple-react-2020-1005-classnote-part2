@@ -94,13 +94,23 @@ import * as serviceWorker from './serviceWorker';
 // (그냥 평소에 하던 state 수정방법입니다.)
 
 
+// 🦄34 - (2) combineReducers()
+// 그럼 redux에서 state를 하나 더 만들고 싶으면 ?
+// 1. 다른 이름의 reducer + 초기값을 하나 더 만드시고 ,
+// 2. 이걸 combineReducers()라는 함수안에 집어넣은 후에 ,
+// 3. createStore()안에 넣으시면 됩니다.
+
+// 34-(5)-2 
+// if: true면 보여주고, else: false면 안보여줌
+// 'alert닫기'가 작동되면, state는 false가 됨
+
 import {BrowserRouter} from 'react-router-dom'
 
 // 32-(4-1)
 import {Provider, ReactReduxContext} from 'react-redux';
 
-// 32c-(4-3)
-import {createStore} from 'redux';
+// 32c-(4-3) , 34
+import {combineReducers, createStore} from 'redux';
 
 // 32c-(4-3)
 // let store = createStore(()=>{ return[{ id : 0, name : '멋진신발', quan : 2 }]   });
@@ -133,8 +143,24 @@ else if (액션.type ==='수량감소'){
  else{ 
   return state}
   }
+// 34-(2)-1
+let initialState34 = true;
 
-let store = createStore(reducer);
+//34-(2)-1,  34-(5)-2
+function reducer2(state = initialState34, action){
+if(action.type === 'alert닫기'){
+  state=false;
+  return state;
+}else{
+  return state
+} 
+}
+
+// 32c
+// let store = createStore(reducer);
+
+// 34c-(2)-3
+let store = createStore(combineReducers({reducer,reducer2}));
 
 
 // 

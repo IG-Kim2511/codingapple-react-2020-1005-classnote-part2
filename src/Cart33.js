@@ -51,7 +51,7 @@ function Cart(props){
           <th>변경</th>
         </tr>
             // (2)
-        { props.state.map((a,i)=>{
+        { props.props작명.map((a,i)=>{
             return (
             <tr key={i}>
               <td>{a.id}</td>
@@ -82,7 +82,8 @@ function Cart(props){
 
 function index의store의state를props로바꿔주는함수(state){
     return{
-        state : state
+      props작명 : state.reducer
+      //원래는... props작명 : state
     }
 
 }
