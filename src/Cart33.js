@@ -69,7 +69,12 @@ function Cart(props){
           })  }
 
 
-      </Table></div>
+      </Table>
+
+      
+      
+      
+      </div>
     )
 }
 

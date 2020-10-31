@@ -26,12 +26,14 @@
 
 // (6)
 // 1 : 저 함수는 index.js의 store 안에 있던 state를 props로 바꾸는 함수
-// function (state){ return  { 자유작명하셈 : state } } 
+// function (state){ return  { props작명 : state } } 
+// state : store에서 가져온 데이터
+// props작명 : state를 props로 옮김. + mynaming
 // 그럼 store 안에 있던 모든 state 데이터가 props로 등록됩니다. 
 
 // 그럼 이제 Cart.js에서 자유작명하셈 이라는걸 출력해보면 아까 저장해뒀던 redux내의 장바구니 state가 출력됩니다.
- 
-// { 자유작명하셈 : state.name }
+
+// { props작명 : state.name }
 // 아니면 이렇게 원하는 state만 쏙쏙 뽑아서 등록하셔도 되고요. 
 
 // 2 : connect 함수에 아까 만든 함수를 집어넣습니다. 그냥 react-redux 라이브러리 사용법입니다.
@@ -65,7 +67,7 @@ function Cart(props){
         <tr>
           <td>1</td>
         //   (6-3)
-          <td>{ props.state[0].name }</td>
+          <td>{ props.props작명[0].name }</td>
           <td>Table cell</td>
           <td>Table cell</td>
         </tr>
@@ -75,7 +77,7 @@ function Cart(props){
 // (5)-1 (6)-1
 function index의store의state를props로바꿔주는함수(state){
     return{
-        state : state
+      props작명 : state
     }
 
 }

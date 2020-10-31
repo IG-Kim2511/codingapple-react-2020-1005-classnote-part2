@@ -54,6 +54,8 @@ import Detail31_file from './Detail31_file.js'
 import Cart32 from './Cart32.js'
 // 33
 import Cart33 from './Cart33.js'
+// 34
+import Cart34 from './Cart34.js'
 
 
 
@@ -1252,16 +1254,11 @@ function App30() {
    <div className="App">
     <div className="black-nav">🦄30 컴포넌트 많을 때 props 쓰기 싫으면 Context API  </div>
 
-    <Navbar bg="light" expand="lg" className='background'>
-      <Navbar.Brand href="#home">..</Navbar.Brand>
-      <Navbar.Toggle aria-controls="basic-navbar-nav" />
-      <Navbar.Collapse id="basic-navbar-nav">
-        <Nav className="mr-auto">
-            <Nav.Link> <Link to='/'>Home</Link></Nav.Link>
-          <Nav.Link><Link to='/detail'>Detail</Link> </Nav.Link>     
-        </Nav>        
-      </Navbar.Collapse>
-    </Navbar>
+    <nav className="ig_nav">
+    <Nav.Link> <Link to='/'>Home</Link></Nav.Link>
+    <Nav.Link><Link to='/detail'>Detail</Link> </Nav.Link>     
+    
+  </nav>
   // (2)-2. (3-2)
       <재고context.Provider value={재고state}>
         <div className="row">
@@ -1320,16 +1317,11 @@ function App31() {
   return (
    <div className="App">
     <div className="black-nav">🦄31 Tab 만들기와 리액트에서의 애니메이션 (react-transition-group)</div>
-    <Navbar bg="light" expand="lg" className='background'>
-      <Navbar.Brand href="#home">..</Navbar.Brand>
-      <Navbar.Toggle aria-controls="basic-navbar-nav" />
-      <Navbar.Collapse id="basic-navbar-nav">
-        <Nav className="mr-auto">
-            <Nav.Link> <Link to='/'>Home</Link></Nav.Link>
-          <Nav.Link><Link to='/detail'>Detail</Link> </Nav.Link>     
-        </Nav>        
-      </Navbar.Collapse>
-    </Navbar>
+    <nav className="ig_nav">
+      <Nav.Link> <Link to='/'>Home</Link></Nav.Link>
+      <Nav.Link><Link to='/detail'>Detail</Link> </Nav.Link>     
+        
+     </nav>
 
     <switch>
      <Route path="/"></Route>
@@ -1368,17 +1360,11 @@ function App32() {
   return (
    <div className="App">
     <div className="black-nav">🦄32 세계최고로 쉬운 Redux 1 : props 싫으면 쓰세요</div>
-    <Navbar bg="light" expand="lg" className='background'>
-      <Navbar.Brand href="#home">..</Navbar.Brand>
-      <Navbar.Toggle aria-controls="basic-navbar-nav" />
-      <Navbar.Collapse id="basic-navbar-nav">
-        <Nav className="mr-auto">
-            <Nav.Link> <Link to='/'>Home</Link></Nav.Link>
-          <Nav.Link><Link to='/detail'>Detail</Link> </Nav.Link>     
-          <Nav.Link><Link to='/cart'>cart32</Link> </Nav.Link>     
-        </Nav>        
-      </Navbar.Collapse>
-    </Navbar>
+    <nav className="ig_nav">
+      <Nav.Link> <Link to='/'>Home</Link></Nav.Link>
+      <Nav.Link><Link to='/detail'>Detail</Link> </Nav.Link>     
+      <Nav.Link><Link to='/cart'>cart</Link> </Nav.Link>      
+  </nav>
 
        //(1)
       <Route path="/cart">
@@ -1401,17 +1387,11 @@ function App33() {
   return (
    <div className="App">
     <div className="black-nav">🦄33 Redux 2 : reducer/dispatch로 데이터 수정하는 법</div>
-    <Navbar bg="light" expand="lg" className='background'>
-      <Navbar.Brand href="#home">..</Navbar.Brand>
-      <Navbar.Toggle aria-controls="basic-navbar-nav" />
-      <Navbar.Collapse id="basic-navbar-nav">
-        <Nav className="mr-auto">
-            <Nav.Link> <Link to='/'>Home</Link></Nav.Link>
-          <Nav.Link><Link to='/detail'>Detail</Link> </Nav.Link>     
-          <Nav.Link><Link to='/cart'>cart33</Link> </Nav.Link>     
-        </Nav>        
-      </Navbar.Collapse>
-    </Navbar>
+    <nav className="ig_nav">
+      <Nav.Link> <Link to='/'>Home</Link></Nav.Link>
+      <Nav.Link><Link to='/detail'>Detail</Link> </Nav.Link>     
+      <Nav.Link><Link to='/cart'>cart</Link> </Nav.Link>      
+    </nav>
      
       <Route path="/cart">
         <Cart33></Cart33>
@@ -1420,6 +1400,30 @@ function App33() {
    </div>
   );
 }
+
+// 🦄34 Redux 3 : state와 reducer가 더 필요하면
+function App34() {
+
+  let [shoes,shoes변경] = useState(Data21);
+  let[재고state,재고state변경] = useState([10,11,12]);
+
+  return (
+   <div className="App">
+    <div className="black-nav">🦄34 Redux 3 : state와 reducer가 더 필요하면</div>    
+    <nav className="ig_nav">
+      <Nav.Link> <Link to='/'>Home</Link></Nav.Link>
+      <Nav.Link><Link to='/detail'>Detail</Link> </Nav.Link>     
+      <Nav.Link><Link to='/cart'>cart</Link> </Nav.Link>      
+    </nav>
+     
+      <Route path="/cart">
+        <Cart34></Cart34>
+      </Route>   
+    
+   </div>
+  );
+}
+
 
 function App(){
   return(
@@ -1442,6 +1446,7 @@ function App(){
        <App31/>    
        <App32/>    
        <App33/>    
+       <App34/>    
     </div>
   )
 }
