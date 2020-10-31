@@ -68,6 +68,20 @@ import * as serviceWorker from './serviceWorker';
 // (영어 : initialState,action ) 
 
 // (6)-2
+// "parameter 액션" 의미 : 
+// 일단 리덕스 사용법 정리부터 하자면 
+// 1. reducer에 데이터 변경방법을 쭉 나열해놓습니다. 
+// 2. 나중에 dispatch()로 reducer에 있던 데이터 변경방법을 동작시킵니다. 
+ 
+// 근데 dispatch()를 사용할 땐 { type: 수량증가 } 이런걸 소괄호안에 넣을 수 있습니다.
+// 소괄호안에 넣은 자료는 reducer() 의 그 둘째 파라미터로 도착한다고 보시면 됩니다. 
+// (위에서 둘째 파라미터는 액션이라고 이름지어놨고요)
+// 그래서 위의 코드는
+// 1. { type: 수량증가 } 가 dispatch에 실려서 도착하면
+// 2. state를 수량증가해서 return 해라 라는 뜻으로 reducer를 기능개발해놓은 것입니다. 
+
+
+// (6)-3
 // 진짜 데이터를 수정되게 만들어봅시다.
 // ‘수량증가’ 요청이 들어오면 state데이터의 첫째 아이템의 quan 항목이 1 증가하게 해보겠습니다.
 // 근데 array, object로 구성된 state 데이터를 수정하시려면 사본을 만드는게 좋다고 했죠
@@ -102,9 +116,9 @@ import {createStore} from 'redux';
 let 기본State = [ {id : 0, name : '멋진신발', quan : 2}, 
 { id : 1, name : '멋진신발22', quan : 3 } ];
 
-// 33c-(5)-2
+// 33c-(5)-2 (6)-2
 function reducer( state = 기본State, 액션){  
-// 33c-(6) (6)-2
+// 33c-(6) (6)-3
  if(액션.type ==='수량증가'){
  let copy = [...state];
  copy[0].quan++;
