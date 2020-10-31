@@ -1389,7 +1389,7 @@ function App32() {
   );
 }
 
-// 🦄33 Redux 2 : reducer/dispatch로 데이터 수정하는 법
+// 🦄33 Redux 2 : reducer/dispatch로 데이터 수정하는 법 
 // →→ Cart33.js
 // →→ index.js
 
