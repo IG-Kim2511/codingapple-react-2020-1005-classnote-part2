@@ -1,6 +1,6 @@
-/* .App {
+.App {
   text-align: center;
-} */
+}
 
 .App-logo {
   height: 40vmin;
@@ -10,6 +10,7 @@
 .ig_nav{
   display: flex;
 }
+
 
 /*15  */
 .black-nav {

@@ -702,17 +702,10 @@ function App22() {
    <div className="App">
     <div className="black-nav">🦄22 styled-components를 이용한 class없는 CSS스타일링</div>
 
-    <Navbar bg="light" expand="lg" className='background'>
-      <Navbar.Brand href="#home">..</Navbar.Brand>
-      <Navbar.Toggle aria-controls="basic-navbar-nav" />
-      <Navbar.Collapse id="basic-navbar-nav">
-        <Nav className="mr-auto">
-            <Nav.Link> <Link to='/'>Home</Link></Nav.Link>
-          <Nav.Link><Link to='/detail'>Detail</Link> </Nav.Link>
-   
-        </Nav>        
-      </Navbar.Collapse>
-    </Navbar>
+    <nav className="ig_nav">
+    <Link to='/'>Home</Link>
+    <Link to='/detail'>Detail</Link>
+   </nav>
     
     <Route path="/">     
     </Route>
@@ -747,16 +740,10 @@ function App23() {
      <div className="App">
       <div className="black-nav">🦄23 SASS를 쓰자 (SASS 문법 10분 총정리)</div>
   
-      <Navbar bg="light" expand="lg" className='background'>
-        <Navbar.Brand href="#home">..</Navbar.Brand>
-        <Navbar.Toggle aria-controls="basic-navbar-nav" />
-        <Navbar.Collapse id="basic-navbar-nav">
-          <Nav className="mr-auto">
-              <Nav.Link> <Link to='/'>Home</Link></Nav.Link>
-            <Nav.Link><Link to='/detail'>Detail</Link> </Nav.Link>     
-          </Nav>        
-        </Navbar.Collapse>
-      </Navbar>
+      <nav className="ig_nav">
+      <Link to='/'>Home</Link>
+      <Link to='/detail'>Detail</Link>
+     </nav>
       
       <Route path="/">     </Route>
   
@@ -783,18 +770,10 @@ function App24() {
     return (
      <div className="App">
       <div className="black-nav">🦄24 Lifecycle Hook (옛날사람) useEffect (요즘사람)</div>
-  
-      <Navbar bg="light" expand="lg" className='background'>
-        <Navbar.Brand href="#home">..</Navbar.Brand>
-        <Navbar.Toggle aria-controls="basic-navbar-nav" />
-        <Navbar.Collapse id="basic-navbar-nav">
-          <Nav className="mr-auto">
-              <Nav.Link> <Link to='/'>Home</Link></Nav.Link>
-            <Nav.Link><Link to='/detail'>Detail</Link> </Nav.Link>
-     
-          </Nav>        
-        </Navbar.Collapse>
-      </Navbar>
+    <nav className="ig_nav">
+      <Link to='/'>Home</Link>
+      <Link to='/detail'>Detail</Link>
+     </nav>
       
       <Route path="/">  </Route>
   
@@ -818,18 +797,11 @@ function App25() {
   
     return (
      <div className="App">
-      <div className="black-nav">🦄25 useEffect 숙제 풀이 & 나머지 기능</div>
-  
-      <Navbar bg="light" expand="lg" className='background'>
-        <Navbar.Brand href="#home">..</Navbar.Brand>
-        <Navbar.Toggle aria-controls="basic-navbar-nav" />
-        <Navbar.Collapse id="basic-navbar-nav">
-          <Nav className="mr-auto">
-              <Nav.Link> <Link to='/'>Home</Link></Nav.Link>
-            <Nav.Link><Link to='/detail'>Detail</Link> </Nav.Link>     
-          </Nav>        
-        </Navbar.Collapse>
-      </Navbar>
+      <div className="black-nav">🦄25 useEffect 숙제 풀이 & 나머지 기능</div>  
+     <nav className="ig_nav">
+        <Link to='/'>Home</Link>
+        <Link to='/detail'>Detail</Link>
+      </nav>
       
       <Route path="/"></Route>
   
@@ -913,17 +885,10 @@ function App26() {
     return (
      <div className="App">
       <div className="black-nav">🦄26 리액트에서의 Ajax 요청방법 & Ajax는 무엇인가</div>
-  
-      <Navbar bg="light" expand="lg" className='background'>
-        <Navbar.Brand href="#home">..</Navbar.Brand>
-        <Navbar.Toggle aria-controls="basic-navbar-nav" />
-        <Navbar.Collapse id="basic-navbar-nav">
-          <Nav className="mr-auto">
-              <Nav.Link> <Link to='/'>Home</Link></Nav.Link>
-            <Nav.Link><Link to='/detail'>Detail</Link> </Nav.Link>     
-          </Nav>        
-        </Navbar.Collapse>
-      </Navbar>
+      <nav className="ig_nav">
+      <Link to='/'>Home</Link>
+      <Link to='/detail'>Detail</Link>
+     </nav>
       
       <Route path="/"></Route>
   
@@ -1061,16 +1026,10 @@ function App27() {
    <div className="App">
     <div className="black-nav">🦄27 리액트에서의 Ajax 요청방법 2 & 숙제풀이</div>
 
-    <Navbar bg="light" expand="lg" className='background'>
-      <Navbar.Brand href="#home">..</Navbar.Brand>
-      <Navbar.Toggle aria-controls="basic-navbar-nav" />
-      <Navbar.Collapse id="basic-navbar-nav">
-        <Nav className="mr-auto">
-            <Nav.Link> <Link to='/'>Home</Link></Nav.Link>
-          <Nav.Link><Link to='/detail'>Detail</Link> </Nav.Link>     
-        </Nav>        
-      </Navbar.Collapse>
-    </Navbar>
+    <nav className="ig_nav">
+    <Link to='/'>Home</Link>
+    <Link to='/detail'>Detail</Link>
+   </nav>
 
     <switch>
      <Route path="/"></Route>
@@ -1159,16 +1118,10 @@ function App28() {
     <div className="black-nav">🦄28 Component를 3단계로 만들면 state 전달은 어떻게?props 두번 </div>
     <div className="black-nav">🦄29 → 캡쳐정리</div>
 
-    <Navbar bg="light" expand="lg" className='background'>
-      <Navbar.Brand href="#home">..</Navbar.Brand>
-      <Navbar.Toggle aria-controls="basic-navbar-nav" />
-      <Navbar.Collapse id="basic-navbar-nav">
-        <Nav className="mr-auto">
-            <Nav.Link> <Link to='/'>Home</Link></Nav.Link>
-          <Nav.Link><Link to='/detail'>Detail</Link> </Nav.Link>     
-        </Nav>        
-      </Navbar.Collapse>
-    </Navbar>
+    <nav className="ig_nav">
+      <Link to='/'>Home</Link>
+      <Link to='/detail'>Detail</Link>
+     </nav>
 
     <switch>
      <Route path="/"></Route>
@@ -1254,11 +1207,12 @@ function App30() {
    <div className="App">
     <div className="black-nav">🦄30 컴포넌트 많을 때 props 쓰기 싫으면 Context API  </div>
 
+
     <nav className="ig_nav">
-    <Nav.Link> <Link to='/'>Home</Link></Nav.Link>
-    <Nav.Link><Link to='/detail'>Detail</Link> </Nav.Link>     
-    
-  </nav>
+      <Link to='/'>Home</Link>
+      <Link to='/detail'>Detail</Link>
+     </nav>
+
   // (2)-2. (3-2)
       <재고context.Provider value={재고state}>
         <div className="row">
@@ -1317,10 +1271,10 @@ function App31() {
   return (
    <div className="App">
     <div className="black-nav">🦄31 Tab 만들기와 리액트에서의 애니메이션 (react-transition-group)</div>
+   
     <nav className="ig_nav">
-      <Nav.Link> <Link to='/'>Home</Link></Nav.Link>
-      <Nav.Link><Link to='/detail'>Detail</Link> </Nav.Link>     
-        
+      <Link to='/'>Home</Link>
+      <Link to='/detail'>Detail</Link>
      </nav>
 
     <switch>
@@ -1360,11 +1314,13 @@ function App32() {
   return (
    <div className="App">
     <div className="black-nav">🦄32 세계최고로 쉬운 Redux 1 : props 싫으면 쓰세요</div>
-    <nav className="ig_nav">
-      <Nav.Link> <Link to='/'>Home</Link></Nav.Link>
-      <Nav.Link><Link to='/detail'>Detail</Link> </Nav.Link>     
-      <Nav.Link><Link to='/cart'>cart</Link> </Nav.Link>      
-  </nav>
+  
+      
+      <nav className="ig_nav">
+        <Link to='/'>Home</Link>
+        <Link to='/detail'>Detail</Link>
+        <Link to='/cart'>cart</Link>
+    </nav>
 
        //(1)
       <Route path="/cart">
@@ -1388,10 +1344,10 @@ function App33() {
    <div className="App">
     <div className="black-nav">🦄33 Redux 2 : reducer/dispatch로 데이터 수정하는 법</div>
     <nav className="ig_nav">
-      <Nav.Link> <Link to='/'>Home</Link></Nav.Link>
-      <Nav.Link><Link to='/detail'>Detail</Link> </Nav.Link>     
-      <Nav.Link><Link to='/cart'>cart</Link> </Nav.Link>      
-    </nav>
+    <Link to='/'>Home</Link>
+    <Link to='/detail'>Detail</Link>
+    <Link to='/cart'>cart</Link>
+</nav>
      
       <Route path="/cart">
         <Cart33></Cart33>
@@ -1411,9 +1367,9 @@ function App34() {
    <div className="App">
     <div className="black-nav">🦄34 Redux 3 : state와 reducer가 더 필요하면</div>    
     <nav className="ig_nav">
-      <Nav.Link> <Link to='/'>Home</Link></Nav.Link>
-      <Nav.Link><Link to='/detail'>Detail</Link> </Nav.Link>     
-      <Nav.Link><Link to='/cart'>cart</Link> </Nav.Link>      
+      <Link to='/'>Home</Link>
+      <Link to='/detail'>Detail</Link>
+      <Link to='/cart'>cart</Link>
     </nav>
      
       <Route path="/cart">
