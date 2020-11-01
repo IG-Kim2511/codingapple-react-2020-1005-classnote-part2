@@ -43,6 +43,9 @@
 // useState()로 Cart 컴포넌트 안에 간단하게 만드십시오. 
 // 많은 컴포넌트들이 공유하는 값은 redux store안에 보관하십시오.
 
+
+// 35-(2) dispatch로 데이터 보내기  -→ index.js
+
 import React from 'react';
 import {Table} from 'react-bootstrap'
 import { connect } from 'react-redux';
@@ -68,6 +71,10 @@ function Cart(props){
               <button onClick={()=>{ props.dispatch  (  { type:'수량증가' } )}}> + </button>
               <button onClick={ ()=>{ props.dispatch( {type:'수량감소'} )  } } > - </button>
               </td>
+              <td>
+              // 35-(2)
+              <button onClick={()=>{ props.dispatch  (  { type:'수량증가', payload: { name:'kim'  }} )}}> + </button>
+               </td>
             </tr>
             )
           })  }

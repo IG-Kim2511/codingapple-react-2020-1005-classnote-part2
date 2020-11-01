@@ -1,3 +1,5 @@
+// 🦄35
+ 
 
 
 import Axios from 'axios';
@@ -10,8 +12,9 @@ import styled from 'styled-components'
 import {CSSTransition} from 'react-transition-group';
 import './Detail31.scss'
 import {재고context2} from './App.js';
+import { connect } from 'react-redux';
 
-
+//⚡function
 function Detail35_file(props){   
 
   let 재고c = useContext(재고context2);
@@ -112,4 +115,17 @@ return(
 )
 }
 
-export default Detail35_file;
+// export default Detail35_file;
+function index의store의state를props로바꿔주는함수(state){
+  return{
+    // 
+    props작명 : state.reducer,     
+    props작명2 : state.reducer2,     
+    props작명35 : state.reducer35     
+  }
+
+}
+
+// export default Detail35_file;
+
+export default connect(index의store의state를props로바꿔주는함수)(Detail35_file)

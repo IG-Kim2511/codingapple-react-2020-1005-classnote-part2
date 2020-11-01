@@ -68,7 +68,7 @@ import * as serviceWorker from './serviceWorker';
 // (영어 : initialState,action ) 
 
 // (6)-2
-// "parameter 액션" 의미 : 
+// "parameter 액션" 의미 : -------------→ 35강
 // 일단 리덕스 사용법 정리부터 하자면 
 // 1. reducer에 데이터 변경방법을 쭉 나열해놓습니다. 
 // 2. 나중에 dispatch()로 reducer에 있던 데이터 변경방법을 동작시킵니다. 
@@ -104,6 +104,22 @@ import * as serviceWorker from './serviceWorker';
 // if: true면 보여주고, else: false면 안보여줌
 // 'alert닫기'가 작동되면, state는 false가 됨
 
+
+// 🦄35 Q: Detail 페이지에 장바구니 추가버튼 만들기
+// 1. index.js : 데이터 수정하는 법을 미리 만들고
+// 2. Detail.js : dispatch 하시면 됩니다. 
+// 3. Detail.js : dispatch할 때 { id : 2, name : ‘어쩌구’ } 데이터를 함께 실어보내면 됩니다.
+
+// 35-(2)'액션' parameter 의미
+// dispatch안의 모든 데이터를 받아옴 : dispatch  (  { type:'수량증가', payload: { name:'kim'  }}
+
+
+
+
+
+
+//⚡coding 시작
+
 import {BrowserRouter} from 'react-router-dom'
 
 // 32-(4-1)
@@ -126,7 +142,7 @@ import {combineReducers, createStore} from 'redux';
 let 기본State = [ {id : 0, name : '멋진신발', quan : 2}, 
 { id : 1, name : '멋진신발22', quan : 3 } ];
 
-// 33c-(5)-2 (6)-2
+// 33c-(5)-2 (6)-2 . 35c-(2)
 function reducer( state = 기본State, 액션){  
 // 33c-(6) (6)-3
  if(액션.type ==='수량증가'){
@@ -156,12 +172,24 @@ if(action.type === 'alert닫기'){
 } 
 }
 
+// 35
+let initialState35 =[ {id : 0, name : '멋진신발', quan : 2}, 
+{ id : 1, name : '멋진신발22', quan : 3 } ];
+
+function reducer35(state = initialState35, action){
+if(action.type === 'alert닫기'){
+  state=false;
+  return state;
+}else{
+  return state
+} 
+}
+
 // 32c
 // let store = createStore(reducer);
 
 // 34c-(2)-3
-let store = createStore(combineReducers({reducer,reducer2}));
-
+let store = createStore(combineReducers({reducer,reducer2,reducer35}));
 
 // 
 ReactDOM.render(  
