@@ -1347,8 +1347,9 @@ function App34() {
   );
 }
 // 🦄35 Redux 4 : dispatch할 때 데이터 실어보낼 수 있음
-// →→ Detail35.js
 // →→ index.js
+// →→ Detail35.js
+
 
 function App35() {
 

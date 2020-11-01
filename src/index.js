@@ -105,13 +105,17 @@ import * as serviceWorker from './serviceWorker';
 // 'alert닫기'가 작동되면, state는 false가 됨
 
 
-// 🦄35 Q: Detail 페이지에 장바구니 추가버튼 만들기
+// 🦄35-(1)Q: Detail 페이지에 장바구니 추가버튼 만들기
 // 1. index.js : 데이터 수정하는 법을 미리 만들고
 // 2. Detail.js : dispatch 하시면 됩니다. 
 // 3. Detail.js : dispatch할 때 { id : 2, name : ‘어쩌구’ } 데이터를 함께 실어보내면 됩니다.
 
 // 35-(2)'액션' parameter 의미
 // dispatch안의 모든 데이터를 받아옴 : dispatch  (  { type:'수량증가', payload: { name:'kim'  }}
+
+// 35-(3) → detail35.js
+
+// 35-(4) payload전송받은 데이터를 push로 state array에 추가함
 
 
 
@@ -122,7 +126,7 @@ import * as serviceWorker from './serviceWorker';
 
 import {BrowserRouter} from 'react-router-dom'
 
-// 32-(4-1)
+//🦄 32-(4-1)
 import {Provider, ReactReduxContext} from 'react-redux';
 
 // 32c-(4-3) , 34
@@ -132,7 +136,7 @@ import {combineReducers, createStore} from 'redux';
 // let store = createStore(()=>{ return[{ id : 0, name : '멋진신발', quan : 2 }]   });
 
 
-// 33c-(4)
+//🦄 33c-(4)
 // function reducer(){
 //   return [{id : 0, name : '멋진신발', quan : 2}, { id : 1, name : '멋진신발22', quan : 3 }]
 // }
@@ -159,7 +163,8 @@ else if (액션.type ==='수량감소'){
  else{ 
   return state}
   }
-// 34-(2)-1
+
+//🦄 34-(2)-1
 let initialState34 = true;
 
 //34-(2)-1,  34-(5)-2
@@ -172,28 +177,32 @@ if(action.type === 'alert닫기'){
 } 
 }
 
-// 35
+//🦄 35
 let initialState35 =[ {id : 0, name : '멋진신발', quan : 2}, 
 { id : 1, name : '멋진신발22', quan : 3 } ];
 
+// 35-(1)-1
 function reducer35(state = initialState35, action){
-if(action.type === 'alert닫기'){
-  state=false;
-  return state;
+if(action.type === '항목추가35'){
+ let copy = [...state];
+//  35-(4)
+ copy.push(action.payload작명);
+  return copy;
 }else{
   return state
 } 
 }
 
+// ⚡ store
 // 32c
 // let store = createStore(reducer);
 
 // 34c-(2)-3
 let store = createStore(combineReducers({reducer,reducer2,reducer35}));
 
-// 
+// ⚡
 ReactDOM.render(  
-  // 19-(2-2) index.html 기본코딩 되어있는 것 : index.html에서 id'root'인 html에 App컴포넌트를 넣어달라는 뜻
+  //🦄 19-(2-2) index.html 기본코딩 되어있는 것 : index.html에서 id'root'인 html에 App컴포넌트를 넣어달라는 뜻
 
   // 19-(2-4)
   <React.StrictMode>
