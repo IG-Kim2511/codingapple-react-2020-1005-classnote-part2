@@ -56,7 +56,8 @@ import Cart32 from './Cart32.js'
 import Cart33 from './Cart33.js'
 // 34
 import Cart34 from './Cart34.js'
-
+// 35
+import Detail35_file from './Detail35_file.js'
 
 
 //👉🌈⚡🦄 ⭐😀👻👽🍉🍒🔥
@@ -1338,12 +1339,36 @@ function App34() {
       <Link to='/'>Home</Link>
       <Link to='/detail'>Detail</Link>
       <Link to='/cart'>cart</Link>
-    </nav>
-     
+    </nav>     
       <Route path="/cart">
         <Cart34></Cart34>
-      </Route>   
-    
+      </Route>       
+   </div>
+  );
+}
+// 🦄35 Redux 4 : dispatch할 때 데이터 실어보낼 수 있음
+// →→ Detail35.js
+// →→ index.js
+
+function App35() {
+
+  let [shoes,shoes변경] = useState(Data21);
+  let[재고state,재고state변경] = useState([10,11,12]);
+
+  return (
+   <div className="App">
+    <div className="black-nav">🦄35 Redux 4 : dispatch할 때 데이터 실어보낼 수 있음</div>    
+    <nav className="ig_nav">
+      <Link to='/'>Home</Link>
+      <Link to='/detail'>Detail</Link>
+      <Link to='/cart'>cart</Link>
+    </nav>     
+      <Route path="/cart">
+        <Cart34></Cart34>
+      </Route>       
+      <Route path="/detail">
+      <Detail35_file shoes={shoes} 재고state={재고state} 재고state변경={재고state변경}/>   
+    </Route>   
    </div>
   );
 }
@@ -1371,6 +1396,7 @@ function App(){
        <App32/>    
        <App33/>    
        <App34/>    
+       <App35/>    
     </div>
   )
 }
