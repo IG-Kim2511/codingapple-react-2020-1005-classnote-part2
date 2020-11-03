@@ -16,6 +16,8 @@
 // history.push() 등의 라우터 함수를 이용해서 페이지 이동을 강제로 시켜보십시오.
 // 저렇게 라우터 함수를 이용해서 페이지 이동을 시키면 개발환경에서도 초기화가 되지 않습니다. 
 
+
+
 import Axios from 'axios';
 import React, {useContext, useEffect, useState} from 'react';
 
@@ -45,13 +47,17 @@ function Detail35_file(props){
 
     <Info 재고state={props.재고state}/>
 
-    <button className='btn btn-danger' onClick={ () => { props.재고state변경([9,11,12]);
+    <button className='btn btn-danger' onClick={ () => { 
+      
+      props.재고state변경([9,11,12]);
       // 35-(3)
       props.dispatch({type:'항목추가35', payload작명:{ id:2, name:'새로운상품', quan:1}});
       // (6)
       history.push('/cart');
      }  }> 항목추가35 </button>
  
+
+
     <p>재고context2 :{재고c}</p>
   
 

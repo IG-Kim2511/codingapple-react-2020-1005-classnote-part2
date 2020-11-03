@@ -44,7 +44,9 @@
 // 많은 컴포넌트들이 공유하는 값은 redux store안에 보관하십시오.
 
 
-// 35-(2) dispatch로 데이터 보내기  -→ index.js
+// 🦄35-(2) dispatch로 데이터 보내기  -→ index.js
+
+// 🦄36
 
 import React from 'react';
 import {Table} from 'react-bootstrap'
@@ -68,13 +70,12 @@ function Cart(props){
               <td>{a.name}</td>
               <td>{a.quan}</td>          
               <td>
-              <button onClick={()=>{ props.dispatch  (  { type:'수량증가' } )}}> + </button>
-              <button onClick={ ()=>{ props.dispatch( {type:'수량감소'} )  } } > - </button>
-              </td>
-              <td>
+              <button onClick={()=>{ props.dispatch  (  { type:'수량증가' } )}}> + dispatch </button>
+              <button onClick={ ()=>{ props.dispatch( {type:'수량감소'} )  } } > - dispatch </button>
+              
               // 35-(2)
-              <button onClick={()=>{ props.dispatch  (  { type:'수량증가', payload: { name:'kim'  }} )}}> + </button>
-               </td>
+              <button onClick={()=>{ props.dispatch  (  { type:'수량증가', payload: { name:'kim'  }} )}}> + payload </button>
+                 </td>
             </tr>
             )
           })  }
