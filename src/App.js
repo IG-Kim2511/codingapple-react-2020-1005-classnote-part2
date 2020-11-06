@@ -1493,6 +1493,7 @@ function App35() {
 
 // }
 
+// 🦄🦄🦄🦄🦄🦄
 // 🦄40 PWA : Progressive Web App 발행하기
 // → 캡쳐본 확인
 
@@ -1504,6 +1505,50 @@ function App35() {
 // → build/manifest.json
 // → build/precache-manifest.js
 // → build/service-worker.js
+
+// (2)-1 build/manifest.json
+// {
+//   "version" : "여러분앱의 버전.. 예를 들면 1.12 이런거",
+//   "short_name" : "설치후 앱런처나 바탕화면에 표시할 짧은 12자 이름",
+//   "name" : "기본이름",
+
+//   "icons" : { 여러가지 사이즈별 아이콘 이미지 경로 },
+// 이미지 사이즈/브라우저 사이즈/os/ 별로
+// 각기 이미지 설정
+// 이미지 경로
+// 구글검색  , 튜토리얼 참고해서 설정
+
+//   "start_url" : "앱아이콘 눌렀을 시 보여줄 메인페이지 경로",
+//   "display" : "standalone 아니면 fullscreen",
+//   "background_color" : "앱 처음 실행시 잠깐 뜨는 splashscreen의 배경색",
+//   "theme_color" : "상단 탭색상 등 원하는 테마색상",
+// }
+
+
+//(2)-2  → build/service-worker.js
+
+//  앱은 하드에 이미 설치되어 있는걸 그대로 가져와서 씁니다
+// 이걸 흉내내도록 도와주는 파일이 바로 service-worker 라는 파일입니다.
+
+// 이 파일에 설정을 잘 해주면 이제 여러분의 웹앱을 설치했을 때 어떤 CSS, JS, HTML, 이미지 파일이 하드에 설치될지 결정할 수 있습니다.
+
+// 그럼 이제 다음에 앱을 켤 때마다 서버에 CSS,JS,HTML 파일을 요청하는게 아니라 Cache Storage에 저장되어있던 CSS,JS,HTML 파일을 사용하게 됩니다.
+
+// (그럼 이제 오프라인에서도 사용이 가능해지는거죠)
+// 설정은 이미 되어있습니다.
+// precache-manifest 라는 파일에 어떤 파일을 설치할지 다 경로가 적혀있고
+// 그걸 service-worker.js에서 가져와서 사용하고 있습니다.
+
+
+// (2)-3 → build/precache-manifest.js
+
+// 필요하면 precache-manifest 파일만 조금 건드셔서 마음에 안드는 파일은 제거하시면 되고요. 
+// 그냥 쌩으로 service worker 파일을 만들고 싶다면 
+// 구글 공식 튜토리얼이나 크롬브라우저 권장 튜토리얼을 참고하십시오.
+// service worker 제작에 필요한 문법이 따로 있고 그걸 학습하셔야합니다. 
+// (공식 튜토리얼) https://developers.google.com/web/fundamentals/primers/service-workers
+// (샘플) https://googlechrome.github.io/samples/service-worker/basic/
+
 
 // (3)
 // → node_modules/react-scripts/config/webpack.config.js 
