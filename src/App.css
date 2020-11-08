@@ -29,11 +29,11 @@
   font-size : 20px;
 }
 
-/*16  */
+/*16 -(4) */
 .background{
-  /* background-image: url(/background.jpg); */  
+  background-image: url(./backgr.jpg);  
   background-position: center;
-  color: white;
+  color: orange;
 
 
 }

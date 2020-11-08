@@ -7,7 +7,8 @@ import './App.css';
 
 import Data from './data.js'
 
-// 16-(1)
+
+// 16-(1)-2
 import { Navbar , Nav ,NavDropdown , Form , FormControl, Button, Jumbotron} from 'react-bootstrap';
 
 // 17 - (2) (2-2)
@@ -96,23 +97,40 @@ function App15() {
   );
 }
 
-// 🦄16 React Bootstrap. 평화로운 쇼핑몰 레이아웃 디자인
+// 🦄16 React Bootstrap.쇼핑몰 레이아웃 디자인
+
 // (1) React Bootstrap 홈페이지에서 Import Components 복사-붙여넣기
-// (1-2) 사용할 component이름 (Navbar , Nav ,NavDropdown , Form , FormControl, Button) 모두 목록에 추가
+
+// (1-2) ↑ import { Navbar , Nav,~~} from 'react-bootstrap';
+//  사용할 component이름  Navbar , Nav,~~}  모두 목록에 추가
+
 // (1-3) 대문자 시작 태그들 모두가 Component
 
-// (2) css className 추가 가능
+// (2)Jumbotron() bootstrap 검색어 : jumbotron, layout)
 
-// bootstrap 검색어 : jumbotron, layout
+// (3) Bootstrap코딩에도 <className=”background”> 클래스 정하고, CSS 작성
+// → App.css
+
+// (4) image가져오기
+// 1. src폴더 안의 파일
+// background-image : url(./background.jpg);  
+
+// 2. src폴더 안 image폴더에서의 파일
+// background-image : url(./images/background.jpg);  
+
+// (참고)
+// 다른 src 폴더 등의 파일들은 리액트 앱을 발행했을 때 저절로 압축이 되는데
+// public 폴더는 리액트 앱을 발행했을 때 사이트 루트경로에 그대로 남아있습니다.
+
+// (5) react-bootstrap 사이트에서 layout + 선생님이 준비한 이미지파일 주소
 
 function App16() {
   return (
    <div className="App">
-    <p className="black-nav">🦄16 React Bootstrap. 평화로운 쇼핑몰 레이아웃 디자인  </p>
+    <p className="black-nav ">🦄16 React Bootstrap.쇼핑몰 레이아웃 디자인  </p>
 
     <div>
-    // (2)navbar
-    <Navbar bg="light" expand="lg" className='background'>
+     <Navbar bg="light" expand="lg" className='background'>
         <Navbar.Brand href="#home">..</Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
@@ -129,8 +147,8 @@ function App16() {
           </Nav>        
       </Navbar.Collapse>
 
-   // Jumbotron
-     <Jumbotron>
+   // (2) Jumbotron
+     <Jumbotron >
         <h1>Hello, world!</h1>
         <p>
           This is a simple hero unit, a simple jumbotron-style component for calling
@@ -141,25 +159,25 @@ function App16() {
         </p>
       </Jumbotron>
 
-      // 상품 레이아웃
+    // (5)
       <div className="container">
-      <div className="row">
-        <div className="col-md-4">
-          <img src="https://codingapple1.github.io/shop/shoes1.jpg" width="100%" />
-          <h4>상품명</h4>
-          <p>상품정보</p>
+        <div className="row">
+          <div className="col-md-4">
+            <img src="https://codingapple1.github.io/shop/shoes1.jpg" width="100%" />
+            <h4>상품명</h4>
+            <p>상품정보</p>
+          </div>
+          <div className="col-md-4">
+            <img src="https://codingapple1.github.io/shop/shoes2.jpg" width="100%" />
+            <h4>상품명</h4>
+            <p>상품정보</p>
+          </div>
+          <div className="col-md-4">
+            <img src="https://codingapple1.github.io/shop/shoes3.jpg" width="100%" />
+            <h4>상품명</h4>
+            <p>상품정보</p>
+          </div>
         </div>
-        <div className="col-md-4">
-          <img src="https://codingapple1.github.io/shop/shoes2.jpg" width="100%" />
-          <h4>상품명</h4>
-          <p>상품정보</p>
-        </div>
-        <div className="col-md-4">
-          <img src="https://codingapple1.github.io/shop/shoes3.jpg" width="100%" />
-          <h4>상품명</h4>
-          <p>상품정보</p>
-        </div>
-      </div>
       </div>
       </Navbar>
     </div>
@@ -493,7 +511,7 @@ function App20() {
    <div className="App">
     <p className="black-nav">🦄20 React Router 2 : Link, Switch, history 기능 </p>
 
-    <Navbar bg="light" expand="lg" className='background'>
+    <Navbar bg="light" expand="lg" >
       <Navbar.Brand href="#home">..</Navbar.Brand>
       <Navbar.Toggle aria-controls="basic-navbar-nav" />
       <Navbar.Collapse id="basic-navbar-nav">
