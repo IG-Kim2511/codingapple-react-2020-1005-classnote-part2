@@ -82,7 +82,7 @@ import Detail35_file from './Detail35_file.js'
 function App15() {
   return (
    <div className="App">
-    <div className="black-nav"> 15 쇼핑몰 프로젝트 : 프로젝트 생성 & Bootstrap 설치 </div>
+    <p className="black-nav"> 15 쇼핑몰 프로젝트 : 프로젝트 생성 & Bootstrap 설치 </p>
     // (4)
     <button type="button" class="btn btn-primary">Primary</button>
 
@@ -102,7 +102,7 @@ function App15() {
 function App16() {
   return (
    <div className="App">
-    <div className="black-nav">16 React Bootstrap. 평화로운 쇼핑몰 레이아웃 디자인  </div>
+    <p className="black-nav">16 React Bootstrap. 평화로운 쇼핑몰 레이아웃 디자인  </p>
 
     <div>
     // (2)navbar
@@ -196,7 +196,7 @@ function App17() {
 
   return (
    <div className="App">
-    <div className="black-nav">  17 코드가 넘나 길어진다면 import / export 사용해보기  </div>
+    <p className="black-nav">  17 코드가 넘나 길어진다면 import / export 사용해보기  </p>
 
     // (2-3)
     {data2mynaming}
@@ -268,7 +268,7 @@ function App18() {
 
   return (
    <div className="App">
-    <div className="black-nav">  🦄18 숙제 해설 : 상품목록 Component 만들기 + 반복문  </div>  
+    <p className="black-nav">  🦄18 숙제 해설 : 상품목록 Component 만들기 + 반복문  </p>  
     <div className="container">
       <div className="row">
       // (2) (2-3) (2-4)
@@ -373,7 +373,7 @@ function App18() {
 function App19() {
   return (
    <div className="App">
-    <div className="black-nav">🦄19 React Router 1 : 셋팅과 기본 라우팅 </div>
+    <p className="black-nav">🦄19 React Router 1 : 셋팅과 기본 라우팅 </p>
   
     // (4-2) (4-3)
     <Route path="/">메인페이지⭐</Route>
@@ -485,7 +485,7 @@ function Card3(){
 function App20() {
   return (
    <div className="App">
-    <div className="black-nav">🦄20 React Router 2 : Link, Switch, history 기능 </div>
+    <p className="black-nav">🦄20 React Router 2 : Link, Switch, history 기능 </p>
 
     <Navbar bg="light" expand="lg" className='background'>
       <Navbar.Brand href="#home">..</Navbar.Brand>
@@ -611,7 +611,7 @@ function App21() {
 
   return (
    <div className="App">
-    <div className="black-nav">🦄21 React Router 3 : URL 파라미터로 상세페이지 100개 만들기</div>
+    <p className="black-nav">🦄21 React Router 3 : URL 파라미터로 상세페이지 100개 만들기</p>
 
     <nav className="ig_nav">
       <Link to='/'>Home</Link>
@@ -666,7 +666,7 @@ function App22() {
 
   return (
    <div className="App">
-    <div className="black-nav">🦄22 styled-components를 이용한 class없는 CSS스타일링</div>
+    <p className="black-nav">🦄22 styled-components를 이용한 class없는 CSS스타일링</p>
 
     <nav className="ig_nav">
     <Link to='/'>Home</Link>
@@ -704,7 +704,7 @@ function App23() {
   
     return (
      <div className="App">
-      <div className="black-nav">🦄23 SASS를 쓰자 (SASS 문법 10분 총정리)</div>
+      <p className="black-nav">🦄23 SASS를 쓰자 (SASS 문법 10분 총정리)</p>
   
       <nav className="ig_nav">
       <Link to='/'>Home</Link>
@@ -735,7 +735,7 @@ function App24() {
   
     return (
      <div className="App">
-      <div className="black-nav">🦄24 Lifecycle Hook (옛날사람) useEffect (요즘사람)</div>
+      <p className="black-nav">🦄24 Lifecycle Hook (옛날사람) useEffect (요즘사람)</p>
     <nav className="ig_nav">
       <Link to='/'>Home</Link>
       <Link to='/detail'>Detail</Link>
@@ -763,7 +763,7 @@ function App25() {
   
     return (
      <div className="App">
-      <div className="black-nav">🦄25 useEffect 숙제 풀이 & 나머지 기능</div>  
+      <p className="black-nav">🦄25 useEffect 숙제 풀이 & 나머지 기능</p>  
      <nav className="ig_nav">
         <Link to='/'>Home</Link>
         <Link to='/detail'>Detail</Link>
@@ -850,7 +850,7 @@ function App26() {
   
     return (
      <div className="App">
-      <div className="black-nav">🦄26 리액트에서의 Ajax 요청방법 & Ajax는 무엇인가</div>
+      <p className="black-nav">🦄26 리액트에서의 Ajax 요청방법 & Ajax는 무엇인가</p>
       <nav className="ig_nav">
       <Link to='/'>Home</Link>
       <Link to='/detail'>Detail</Link>
@@ -990,7 +990,7 @@ function App27() {
 
   return (
    <div className="App">
-    <div className="black-nav">🦄27 리액트에서의 Ajax 요청방법 2 & 숙제풀이</div>
+    <p className="black-nav">🦄27 리액트에서의 Ajax 요청방법 2 & 숙제풀이</p>
 
     <nav className="ig_nav">
     <Link to='/'>Home</Link>
@@ -1081,8 +1081,8 @@ function App28() {
 
   return (
    <div className="App">
-    <div className="black-nav">🦄28 Component를 3단계로 만들면 state 전달은 어떻게?props 두번 </div>
-    <div className="black-nav">🦄29 → 캡쳐정리</div>
+    <p className="black-nav">🦄28 Component를 3단계로 만들면 state 전달은 어떻게?props 두번 </p>
+    <p className="black-nav">🦄29 → 캡쳐정리</p>
 
     <nav className="ig_nav">
       <Link to='/'>Home</Link>
@@ -1171,7 +1171,7 @@ function App30() {
 
   return (
    <div className="App">
-    <div className="black-nav">🦄30 컴포넌트 많을 때 props 쓰기 싫으면 Context API  </div>
+    <p className="black-nav">🦄30 컴포넌트 많을 때 props 쓰기 싫으면 Context API  </p>
 
 
     <nav className="ig_nav">
@@ -1236,7 +1236,7 @@ function App31() {
 
   return (
    <div className="App">
-    <div className="black-nav">🦄31 Tab 만들기와 리액트에서의 애니메이션 (react-transition-group)</div>
+    <p className="black-nav">🦄31 Tab 만들기와 리액트에서의 애니메이션 (react-transition-group)</p>
    
     <nav className="ig_nav">
       <Link to='/'>Home</Link>
@@ -1279,7 +1279,7 @@ function App32() {
 
   return (
    <div className="App">
-    <div className="black-nav">🦄32 세계최고로 쉬운 Redux 1 : props 싫으면 쓰세요</div>
+    <p className="black-nav">🦄32 세계최고로 쉬운 Redux 1 : props 싫으면 쓰세요</p>
   
       
       <nav className="ig_nav">
@@ -1308,7 +1308,7 @@ function App33() {
 
   return (
    <div className="App">
-    <div className="black-nav">🦄33 Redux 2 : reducer/dispatch로 데이터 수정하는 법</div>
+    <p className="black-nav">🦄33 Redux 2 : reducer/dispatch로 데이터 수정하는 법</p>
     <nav className="ig_nav">
     <Link to='/'>Home</Link>
     <Link to='/detail'>Detail</Link>
@@ -1334,7 +1334,7 @@ function App34() {
 
   return (
    <div className="App">
-    <div className="black-nav">🦄34 Redux 3 : state와 reducer가 더 필요하면</div>    
+    <p className="black-nav">🦄34 Redux 3 : state와 reducer가 더 필요하면</p>    
     <nav className="ig_nav">
       <Link to='/'>Home</Link>
       <Link to='/detail'>Detail</Link>
@@ -1358,7 +1358,7 @@ function App35() {
 
   return (
    <div className="App">
-    <div className="black-nav">🦄35 Redux 4 : dispatch할 때 데이터 실어보낼 수 있음</div>    
+    <p className="black-nav">🦄35 Redux 4 : dispatch할 때 데이터 실어보낼 수 있음</p>    
     <nav className="ig_nav">
     <Link to='/'>Home</Link>
     <Link to='/detail'>Detail</Link>
