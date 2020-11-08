@@ -62,35 +62,41 @@ import Detail35_file from './Detail35_file.js'
 
 //👉🌈⚡🦄 ⭐😀👻👽🍉🍒🔥
 
-// 15 쇼핑몰 프로젝트 : 프로젝트 생성 & Bootstrap 설치
-//(1)yarn
+// 🦄 15 react bootstrap (쇼핑몰 프로젝트 : 프로젝트 생성 & Bootstrap 설치)
+
+// (2) react bootstrap
+// react bootstrap이라고 구글 검색하면 맨 처음에 나오는 사이트로 들어갑시다. 
+// 터미널 : npm install react-bootstrap bootstrap
+
+// (2)-2
+// → public/index.html
+// react bootstrap사이트에 있는 CSS 파일 → index.html 파일의 <head> 태그 안에 복사붙여넣기함
+// https://react-bootstrap.github.io/getting-started/introduction
+
+// (2)-3 bootstrap Component 복붙
+
+// (2)-4 사용할 Componetn들을 import함.  import { Navbar , Nav , Button} from 'react-bootstrap';
+// → 16강에서 자세히 설명
+
+//(4) yarn
 // yarn이 뭐하는 애냐면 npm이나 npx를 대체해서 이용할 수 있게 도와주는 친구입니다.
 // npm보다 훨씬 빠른 라이브러리 설치속도와 안정성을 자랑합니다. 
 // 일단 설치해놓으면 npx create-react-app 어쩌구 하실 때 자동으로 yarn이 구동되어 빨라집니다. 
 // 누군가가 npm install 어쩌구 하라고 하면 그거 대신 yarn add 어쩌구 라고 사용하시면 더 빠르게 설치할 수 있으며
 // npm run start 로 미리보기 띄울 때도 yarn start 이걸로 대체할 수 있습니다. 
 
-// (2)
-// react bootstrap이라고 구글 검색하면 맨 처음에 나오는 사이트로 들어갑시다. 
-// 터미널 : npm install react-bootstrap bootstrap
-
-// (3)
-// 사이트에 있는 CSS 파일을 index.html 파일의 <head> 태그 안에 복붙해
-
-// (4) bootstrap Component 복붙
 
 function App15() {
   return (
    <div className="App">
-    <p className="black-nav"> 15 쇼핑몰 프로젝트 : 프로젝트 생성 & Bootstrap 설치 </p>
-    // (4)
-    <button type="button" class="btn btn-primary">Primary</button>
-
-   </div>
+      <p className="black-nav">🦄15 react bootstrap (쇼핑몰 프로젝트 : 프로젝트 생성 & Bootstrap 설치)</p>
+      // (2)-3
+      <button type="button" class="btn btn-primary">Primary</button>
+    </div>
   );
 }
 
-// 16 React Bootstrap. 평화로운 쇼핑몰 레이아웃 디자인
+// 🦄16 React Bootstrap. 평화로운 쇼핑몰 레이아웃 디자인
 // (1) React Bootstrap 홈페이지에서 Import Components 복사-붙여넣기
 // (1-2) 사용할 component이름 (Navbar , Nav ,NavDropdown , Form , FormControl, Button) 모두 목록에 추가
 // (1-3) 대문자 시작 태그들 모두가 Component
@@ -102,7 +108,7 @@ function App15() {
 function App16() {
   return (
    <div className="App">
-    <p className="black-nav">16 React Bootstrap. 평화로운 쇼핑몰 레이아웃 디자인  </p>
+    <p className="black-nav">🦄16 React Bootstrap. 평화로운 쇼핑몰 레이아웃 디자인  </p>
 
     <div>
     // (2)navbar
