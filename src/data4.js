@@ -1,4 +1,4 @@
-// (4-1)
+// (4)-1-1
 export default
 
 [
@@ -23,3 +23,11 @@ export default
       price : 130000
     }
   ] 
+
+
+
+  // (4)-1-2
+
+  // let 작명 = [ ~~~~ ]  
+  
+  // export default 작명

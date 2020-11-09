@@ -5,19 +5,16 @@
 import React,{useContext, useState} from 'react';
 import './App.css';
 
-import Data from './data.js'
-
-
 // 16-(1)-2
 import { Navbar , Nav ,NavDropdown , Form , FormControl, Button, Jumbotron} from 'react-bootstrap';
 
-// 17 - (2) (2-2)
+// 17 - (2)-4
 import data2mynaming from './data2.js'
 
 // 17 - (3)
 import {naming,naming2} from './data3.js'
 
-// 17-(4-1)
+// 17-(4)-2
 import data4naming from './data4.js'
 
 // 19-(3) 20-(3-3) 20-(8-2)
@@ -185,57 +182,71 @@ function App16() {
   );
 }
 
-// 17 코드가 넘나 길어진다면 import / export 사용해보기
-
-// (1) data.js /  import / export 문법
-//src폴더에 data.js 파일 만듬
-// export default [ ] 
-
-// (1-2) 코드 그냥 useState([]); 안에 넣기
+//🦄17 import/export 문법, export default 작명 (variable, array, function), import 작명 from './data4.js'
+// →data2.js
+// →data3.js
+// →data4.js
+// ↑ import
 
 // (2)  data2.js / export default mynaming
-// var naming변수 만듬
-// name이라는 변수를 다른 파일에서 쓸수 있게 함(참고로 페이지의 가장 마지막 문단에 코딩함)
-//export default mynaming2 ...이런식으로 2번 쓸 수 없음
+// 1. src폴더에 data2.js 파일 만듬
 
-// (2-2)
-// App.js에서 data2.js에서 배출한 변수를 쓰고 싶다면, 'import 변수명 from 경로' 사용
+// 2. 3. →data2.js
+
+// (2)-4
+// App.js에서 data2.js에서 배출한 변수를 쓰고 싶다면, 'import 작명 from 경로' 사용
 // 경로 쓸때 ./라고 쓰는 것은 현재경로입니다.
 
-// (2-3) mynaming 데이터바인딩
+// (2)-5 mynaming 데이터바인딩
+
+// (2)-6 import이름: mynaming , export이름: data2mynaming ..... 각자이름이 같을 필요 없음 
 
 // (3) 변수 2개 export할때... array 형식 사용 , 
+// →data3.js
 
-// (3-2) naming2 데이터바인딩
+// (3)-2 Data binding
 
+// (3)-3 import이름: {naming,naming2} , export이름: {naming,naming2} ..... 각자이름이 같아야함
 
-//  (4) export default
-// (4-1) data4.js / import, export
-// (4-2) 호출
+// (4) export default
+// →data4.js
+// 1. data4.js 에 데이터를 다 저장하고 export default 로 내보내줍니다.
+
+// 1-1. export default 뒤에 data,array를 그대로 집어넣어도 됨
+// 1-2.변수에 저장했다가,  export default 변수명 해도 됨
+//  → let 작명 = [ ~~~~ ]  , export default 작명
+
+// 2. import data4naming(작명) from './data4.js';
+
+// 3. 그걸로 state를 만듬 :  useState([]); 안에 넣기
+
+// 4. Data binding
 
 function App17() {
 
-  // (1-2)  (4)
+  // (4)-3
   let [shoes,shoes변경]=useState(data4naming);
 
   return (
    <div className="App">
-    <p className="black-nav">  17 코드가 넘나 길어진다면 import / export 사용해보기  </p>
+    <p className="black-nav">🦄17 import/export 문법, export default 작명 (variable, array, function), import 작명 from './data4.js' </p>
+    <p>
+      // (2)-5
+      import data2mynaming from './data2.js' 
+      {data2mynaming}
 
-    // (2-3)
-    {data2mynaming}
+      // (3)-2
+      import {naming,naming2} from './data3.js'  
+      {naming2}
+    </p>
 
-    // (3-2)
-    {naming2}
-
-    <div>
-    // (4-2)
+     <div>
+    // (4)-4
+    import data4naming from './data4.js'
       <h4> {shoes[0].title} </h4> 
       <h4> {shoes[1].content} </h4> 
-      <h4> {shoes[2].price} </h4> 
-      
+      <h4> {shoes[2].price} </h4>       
      </div>
-
    </div>
     );
  }
