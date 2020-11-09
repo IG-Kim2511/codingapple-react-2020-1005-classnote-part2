@@ -17,7 +17,7 @@ import {naming,naming2} from './data3.js'
 // 17-(4)-2
 import data4naming from './data4.js'
 
-// 19-(3) 20-(3-3) 20-(8-2)
+// 19-(3)-1 20-(3-3) 20-(8-2)
 import { Link, Route, Switch, useHistory } from 'react-router-dom'
 
 // 20-(2)
@@ -254,12 +254,12 @@ function App17() {
 // 🦄18 map()활용2. Component,props쓰기.{'text'+(props.i+1)}.(상품목록 Component 만들기 + 반복문)
 // (1)일단 터미널창에 뜨는 warning부터 해결합시다. 이런 잔소리가 귀찮다면, 페이지 맨 위에 /*eslint-disable*/ 이라는 코드를 추가합니다.
 
-// (6)
+// (2)
 // App이라는 컴포넌트에 있는 state를 Card에서 쓰고싶으면 props로 전송해주어야합니다.
 // 1. <Card>를 첨부할 때 shoes={shoes}로 전송하는 문법을 썼고
 // 2. Card 컴포넌트 안에 shoes를 갖다쓸 땐 props.shoes 라고 사용했습니다.
 
-// (7) 각각의 Card 컴포넌트마다 다른 데이터 전송해주기 
+// (3) 각각의 Card 컴포넌트마다 다른 데이터 전송해주기 
 // 각각의 Card마다 shoes[0], shoes[1] … 이런 식으로 전송해주면 되겠구만요.
 // 1. 그니까 shoes라는 [ {}, {}, {} ] 이렇게 생긴 데이터를 다 전송하는게 아니라
 // shoes 안에 있던 하나의 {} 오브젝트만 각각 전송하자는 겁니다.
@@ -271,7 +271,7 @@ function App17() {
 // props.shoes[0].title 이게 아니라
 // props.shoes.title 이렇게 통합해서 쓸 수 있음 (다음단계 프로그래밍 코딩을 위해 필요함)
 
-// (8) Card2 컴포넌트 반복문 돌리기- 프로그래밍
+// (4) Card2 컴포넌트 반복문 돌리기- 프로그래밍
 // 1.<Card2> 3개를 map 반복문으로 돌려보았습니다.
 // { }
 // 변수~state~함수~array.map((a,i)=>{ })
@@ -309,7 +309,7 @@ function App18() {
    <div className="App">
     <p className="black-nav">🦄18 map()활용2.Component,props쓰기.(상품목록 Component 만들기 + 반복문)</p>  
     <div >
-      //  (6)-1
+      //  (2)-1
       <Card shoes={shoes}></Card>  
         <div className="col-md-4">
           <img src="https://codingapple1.github.io/shop/shoes2.jpg" width="100%" />
@@ -323,13 +323,13 @@ function App18() {
         </div>    
      </div>    
     <div >     
-      // (7)-1
+      // (3)-1
       <Card2 shoes={shoes[0]}></Card2>
       <Card2 shoes={shoes[1]}></Card2>
       <Card2 shoes={shoes[2]}></Card2>
     </div>
     <div >     
-      // (8)-1 (8)-2
+      // (4)-1 (4)-2
       {
         shoes.map( (a,i)=>{
           return <Card2 shoes={shoes[i]} i={i}></Card2>
@@ -345,7 +345,7 @@ function App18() {
    return(
     <div>
       <img src="https://codingapple1.github.io/shop/shoes1.jpg" width="20%" />
-      // (6)-2
+      // (2)-2
       <h4> {props.shoes[0].title} </h4> 
       <p>{props.shoes[0].content} & {props.shoes[0].price}  </p>    
     </div>
@@ -355,35 +355,54 @@ function App18() {
   function Card2(props){
    return(
     <div >
-      //(8)-4
+      //(4)-4
       <img src={"https://codingapple1.github.io/shop/shoes"+(props.i+1)+".jpg"} width="20%" />
-      // (7)-2
+      // (3)-2
       <h4> {props.shoes.title} </h4> 
       <p>{props.shoes.content} & {props.shoes.price}  </p>    
     </div>
    )
  }
 
-// 🦄19 React Router 1 : 셋팅과 기본 라우팅 (router = 페이지 만들고, a태그)
+// 🦄19 React Router 1: npm.import,BrowserRouter,path=""
+// →  index.js
+
 // (router 라우터 ((데이터 전송시의 최적 경로를 선택하는 장치)) ) (route 루트. 길)
 // React-Router 특징 : 각각 페이지마다 다른 HTML 파일을 보여주는게 아닙니다.
 // HTML 내부의 내용을 갈아치워서 다른 페이지처럼 흉내내는 것일 뿐입니다.
 
-// react-router-dom이라는 공식 라이브러리를 설치해서 이용하시면 됩니다.
-//설치: 터미널을 여시고 npm install react-router-dom
+// (1)
+// 터미널: npm install react-router-dom
+// (react-router-dom이라는 공식 라이브러리를 설치해서 이용)
 
-// (2) index.js 파일에 방문합니다.
+// (2)  →  index.js
+// 0. App.js에 있는 <App> 컴포넌트를 index.html에 꽂아주세요~ 뭐 이런 작업을 시키는 파일이라고 보시면 됩니다.
+// <React.StrictMode>
+//       <App/> 
+//   </React.StrictMode>,
+// document.getElementById('root')
 
-// (3) 상단에 Route 라는 태그를 import 해오십시오.  
-// Link, Switch는 다음시간에 쓸거라 미리 해놨습니다.
-// import { Link, Route, Switch } from 'react-router-dom';
+// 1. import { BrowserRouter } from 'react-router-dom';
 
-// (4)라우팅하려면 
-// (4-2). 원하는 곳에 <Route></Route>  , <Route/>태그를 작성합니다.
-// (4-3). <Route>안에 path와 path 방문시 보여줄 HTML 을 적으시면 됩니다. 
+// 2. <BrowserRouter>라는 태그를 추가
+// <BrowserRouter>
+//    <App/>
+// </BrowserRouter>
+
+// 3. <HashRouter>도 사용 가능함 
+// 사이트 방문시 URL 맨 뒤에 /#/이 붙은채로 시작합니다.
+
+//(3) Q: / 여기로 접속하면 메인페이지를,/detail로 접속하면 상세페이지를 보여주기
+ 
+// 1. (→App.js) ↑ import {  Route, Link, Switch } from 'react-router-dom';
+//( Link, Switch는 다음시간에 )
+
+// 2.  원하는 곳에 <Route></Route>  , <Route/>태그를 작성합니다.
+// 3.  <Route>안에 path와,  path 방문시 보여줄 HTML 을 적으시면 됩니다. 
 // 계속 추가 끝없이 가능
 
-// (4-4) component 호출 2way
+// (4-4) 그러면 /어쩌구 라는 경로로 접속했을 때, Card 라는 컴포넌트를 보여줍니다.
+// 방법 2가지
 
 // (5) Q: 나는 /detail로 접속했는데 왜 상세페이지, 메인페이지 둘다 보여주죠? 
 // 왜냐면 /detail이라고 적으면 /라는 경로도 포함되어있으니까요.
@@ -398,12 +417,21 @@ function App18() {
 function App19() {
   return (
    <div className="App">
-    <p className="black-nav">🦄19 React Router 1 : 셋팅과 기본 라우팅 </p>
-  
-    // (4-2) (4-3)
-    <Route path="/">메인페이지⭐</Route>
-    <Route path="/detail">상세페이지😎 </Route>
-    <Route pate="/4-2"/>4-2
+    <p className="black-nav">🦄19 React Router 1: npm.import,BrowserRouter,path=""</p>
+
+    (//21강에서 배울 내용 Link )
+    <nav className="ig_nav">
+      <Link to='/'>Home</Link>
+      <Link to='/detail'>Detail</Link>
+      <Link to='/component'>component</Link>
+      <Link to='/component2'>component2</Link>
+      <Link to='/main2'>main2</Link>
+      <Link to='/detail2'>detail2</Link>
+     </nav>
+     
+    // (3)-2 (3)-3 
+    <Route path="/"> <div>메인페이지인데요</div></Route>
+    <Route path="/detail"><div>상세페이지인데요</div></Route>
     <Route path="/ㄴㄻㄴㄹㅇ">계속 추가 끝없이 가능</Route>
 
     // (4-4)
@@ -413,30 +441,21 @@ function App19() {
     // (5)
     <Route exact path="/">메인페이지⭐</Route>
 
-    // (6)
+    // (6)-1
     <Route path="/main2">     
       <Jumbotron>
-      <h1>Hello, world!</h1>        
-        <Button variant="primary">Learn more</Button>    
+        <h1>Hello, world!</h1>   
      </Jumbotron>
     </Route>
-
-    <Route path="/detail2">
-        <div className="container">
-        <div className="row">
-          <div className="col-md-6">
-            <img src="https://codingapple1.github.io/shop/shoes1.jpg" width="100%" />
-          </div>
-          <div className="col-md-6 mt-4">
-            <h4 className="pt-5">상품명</h4>
-            <p>상품설명</p>
-            <p>120000원</p>
-            <button className="btn btn-danger">주문하기</button> 
-          </div>
-        </div>
-          </div> 
-      </Route>
     
+    // (6)-2
+    <Route path="/detail2">
+        <div className="container">    
+            <div className="col-md-6">
+              <img src="https://codingapple1.github.io/shop/shoes1.jpg" width="20%" />
+            </div>         
+         </div> 
+    </Route>    
    </div>
   );
 }
@@ -444,7 +463,7 @@ function App19() {
 // (4-4)
 function Card3(){
   return(
-  <div>Component 🙄</div>
+  <div>Component Card 🙄</div>
   )
 }
 
