@@ -251,51 +251,46 @@ function App17() {
     );
  }
 
-// 🦄18 숙제 해설 : 상품목록 Component 만들기 + 반복문
+// 🦄18 map()안에 Component,props쓰기(상품목록 Component 만들기 + 반복문)
 // (1)일단 터미널창에 뜨는 warning부터 해결합시다. 이런 잔소리가 귀찮다면, 페이지 맨 위에 /*eslint-disable*/ 이라는 코드를 추가합니다.
 
-// (2) 1번째 상품목록 Component 만들기 
-// (2-2) function mynaming (){ return( <div> component'만들 html넣음</div>)}
+// (6)
+// App이라는 컴포넌트에 있는 state를 Card에서 쓰고싶으면 props로 전송해주어야합니다.
+// 1. <Card>를 첨부할 때 shoes={shoes}로 전송하는 문법을 썼고
+// 2. Card 컴포넌트 안에 shoes를 갖다쓸 땐 props.shoes 라고 사용했습니다.
 
-// (2-3) 호출
-// (2-4) props
-
-// (3) 모든상품목록 Component 만들기
-
-// (3-2)
-// 각각의 Card 컴포넌트마다 다른 데이터 전송해주기 
+// (7) 각각의 Card 컴포넌트마다 다른 데이터 전송해주기 
 // 각각의 Card마다 shoes[0], shoes[1] … 이런 식으로 전송해주면 되겠구만요.
+// 1. 그니까 shoes라는 [ {}, {}, {} ] 이렇게 생긴 데이터를 다 전송하는게 아니라
+// shoes 안에 있던 하나의 {} 오브젝트만 각각 전송하자는 겁니다.
 
-// (3-3)
-//  위에서 shoes[0] 이라는 데이터를 shoes라는 이름으로 props로 전송했기 때문에
+// 2.위에서 shoes[0] 이라는 데이터를 shoes라는 이름으로 props로 전송했기 때문에
 // props.shoes[0].title 이게 아니라
 // props.shoes.title 이렇게 써주시면 제목 등이 정상적으로 출력됩니다.
 
-// 교훈은:
-//  같은 컴포넌트라고 항상 같은 내용만 보여줄 수 있는게 아닙니다.
-//  props 등을 이용해 각각 다른 내용을 전송해주면 됩니다.
-//  그럼 같은 컴포넌트라고 해도 각각 다른 내용이 출력되는 컴포넌트를 만드실 수 있습니다.
+// (8) Card2 컴포넌트 반복문 돌리기- 프로그래밍
+// 1.<Card2> 3개를 map 반복문으로 돌려보았습니다.
+// { }
+// 변수~state~함수~array.map((a,i)=>{ })
+// return <Card2/>
+// shoes={shoes[i]}
 
-// (4)  <Card> 3개를 map 반복문으로 돌려보았습니다.
-// (4-2) 자료.map( ()=>{ return( 반복시킬HTML    }  )
-// (shoes라는 state 갯수만큼 돌려야하니까 shoes에 map을 붙였습니다)
-// map 반복문 안엔 2개의 파라미터가 들어갈 수 있는데 (a, i 이렇게 써놓은거요)
-// a는 shoes라는 array에 있던 하나하나의 데이터를 의미하고,
+// 2. map 반복문 안엔 2개의 파라미터가 들어갈 수 있는데 (a, i 이렇게 써놓은거요)
+// 왼쪽거는 shoes라는 array에 있던 하나하나의 데이터를 의미하고,
 // i는 반복문 돌면서 1씩 증가하는 정수입니다. 0,1,2 … 이런 식으로 변하는 변수겠네요.
 
-// (4-3) 둘 다 맞는 코딩
+// 3.현재 모든 상품이미지들은 Card 컴포넌트 안에 <img src=”~~~/shoes1.jpg”> 이렇게 하드코딩되어있습니다.
 
-// (5) src=""에 데이터바인딩하기
+// 근데 각각 컴포넌트마다 shoes1.jpg / shoes2.jpg / shoes3.jpg 라는 데이터로 데이터바인딩하고 싶은데 어떻게 하면 될까요?
+// <Card> 반복문 돌릴 때 map 안에 i라는 변수가 있다고 했습니다. 0,1,2라고 변하는 변수였죠?
+// 비슷하니까 이걸 활용하면 되겠군요.
+// <img src={ 'https://codingapple1.github.io/shop/shoes' + i + '.jpg' } width="100%"/>
 
-//(5-2) src = { } ...변수명,함수명을 넣을 수 있음
-
-//(5-3) props 전송하시려면
-// 1. i={i} 이렇게 전송해주시고 
-// 2. props.i 이렇게 갖다쓴다고 배워봤습니다.
-
-// (5-4)
+// 4.props 전송하시려면
+// 4-1. i={i} 이렇게 전송해주시고
+// 4-2. props.i 이렇게 갖다쓴다고 배워봤습니다.
 // 근데 i는 0,1,2가 된댔는데 우리가 필요한 숫자는 1,2,3 이잖아요
-// 그래서 (props.i + 1) 이런 변수를 집어넣은 것입니다.
+// 4-3. 그래서 (props.i + 1) 이런 변수를 집어넣은 것입니다.
 
 function App18() {
 
@@ -303,10 +298,10 @@ function App18() {
 
   return (
    <div className="App">
-    <p className="black-nav">  🦄18 숙제 해설 : 상품목록 Component 만들기 + 반복문  </p>  
+    <p className="black-nav">🦄18 map()안에 Component,props쓰기(상품목록 Component 만들기 + 반복문)</p>  
     <div className="container">
       <div className="row">
-      // (2) (2-3) (2-4)
+      //  (6)-1
       <Card shoes={shoes}></Card>  
         <div className="col-md-4">
           <img src="https://codingapple1.github.io/shop/shoes2.jpg" width="100%" />
@@ -321,26 +316,24 @@ function App18() {
       </div>
     </div>
     
-// (3)
     <div className="container">
       <div className="row">
-      // (3-2)
+      // (7)-1
       <Card2 shoes={shoes[0]}></Card2>
       <Card2 shoes={shoes[1]}></Card2>
       <Card2 shoes={shoes[2]}></Card2>    
       </div>
     </div>
 
-    // (4)
     <div className="container">
       <div className="row">
-      // (4-2)
+      // (8)-1 (8)-2
       {
         shoes.map( (a,i)=>{
           // (4-3) i  //(5-3) 
-          return       <Card2 shoes={shoes[i]} i={i}></Card2>
+          return <Card2 shoes={shoes[i]} i={i}></Card2>
           // (4-3) a
-          // return       <Card2 shoes={a}></Card2>
+          // return <Card2 shoes={a}></Card2>
         }  )
       }
       </div>
@@ -349,25 +342,23 @@ function App18() {
     );
  }
 
-//  (2-2) (2-4)
  function Card(props){
    return(
     <div className="col-md-4">
     <img src="https://codingapple1.github.io/shop/shoes1.jpg" width="100%" />
-    // (2-4)
+    // (6)-2
     <h4> {props.shoes[0].title} </h4> 
     <p>{props.shoes[0].content} & {props.shoes[0].price}  </p>    
   </div>
    )
  }
 
-  // (3)
- function Card2(props){
+  function Card2(props){
    return(
     <div className="col-md-4">
-    // (5) (5-2) (5-3)
+    //(8)-4
     <img src={"https://codingapple1.github.io/shop/shoes"+(props.i+1)+".jpg"} width="100%" />
-    // (3-3)
+    // (7)-2
     <h4> {props.shoes.title} </h4> 
     <p>{props.shoes.content} & {props.shoes.price}  </p>    
   </div>
