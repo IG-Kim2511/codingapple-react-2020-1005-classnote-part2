@@ -401,7 +401,7 @@ function App18() {
 // 3.  <Route>안에 path와,  path 방문시 보여줄 HTML 을 적으시면 됩니다. 
 // 계속 추가 끝없이 가능
 
-// (4-4) 그러면 /어쩌구 라는 경로로 접속했을 때, Card 라는 컴포넌트를 보여줍니다.
+// (4-4) 컴포넌트 route하기
 // 방법 2가지
 
 // (5) Q: 나는 /detail로 접속했는데 왜 상세페이지, 메인페이지 둘다 보여주죠? 
@@ -435,8 +435,10 @@ function App19() {
     <Route path="/ㄴㄻㄴㄹㅇ">계속 추가 끝없이 가능</Route>
 
     // (4-4)
-    <Route path="/component" component={Card3}></Route>
     <Route path="/component2" > <Card3/> </Route>
+
+    <Route path="/component" component={Card3}></Route>
+    
 
     // (5)
     <Route exact path="/">메인페이지⭐</Route>
@@ -447,7 +449,7 @@ function App19() {
         <h1>Hello, world!</h1>   
      </Jumbotron>
     </Route>
-    
+
     // (6)-2
     <Route path="/detail2">
         <div className="container">    
@@ -463,7 +465,7 @@ function App19() {
 // (4-4)
 function Card3(){
   return(
-  <div>Component Card 🙄</div>
+  <div> 이것은 Component Card 입니다 🙄</div>
   )
 }
 
