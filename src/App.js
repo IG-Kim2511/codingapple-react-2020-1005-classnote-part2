@@ -17,11 +17,11 @@ import {naming,naming2} from './data3.js'
 // 17-(4)-2
 import data4naming from './data4.js'
 
-// 19-(3)-1 20-(3-3) 20-(8-2)
+// 19-(3)-1 20-(3-3) 20-(8)-2
 import { Link, Route, Switch, useHistory } from 'react-router-dom'
 
-// 20-(2)
-import Detail20_file from './Detail20.js'
+// 20-(2-3)
+import Detail20_file2 from './Detail20.js'
 
 // 21 - (1)
 import Data21 from './data21.js'
@@ -437,8 +437,7 @@ function App19() {
     // (4-4)
     <Route path="/component2" > <Card3/> </Route>
 
-    <Route path="/component" component={Card3}></Route>
-    
+    <Route path="/component" component={Card3}></Route>    
 
     // (5)
     <Route exact path="/">메인페이지⭐</Route>
@@ -469,18 +468,12 @@ function Card3(){
   )
 }
 
-// 🦄20 React Router 2 : Link, Switch, history 기능
-// (1)Component Detail20에 넣음
+// 🦄20 React Router 2: Link, Switch, useHistory,history.goBack,push
+//→ Detail20.js
 
-// (2)  -->Detail20.js (src 폴더 내에 Detail20.js )
+// (1) Component 함수 만듬
 
-// (2-3) 호출
-// (2-4) src폴더내에 component파일만 모아놓은 폴더를 만들기도 함
-
-//(3) Link 태그로 페이지 이동버튼 만들기 
-// 메인페이지, 상세페이지 이동버튼을 만들어봅시다.
-
-// (3-2) 일단 (href="#home" 삭제)(link사용할 예정)
+// (3) Link 태그로 페이지 이동버튼 만들기 
 
 //(3-3) ‘react-router-dom’ library 에서 가져온 Link 쓸수 있음.
 // 일종의 component.
@@ -495,7 +488,6 @@ function Card3(){
  
 // 그럼 Detail이라는 글자를 누르면 /detail 경로, Home이라는 글자를 누르면 / 경로로 이동합니다.
 
-
 //(3-5) 24강에 나오는 내용 : <Nav.Link> 안에 <Link> 쓰면 브라우저 콘솔창에 warning이 뜹니다
 // 저번 Router 했을 때부터 뜨는, 
 // 콘솔창에 “a태그 안에 a태그 넣으면 안될 것 같은디요” 라고 워닝을 해결해봅시다.
@@ -505,8 +497,11 @@ function Card3(){
 // 그래서 Link 태그를 집어넣은 것일 뿐입니다
 // as={Link} :  as={Link} 속해있는 태그는 link태그처럼 써달라는 의미
 
-// (4) (5) (6) (7) -->Detail20.js
+// (4) (5) (6) (7) → Detail20.js (src 폴더 내에 Detail20.js )
 
+// (4)-5 ↑ import Detail20_file2 from './Detail20.js'
+
+// (4)-6 src폴더내에 component파일만 모아놓은 폴더를 만들기도 함
 
 // (8) Switch 컴포넌트에 대해 알아보자
 // 새로운 Route는 path를 /:id 라고 적었는데, 이게 뭐냐면 URL 파라미터라는 문법인데
@@ -520,8 +515,8 @@ function Card3(){
 // 이런걸 방지하고 싶다, 그냥 한번에 하나의 <Route>만 보여주고 싶다 그러면
 // <Route>들을 위에서 import 해온 <Switch> 태그로 감싸면 됩니다.
 
-// (8-2)
-//1. import { Switch } from 'react-router-dom' 추가
+// (8)-2
+//1. ↑ import { Switch } from 'react-router-dom' 추가
 //2. <Switch> 태그로  전부 감쌈
 //  다 감싸면 이제 여러개의 Route가 매칭이 되어도 맨 위의 Route 하나만 보여줍니다.
 // 이걸 응용하시면 이전시간에 겪었던 / 경로 문제도 exact 쓰지않고 해결할 수 있습니다.
@@ -531,57 +526,41 @@ function Card3(){
 function App20() {
   return (
    <div className="App">
-    <p className="black-nav">🦄20 React Router 2 : Link, Switch, history 기능 </p>
+    <p className="black-nav">🦄20 React Router 2: Link, Switch, useHistory,history.goBack,push </p>
+    <Nav>
+    // (3-2) (3-4)
+      <Nav.Link> <Link to='/'>Home</Link></Nav.Link>
+      <Nav.Link><Link to='/detail'>Detail</Link> </Nav.Link>
 
-    <Navbar bg="light" expand="lg" >
-      <Navbar.Brand href="#home">..</Navbar.Brand>
-      <Navbar.Toggle aria-controls="basic-navbar-nav" />
-      <Navbar.Collapse id="basic-navbar-nav">
-        <Nav className="mr-auto">
-        // (3-2) (3-4)
-          <Nav.Link> <Link to='/'>Home</Link></Nav.Link>
-          <Nav.Link><Link to='/detail'>Detail</Link> </Nav.Link>
-
-          // (3-5)
-          <Nav.Link as={Link} to="/"> Home </Nav.Link> 
-          <Nav.Link as={Link} to="/detail"> Detail </Nav.Link> 
-
-          <NavDropdown title="Dropdown" id="basic-nav-dropdown">
-            <NavDropdown.Item href="#action/3.1">Action</NavDropdown.Item>
-            <NavDropdown.Item href="#action/3.2">Another action</NavDropdown.Item>
-            <NavDropdown.Item href="#action/3.3">Something</NavDropdown.Item>
-            <NavDropdown.Divider />
-            <NavDropdown.Item href="#action/3.4">Separated link</NavDropdown.Item>
-          </NavDropdown>
-        </Nav>        
-      </Navbar.Collapse>
-    </Navbar>
+      // (3-5)
+      <Nav.Link as={Link} to="/"> Home </Nav.Link> 
+      <Nav.Link as={Link} to="/detail"> Detail </Nav.Link> 
+    </Nav>
     
     <Route path="/">     
       <Jumbotron>
-      <h1>Hello, world!</h1>          
-        <Button variant="primary">Learn more</Button>     
+       <h1>Hello, world!</h1>          
      </Jumbotron>
     </Route>
  
-      // (1)
+      // (1) Component function
       <Route path="/detail">
-        <Detail20></Detail20>
+        <Card20/>
       </Route>
 
-        // (2-3)
+        // (4) .js
       <Route path="/detail">
-        <Detail20_file></Detail20_file>     
+        <Detail20_file2></Detail20_file2>     
       </Route>     
 
       // (8-2)
     <Switch>    
       <Route path="/detail">
-        <Detail20></Detail20>
+        <Card20/>
       </Route>
    
       <Route path="/detail">
-        <Detail20_file></Detail20_file>     
+        <Detail20_file2></Detail20_file2>     
       </Route>
 
       //  (8)
@@ -589,28 +568,16 @@ function App20() {
       <div>아무거나 적었을때 이거 보여주세요.</div>
       </Route>
     </Switch>
-
    </div>
   );
 }
+
 // (1)
-function Detail20(){
+function Card20(){
   return(
-
-    <div className="container">
-    <div className="row">
-      <div className="col-md-6">
-        <img src="https://codingapple1.github.io/shop/shoes1.jpg" width="100%" />
-      </div>
-      <div className="col-md-6 mt-4">
-        <h4 className="pt-5">Component상품명</h4>
-        <p>상품설명</p>
-        <p>120000원</p>
-        <button className="btn btn-danger">주문하기</button> 
-      </div>
+    <div>
+    <img src="https://codingapple1.github.io/shop/shoes1.jpg" width="10%" />
     </div>
-  </div> 
-
   )
 }
 
