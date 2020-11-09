@@ -251,7 +251,7 @@ function App17() {
     );
  }
 
-// 🦄18 map()안에 Component,props쓰기(상품목록 Component 만들기 + 반복문)
+// 🦄18 map()활용2. Component,props쓰기.{'text'+(props.i+1)}.(상품목록 Component 만들기 + 반복문)
 // (1)일단 터미널창에 뜨는 warning부터 해결합시다. 이런 잔소리가 귀찮다면, 페이지 맨 위에 /*eslint-disable*/ 이라는 코드를 추가합니다.
 
 // (6)
@@ -264,33 +264,42 @@ function App17() {
 // 1. 그니까 shoes라는 [ {}, {}, {} ] 이렇게 생긴 데이터를 다 전송하는게 아니라
 // shoes 안에 있던 하나의 {} 오브젝트만 각각 전송하자는 겁니다.
 
+//  shoes={shoes[0] : data.js의 0번째 자료 의미함  [ {0번째}, {1번째}, {2번째} ]
+//  shoes={shoes[1] : data.js의 1번째 자료 의미함  
+
 // 2.위에서 shoes[0] 이라는 데이터를 shoes라는 이름으로 props로 전송했기 때문에
 // props.shoes[0].title 이게 아니라
-// props.shoes.title 이렇게 써주시면 제목 등이 정상적으로 출력됩니다.
+// props.shoes.title 이렇게 통합해서 쓸 수 있음 (다음단계 프로그래밍 코딩을 위해 필요함)
 
 // (8) Card2 컴포넌트 반복문 돌리기- 프로그래밍
 // 1.<Card2> 3개를 map 반복문으로 돌려보았습니다.
 // { }
 // 변수~state~함수~array.map((a,i)=>{ })
 // return <Card2/>
-// shoes={shoes[i]}
+// shoes={shoes[i]} i={i}
 
 // 2. map 반복문 안엔 2개의 파라미터가 들어갈 수 있는데 (a, i 이렇게 써놓은거요)
 // 왼쪽거는 shoes라는 array에 있던 하나하나의 데이터를 의미하고,
 // i는 반복문 돌면서 1씩 증가하는 정수입니다. 0,1,2 … 이런 식으로 변하는 변수겠네요.
+// state,변수~~뿐만이 아니라, map(a,i)함수 내의 i도 가져와서 props로 사용 가능함
+// (a를 넣어도 됨)
 
 // 3.현재 모든 상품이미지들은 Card 컴포넌트 안에 <img src=”~~~/shoes1.jpg”> 이렇게 하드코딩되어있습니다.
 
-// 근데 각각 컴포넌트마다 shoes1.jpg / shoes2.jpg / shoes3.jpg 라는 데이터로 데이터바인딩하고 싶은데 어떻게 하면 될까요?
-// <Card> 반복문 돌릴 때 map 안에 i라는 변수가 있다고 했습니다. 0,1,2라고 변하는 변수였죠?
-// 비슷하니까 이걸 활용하면 되겠군요.
-// <img src={ 'https://codingapple1.github.io/shop/shoes' + i + '.jpg' } width="100%"/>
+// Q: 각각 컴포넌트마다 shoes1.jpg / shoes2.jpg / shoes3.jpg 라는 데이터로 데이터바인딩하기
+// <Card> 반복문 돌릴 때 map 안에 i라는 변수 활용. (1.2.3....변수)
+// 'text'+변수+'text'형태로 만들기
+// <img src="https:파일주소1.jpg" />  →
+// → <img src={ 'https:파일주소'+i+'.jpg'}/>
 
-// 4.props 전송하시려면
-// 4-1. i={i} 이렇게 전송해주시고
-// 4-2. props.i 이렇게 갖다쓴다고 배워봤습니다.
-// 근데 i는 0,1,2가 된댔는데 우리가 필요한 숫자는 1,2,3 이잖아요
-// 4-3. 그래서 (props.i + 1) 이런 변수를 집어넣은 것입니다.
+// 4.
+// props전송받았으므로 i→props.i
+
+// 우리가 필요한 숫자는 1,2,3 (i는 0,1,2)
+// 그래서 props.i → (props.i + 1) 로 완성
+// → <img src={ 'https:파일주소'+(props.i + 1)+'.jpg'}/>
+
+// ⚡체크포인트 :{'text'+(props.i+1)} 형태
 
 function App18() {
 
@@ -298,9 +307,8 @@ function App18() {
 
   return (
    <div className="App">
-    <p className="black-nav">🦄18 map()안에 Component,props쓰기(상품목록 Component 만들기 + 반복문)</p>  
-    <div className="container">
-      <div className="row">
+    <p className="black-nav">🦄18 map()활용2.Component,props쓰기.(상품목록 Component 만들기 + 반복문)</p>  
+    <div >
       //  (6)-1
       <Card shoes={shoes}></Card>  
         <div className="col-md-4">
@@ -308,35 +316,26 @@ function App18() {
           <h4> {shoes[1].title} </h4> 
           <p>{shoes[1].content} & {shoes[1].price}  </p>          
         </div>
-        <div className="col-md-4">
-          <img src="https://codingapple1.github.io/shop/shoes3.jpg" width="100%" />
+        <div >
+          <img src="https://codingapple1.github.io/shop/shoes3.jpg" width="20%" />
           <h4> {shoes[2].title} </h4> 
           <p>{shoes[2].content} & {shoes[2].price}  </p>          
-        </div>
-      </div>
-    </div>
-    
-    <div className="container">
-      <div className="row">
+        </div>    
+     </div>    
+    <div >     
       // (7)-1
       <Card2 shoes={shoes[0]}></Card2>
       <Card2 shoes={shoes[1]}></Card2>
-      <Card2 shoes={shoes[2]}></Card2>    
-      </div>
+      <Card2 shoes={shoes[2]}></Card2>
     </div>
-
-    <div className="container">
-      <div className="row">
+    <div >     
       // (8)-1 (8)-2
       {
         shoes.map( (a,i)=>{
-          // (4-3) i  //(5-3) 
           return <Card2 shoes={shoes[i]} i={i}></Card2>
-          // (4-3) a
-          // return <Card2 shoes={a}></Card2>
+             // return <Card2 shoes={a}></Card2>
         }  )
-      }
-      </div>
+      }      
     </div>
    </div>
     );
@@ -344,24 +343,24 @@ function App18() {
 
  function Card(props){
    return(
-    <div className="col-md-4">
-    <img src="https://codingapple1.github.io/shop/shoes1.jpg" width="100%" />
-    // (6)-2
-    <h4> {props.shoes[0].title} </h4> 
-    <p>{props.shoes[0].content} & {props.shoes[0].price}  </p>    
-  </div>
+    <div>
+      <img src="https://codingapple1.github.io/shop/shoes1.jpg" width="20%" />
+      // (6)-2
+      <h4> {props.shoes[0].title} </h4> 
+      <p>{props.shoes[0].content} & {props.shoes[0].price}  </p>    
+    </div>
    )
  }
 
   function Card2(props){
    return(
-    <div className="col-md-4">
-    //(8)-4
-    <img src={"https://codingapple1.github.io/shop/shoes"+(props.i+1)+".jpg"} width="100%" />
-    // (7)-2
-    <h4> {props.shoes.title} </h4> 
-    <p>{props.shoes.content} & {props.shoes.price}  </p>    
-  </div>
+    <div >
+      //(8)-4
+      <img src={"https://codingapple1.github.io/shop/shoes"+(props.i+1)+".jpg"} width="20%" />
+      // (7)-2
+      <h4> {props.shoes.title} </h4> 
+      <p>{props.shoes.content} & {props.shoes.price}  </p>    
+    </div>
    )
  }
 
