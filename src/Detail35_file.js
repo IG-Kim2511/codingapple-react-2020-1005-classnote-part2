@@ -1,7 +1,7 @@
 // 🦄35
 // 35-(3) 주문하기button에 추가 
 // props.dispatch작명({type:'항목추가35', payload:{ id:2, name:'새로운상품', quan:1}});
-// → index.js로 dispatch( ) 데이터 전송함
+// 👉 index.js로 dispatch( ) 데이터 전송함
  
 // (4)
 // (5) connnect()함수 . import, export, function추가

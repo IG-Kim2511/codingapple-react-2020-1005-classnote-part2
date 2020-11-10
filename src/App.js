@@ -67,14 +67,14 @@ import Detail35_file from './Detail35_file.js'
 // 터미널 : npm install react-bootstrap bootstrap
 
 // (2)-2
-// → public/index.html
-// react bootstrap사이트에 있는 CSS 파일 → index.html 파일의 <head> 태그 안에 복사붙여넣기함
+// 👉 public/index.html
+// react bootstrap사이트에 있는 CSS 파일 👉 index.html 파일의 <head> 태그 안에 복사붙여넣기함
 // https://react-bootstrap.github.io/getting-started/introduction
 
 // (2)-3 bootstrap Component 복붙
 
 // (2)-4 사용할 Componetn들을 import함.  import { Navbar , Nav , Button} from 'react-bootstrap';
-// → 16강에서 자세히 설명
+// 👉 16강에서 자세히 설명
 
 //(4) yarn
 // yarn이 뭐하는 애냐면 npm이나 npx를 대체해서 이용할 수 있게 도와주는 친구입니다.
@@ -98,7 +98,7 @@ function App15() {
 
 // (1) React Bootstrap 홈페이지에서 Import Components 복사-붙여넣기
 
-// (1-2) ↑ import { Navbar , Nav,~~} from 'react-bootstrap';
+// (1-2) 👆 import { Navbar , Nav,~~} from 'react-bootstrap';
 //  사용할 component이름  Navbar , Nav,~~}  모두 목록에 추가
 
 // (1-3) 대문자 시작 태그들 모두가 Component
@@ -106,7 +106,7 @@ function App15() {
 // (2)Jumbotron() bootstrap 검색어 : jumbotron, layout)
 
 // (3) Bootstrap코딩에도 <className=”background”> 클래스 정하고, CSS 작성
-// → App.css
+// 👉 App.css
 
 // (4) image가져오기
 // 1. src폴더 안의 파일
@@ -183,15 +183,15 @@ function App16() {
 }
 
 //🦄17 import/export 문법, export default 작명 (variable, array, function), import 작명 from './data4.js'
-// →data2.js
-// →data3.js
-// →data4.js
-// ↑ import
+// 👉data2.js
+// 👉data3.js
+// 👉data4.js
+// 👆 import
 
 // (2)  data2.js / export default mynaming
 // 1. src폴더에 data2.js 파일 만듬
 
-// 2. 3. →data2.js
+// 2. 3. 👉data2.js
 
 // (2)-4
 // App.js에서 data2.js에서 배출한 변수를 쓰고 싶다면, 'import 작명 from 경로' 사용
@@ -202,19 +202,19 @@ function App16() {
 // (2)-6 import이름: mynaming , export이름: data2mynaming ..... 각자이름이 같을 필요 없음 
 
 // (3) 변수 2개 export할때... array 형식 사용 , 
-// →data3.js
+// 👉data3.js
 
 // (3)-2 Data binding
 
 // (3)-3 import이름: {naming,naming2} , export이름: {naming,naming2} ..... 각자이름이 같아야함
 
 // (4) export default
-// →data4.js
+// 👉data4.js
 // 1. data4.js 에 데이터를 다 저장하고 export default 로 내보내줍니다.
 
 // 1-1. export default 뒤에 data,array를 그대로 집어넣어도 됨
 // 1-2.변수에 저장했다가,  export default 변수명 해도 됨
-//  → let 작명 = [ ~~~~ ]  , export default 작명
+//  👉 let 작명 = [ ~~~~ ]  , export default 작명
 
 // 2. import data4naming(작명) from './data4.js';
 
@@ -289,15 +289,15 @@ function App17() {
 // Q: 각각 컴포넌트마다 shoes1.jpg / shoes2.jpg / shoes3.jpg 라는 데이터로 데이터바인딩하기
 // <Card> 반복문 돌릴 때 map 안에 i라는 변수 활용. (1.2.3....변수)
 // 'text'+변수+'text'형태로 만들기
-// <img src="https:파일주소1.jpg" />  →
-// → <img src={ 'https:파일주소'+i+'.jpg'}/>
+// <img src="https:파일주소1.jpg" />  👉
+// 👉 <img src={ 'https:파일주소'+i+'.jpg'}/>
 
 // 4.
-// props전송받았으므로 i→props.i
+// props전송받았으므로 i👉props.i
 
 // 우리가 필요한 숫자는 1,2,3 (i는 0,1,2)
-// 그래서 props.i → (props.i + 1) 로 완성
-// → <img src={ 'https:파일주소'+(props.i + 1)+'.jpg'}/>
+// 그래서 props.i 👉 (props.i + 1) 로 완성
+// 👉 <img src={ 'https:파일주소'+(props.i + 1)+'.jpg'}/>
 
 // ⚡체크포인트 :{'text'+(props.i+1)} 형태
 
@@ -365,7 +365,7 @@ function App18() {
  }
 
 // 🦄19 React Router 1: npm.import,BrowserRouter,path=""
-// →  index.js
+// 👉  index.js
 
 // (router 라우터 ((데이터 전송시의 최적 경로를 선택하는 장치)) ) (route 루트. 길)
 // React-Router 특징 : 각각 페이지마다 다른 HTML 파일을 보여주는게 아닙니다.
@@ -375,7 +375,7 @@ function App18() {
 // 터미널: npm install react-router-dom
 // (react-router-dom이라는 공식 라이브러리를 설치해서 이용)
 
-// (2)  →  index.js
+// (2)  👉  index.js
 // 0. App.js에 있는 <App> 컴포넌트를 index.html에 꽂아주세요~ 뭐 이런 작업을 시키는 파일이라고 보시면 됩니다.
 // <React.StrictMode>
 //       <App/> 
@@ -394,7 +394,7 @@ function App18() {
 
 //(3) Q: / 여기로 접속하면 메인페이지를,/detail로 접속하면 상세페이지를 보여주기
  
-// 1. (→App.js) ↑ import {  Route, Link, Switch } from 'react-router-dom';
+// 1. (👉App.js) 👆 import {  Route, Link, Switch } from 'react-router-dom';
 //( Link, Switch는 다음시간에 )
 
 // 2.  원하는 곳에 <Route></Route>  , <Route/>태그를 작성합니다.
@@ -469,7 +469,7 @@ function Card3(){
 }
 
 // 🦄20 React Router 2: Link, Switch, useHistory,history.goBack,push
-//→ Detail20.js
+//👉 Detail20.js
 
 // (1) Component 함수 만듬
 
@@ -497,9 +497,9 @@ function Card3(){
 // 그래서 Link 태그를 집어넣은 것일 뿐입니다
 // as={Link} :  as={Link} 속해있는 태그는 link태그처럼 써달라는 의미
 
-// (4) (5) (6) (7) → Detail20.js (src 폴더 내에 Detail20.js )
+// (4) (5) (6) (7) 👉 Detail20.js (src 폴더 내에 Detail20.js )
 
-// (4)-5 ↑ import Detail20_file2 from './Detail20.js'
+// (4)-5 👆 import Detail20_file2 from './Detail20.js'
 
 // (4)-6 src폴더내에 component파일만 모아놓은 폴더를 만들기도 함
 
@@ -516,7 +516,7 @@ function Card3(){
 // <Route>들을 위에서 import 해온 <Switch> 태그로 감싸면 됩니다.
 
 // (8)-2
-//1. ↑ import { Switch } from 'react-router-dom' 추가
+//1. 👆 import { Switch } from 'react-router-dom' 추가
 //2. <Switch> 태그로  전부 감쌈
 //  다 감싸면 이제 여러개의 Route가 매칭이 되어도 맨 위의 Route 하나만 보여줍니다.
 // 이걸 응용하시면 이전시간에 겪었던 / 경로 문제도 exact 쓰지않고 해결할 수 있습니다.
@@ -584,7 +584,7 @@ function Card20(){
 //🦄21 React Router 3: url parameters ":작명". useParams().destructuring 문법.find(). filter()(React Router 3 : URL 파라미터로 상세페이지 100개 만들기)
 // 👉Data21파일 , 
 // 👉Detail21_file.js
-// 👉 Detail21_2file.js 
+// 👉Detail21_2file.js 
 
 // URL 파라미터에 대해 알아봅시다.
 // 상세페이지 5조 5억개 정도는 한번에 만들어낼 수 있습니다.
@@ -707,7 +707,7 @@ function App22() {
     </Route>
 
       <switch>
-      →  Detail22_file.js
+      👉  Detail22_file.js
       <Route path="/detail">
       <Detail22_file />   
     </Route>
@@ -724,8 +724,8 @@ function App22() {
 // node-sass라는 라이브러리만 설치하시면 CSS로 컴파일 알아서 해줌
 // 설치: 터미널 에서 npm install node-sass  / yarn add node-sass
 
-//   → Detail23_file.js
- // → Detail23.Sass
+//   👉 Detail23_file.js
+ // 👉 Detail23.Sass
 
 
 function App23() {
@@ -744,8 +744,8 @@ function App23() {
       <Route path="/">     </Route>
   
         <switch>
-  → Detail23_file.js
-  → Detail23.Scss  
+  👉 Detail23_file.js
+  👉 Detail23.Scss  
         <Route path="/detail">
         <Detail23_file />   
       </Route>
@@ -757,7 +757,7 @@ function App23() {
   }
 
   // 🦄24 Lifecycle Hook (옛날사람) useEffect (요즘사람)
-  //  →🦄 Detail24_file.js  
+  //  👉🦄 Detail24_file.js  
 
 function App24() {
 
@@ -774,7 +774,7 @@ function App24() {
       <Route path="/">  </Route>
   
        <switch>
-          →🦄 Detail24_file.js  
+          👉🦄 Detail24_file.js  
           <Route path="/detail">
           <Detail24_file />   
         </Route>   
@@ -785,7 +785,7 @@ function App24() {
   }
 
   // 🦄25 useEffect 숙제 풀이 & 나머지 기능
-  //  →🦄 Detail25_file.js  
+  //  👉🦄 Detail25_file.js  
 
 function App25() {
 
@@ -802,7 +802,7 @@ function App25() {
       <Route path="/"></Route>
   
         <switch>
-          →🦄 Detail25_file.js  
+          👉🦄 Detail25_file.js  
           <Route path="/detail">
           <Detail25_file />   
         </Route>   
@@ -989,7 +989,7 @@ function App26() {
 
 // (3-3)
 // 버튼 클릭하면, 데이터 가져와서, 추가된버전으로  shoes state 변경시킴
-// […shoes ] → shoes변경 → […shoes, …result.data ]
+// […shoes ] 👉 shoes변경 👉 […shoes, …result.data ]
 
 // (3-4)
 // Q. 버튼을 2번재 클릭할때, 새로운 url로 데이터 요청하고 싶다면?
@@ -1003,7 +1003,7 @@ function App26() {
 // Q. 실패했을 경우 어쩌죠 
 // A. catch() 함수 안에 실행 원하는 코드를 담으시면 됩니다. “요청실패시 사용자에게 알림창 UI를 보여줍니다~” 이런 코드도 괜찮겠네요.
 
-// (4) → 캡쳐정리 확인
+// (4) 👉 캡쳐정리 확인
 // Q: 버튼 클릭때 ' 로딩중 ' 띄우기 
 // A: 클릭한때  '로딩중html' 띄우게함
 // axios서버 받거나,실패시 '로딩중html' 안보이게 함
@@ -1012,7 +1012,7 @@ function App26() {
 // (5) post : 서버에 데이터 보내기
 // axios.post('url',(보낼 데이터));
 
-// (6) → Detail27_file.js
+// (6) 👉 Detail27_file.js
 
 function App27() {
 
@@ -1085,7 +1085,7 @@ function App27() {
 // 그냥 예제기 때문에 대충 [10,11,12] 이런 데이터를 저장하면 될듯요. (각각 상품 0,1,2의 재고데이터입니다)
 // let [재고, 재고변경] = useState([10,11,12]);
 
-// (1-3) (1-4) → Detail28_file
+// (1-3) (1-4) 👉 Detail28_file
 
 // (1-5)
 // props로 재고라는 state 데이터를 2번 전송했습니다.
@@ -1096,7 +1096,7 @@ function App27() {
 // 지금 props로 보낼게 하나라 그렇지 수십개면 어떡합니까.
 // 그러니 컴포넌트 만들땐 각오하고 만드는게 좋습니다. (props hell)
 
-// (2) (2-2) → Detail28_file
+// (2) (2-2) 👉 Detail28_file
 
 // (3) 오늘의 교훈 : 함수든 변수든 부모가 가진걸 자식컴포넌트가 사용하려면 항상 props로 전송해서 쓸 수 있습니다.
 // 이게 귀찮으면 컴포넌트를 많이 만들지 않으면 되겠습니다.
@@ -1112,7 +1112,7 @@ function App28() {
   return (
    <div className="App">
     <p className="black-nav">🦄28 Component를 3단계로 만들면 state 전달은 어떻게?props 두번 </p>
-    <p className="black-nav">🦄29 → 캡쳐정리</p>
+    <p className="black-nav">🦄29 👉 캡쳐정리</p>
 
     <nav className="ig_nav">
       <Link to='/'>Home</Link>
@@ -1132,11 +1132,11 @@ function App28() {
 }
 
 // 🦄29 만든 리액트 사이트 build & Github Pages로 배포해보기
-// → 캡쳐 정리
+// 👉 캡쳐 정리
 // npm run build / yarn build
 
 // 1. 깃헙에 저장소 만듬 + 배포 주소 확인
-// 2. → package.json 에 깃헙에 만든 저장소 배포 주소 추가
+// 2. 👉 package.json 에 깃헙에 만든 저장소 배포 주소 추가
 // "homepage": "https://ig-kim2511.github.io/test1024_2/"
 
 // 예시:
@@ -1255,7 +1255,7 @@ function Card30(props){
 }
 
 // 🦄31 Tab 만들기와 리액트에서의 애니메이션 (react-transition-group)
-// →→ Detail31.js
+// 👉👉 Detail31.js
 
 function App31() {
 
@@ -1284,8 +1284,8 @@ function App31() {
   );
 }
 // 🦄32 Redux 1 : props 싫으면 쓰세요
-// →→ Cart32.js
-// →→ index.js
+// 👉👉 Cart32.js
+// 👉👉 index.js
 
 //(1) Cart32.js만들고, import, export , route 
 
@@ -1298,7 +1298,7 @@ function App31() {
 // react-redux는 리덕스를 리액트에서 쓸 수 있게 도와주는 기능을 제공합니다
 // 터미널 : npm install redux react-redux /  yarn add redux react-redux  둘 중 하나 하시면 됩니다.
 
-//(4) →→ index.js
+//(4) 👉👉 index.js
 
 function App32() {
 
@@ -1328,8 +1328,8 @@ function App32() {
 }
 
 // 🦄33 Redux 2 : reducer/dispatch로 데이터 수정하는 법 
-// →→ Cart33.js
-// →→ index.js
+// 👉👉 Cart33.js
+// 👉👉 index.js
 
 function App33() {
 
@@ -1354,8 +1354,8 @@ function App33() {
 }
 
 // 🦄34 Redux 3 : state와 reducer가 더 필요하면
-// →→ Cart34.js
-// →→ index.js
+// 👉👉 Cart34.js
+// 👉👉 index.js
 
 function App34() {
 
@@ -1377,8 +1377,8 @@ function App34() {
   );
 }
 // 🦄35 Redux 4 : dispatch할 때 데이터 실어보낼 수 있음
-// →→ index.js
-// →→ Detail35.js
+// 👉👉 index.js
+// 👉👉 Detail35.js
 
 
 function App35() {
@@ -1404,10 +1404,10 @@ function App35() {
   );
 }
 // 🦄36 장바구니 기능 완성하기 - 일단 지나쳤던 코딩 마무리
-// →→ 캡쳐 확인
-// →→ index.js
-// →→ Detail35.js
-// →→ Cart36.js
+// 👉👉 캡쳐 확인
+// 👉👉 index.js
+// 👉👉 Detail35.js
+// 👉👉 Cart36.js
 
 // ⚡(1) 메인페이지의 <Card>를 클릭, 상세페이지 이동시키자
 // 이거 어떻게 합니까. 그냥 router 시간에 배웠던거 활용하면 되겠죠?
@@ -1430,7 +1430,7 @@ function App35() {
 
 //(1) Apps.js
 
-// <Card36  onClick={}></Card36>  → ⊗
+// <Card36  onClick={}></Card36>  👉 ⊗
 
 // function Card(props){
 //   let history = useHistory();
@@ -1525,16 +1525,16 @@ function App35() {
 
 // 🦄🦄🦄🦄🦄🦄
 // 🦄40 PWA : Progressive Web App 발행하기
-// → 캡쳐본 확인
+// 👉 캡쳐본 확인
 
 // (1)
 // index.js에서 serviceWorker.register();
 // npm run build
 
 // (2)
-// → build/manifest.json
-// → build/precache-manifest.js
-// → build/service-worker.js
+// 👉 build/manifest.json
+// 👉 build/precache-manifest.js
+// 👉 build/service-worker.js
 
 // (2)-1 build/manifest.json
 // {
@@ -1555,7 +1555,7 @@ function App35() {
 // }
 
 
-//(2)-2  → build/service-worker.js
+//(2)-2  👉 build/service-worker.js
 
 //  앱은 하드에 이미 설치되어 있는걸 그대로 가져와서 씁니다
 // 이걸 흉내내도록 도와주는 파일이 바로 service-worker 라는 파일입니다.
@@ -1570,7 +1570,7 @@ function App35() {
 // 그걸 service-worker.js에서 가져와서 사용하고 있습니다.
 
 
-// (2)-3 → build/precache-manifest.js
+// (2)-3 👉 build/precache-manifest.js
 
 // 필요하면 precache-manifest 파일만 조금 건드셔서 마음에 안드는 파일은 제거하시면 되고요. 
 // 그냥 쌩으로 service worker 파일을 만들고 싶다면 
@@ -1581,7 +1581,7 @@ function App35() {
 
 
 // (3)
-// → node_modules/react-scripts/config/webpack.config.js 
+// 👉 node_modules/react-scripts/config/webpack.config.js 
 // 나의 PWA를 커스터마이징하려면
 // 지금 PWA 발행이 쉽고 간단한 이유는 구글의 workbox 라는 라이브러리 덕분입니다.
 // 이게 create-react-app 설치할 때 함께 설치되었기 때문입니다.

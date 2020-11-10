@@ -11,7 +11,7 @@
 // (일반 컴포넌트에선 useState()를 하나 더 쓰시면 됩니다.)
 // 그래서 state + reducer 세트를 하나 더 만들어서 여기에 UI의 true/false 값을 저장해봅시다.
 
-// (2) →→ index.js
+// (2) 👉👉 index.js
 
 // (3)
 // reducer 2개 만든거 사용하기
@@ -31,7 +31,7 @@
 
 // (5) Q: 닫기버튼 클릭하면 alert창이 닫혀야 함
 
-// (5)-2  →→ index.js
+// (5)-2  👉👉 index.js
 // reducer2 내에 미리 데이터 수정하는 방법을 만들어두신 다음
 
 // (5)-3 : 버튼을 클릭한 때 dispatch로 수정하시면 됩니다. 
@@ -44,7 +44,7 @@
 // 많은 컴포넌트들이 공유하는 값은 redux store안에 보관하십시오.
 
 
-// 🦄35-(2) dispatch로 데이터 보내기  -→ index.js
+// 🦄35-(2) dispatch로 데이터 보내기  -👉 index.js
 
 // 🦄36
 
