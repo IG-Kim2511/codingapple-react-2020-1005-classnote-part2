@@ -741,8 +741,8 @@ function App23() {
       <nav className="ig_nav">
       <Link to='/'>Home</Link>
       <Link to='/detail'>Detail</Link>
-     </nav>
-      
+     </nav> 
+
         👉 Detail23_file.js
         👉 Detail23.Scss  
        <Route path="/detail">
@@ -752,7 +752,7 @@ function App23() {
     );
   }
 
-  // 🦄24 Lifecycle Hook (옛날사람)(componentDidMount(.)) useEffect (요즘사람)
+  // 🦄24 Lifecycle Hook(예전문법)(componentDidMount(.)) useEffect(신문법)
   //  👉🦄 Detail24_file.js  
 
 function App24() {
@@ -761,21 +761,16 @@ function App24() {
   
     return (
      <div className="App">
-        <p className="black-nav">🦄24 Lifecycle Hook (옛날사람)(componentDidMount(.)) useEffect (요즘사람)</p>
+        <p className="black-nav">🦄24 Lifecycle Hook(예전문법)(componentDidMount(.)) useEffect(신문법)</p>
         <nav className="ig_nav">
           <Link to='/'>Home</Link>
           <Link to='/detail'>Detail</Link>
-        </nav>
-        
-        <Route path="/">  </Route>
-    
-        <switch>
+        </nav>  
+
             👉🦄 Detail24_file.js  
-            <Route path="/detail">
+          <Route path="/detail">
             <Detail24_file />   
-          </Route>   
-        </switch>  
-        
+          </Route>     
       </div>
     );
   }
@@ -789,24 +784,20 @@ function App25() {
   
     return (
      <div className="App">
-      <p className="black-nav">🦄25 useEffect 숙제 풀이 & 나머지 기능</p>  
-     <nav className="ig_nav">
-        <Link to='/'>Home</Link>
-        <Link to='/detail'>Detail</Link>
-      </nav>
-      
-      <Route path="/"></Route>
-  
-        <switch>
+        <p className="black-nav">🦄25 useEffect 숙제 풀이 & 나머지 기능</p>  
+         <nav className="ig_nav">
+            <Link to='/'>Home</Link>
+            <Link to='/detail'>Detail</Link>
+          </nav>      
+
           👉🦄 Detail25_file.js  
-          <Route path="/detail">
+        <Route path="/detail">
           <Detail25_file />   
-        </Route>   
-      </switch>  
-      
+        </Route>         
      </div>
     );
   }
+
   // 🦄26 리액트에서의 Ajax 요청방법 & Ajax는 무엇인가
 
 // ● Ajax는 서버에 새로고침없이 요청을 할 수 있게 도와주는 일종의 자바스크립트 코드
@@ -869,7 +860,6 @@ function App25() {
 // axios라이브러리 쓰시면 JSON 자료를 가져와도 지가 알아서 따옴표를 제거한 Object로 자동으로 변환해줌 (편함)
 //  fetch()는 그런거 안해줍니다. undefined 뜸
 
-
 function App26() {
 
     let [shoes,shoes변경] = useState(Data21);
@@ -881,15 +871,11 @@ function App26() {
       <Link to='/'>Home</Link>
       <Link to='/detail'>Detail</Link>
      </nav>
-      
-      <Route path="/"></Route>
   
-        <switch>
-          <Route path="/detail">
-          <Detail25_file />   
-        </Route>   
-      </switch>  
-      
+      <Route path="/detail">
+       <Detail25_file />   
+      </Route>   
+        
       // (3)
       <button className="btn btn-primary" onClick={()=>{  }}>더보기</button>
 
@@ -936,7 +922,6 @@ function App26() {
             console.log(result.data);
           })
           }}>더보기</button>
-
      </div>
     );
   }
