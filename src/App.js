@@ -694,7 +694,10 @@ function App21() {
 
 // 🦄22 styled-components를 이용한 class없는 CSS스타일링
 // 👉 Detail22_file
+
 // 그냥 일반 CSS가 편함
+// 공부x 👉 입사해서 필요해지면 공부
+
 
 function App22() {
 
@@ -720,13 +723,14 @@ function App22() {
 }
 
 //🦄 23 SASS를 쓰자 (SASS 문법 10분 총정리)
+// 👉 Detail23_file.js
+// 👉 Detail23.Sass
+// 👉_reset23.scss
+
+
 // SASS 문법으로 작성한 뒤에  -👉 CSS로 컴파일
 // node-sass라는 라이브러리만 설치하시면 CSS로 컴파일 알아서 해줌
-// 설치: 터미널 에서 npm install node-sass  / yarn add node-sass
-
-//   👉 Detail23_file.js
- // 👉 Detail23.Sass
-
+// ⚡설치: 터미널 에서 npm install node-sass  / yarn add node-sass
 
 function App23() {
 
@@ -741,17 +745,11 @@ function App23() {
       <Link to='/detail'>Detail</Link>
      </nav>
       
-      <Route path="/">     </Route>
-  
-        <switch>
   👉 Detail23_file.js
   👉 Detail23.Scss  
-        <Route path="/detail">
+       <Route path="/detail">
         <Detail23_file />   
-      </Route>
-   
-      </switch>  
-      
+      </Route>   
      </div>
     );
   }
