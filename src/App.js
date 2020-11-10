@@ -26,7 +26,8 @@ import Detail20_file2 from './Detail20.js'
 // 21 - (1)
 import Data21 from './data21.js'
 import Detail21_file from './Detail21_file.js'
-import Detail21_2file from './Detail21_2file.js'
+import Detail21_3 from './Detail21_3.js'
+import Detail21_4 from './Detail21_4.js'
 
 // 22
 import Detail22_file from './Detail22_file.js'
@@ -584,7 +585,8 @@ function Card20(){
 //🦄21 React Router 3: url parameters ":작명". useParams().destructuring 문법.find(). filter()(React Router 3 : URL 파라미터로 상세페이지 100개 만들기)
 // 👉Data21파일 , 
 // 👉Detail21_file.js
-// 👉Detail21_2file.js 
+// 👉Detail21_3.js 
+// 👉Detail21_4.js 
 
 // URL 파라미터에 대해 알아봅시다.
 // 상세페이지 5조 5억개 정도는 한번에 만들어낼 수 있습니다.
@@ -628,9 +630,9 @@ function Card20(){
 // Detail 페이지에서 데이터바인딩을 이렇게 하면 되겠죠
 // 👉Detail21_file.js
 
-// (7) 👉Detail21_file.js
+// (7) 👉Detail21_3.js
 
-// (8) (9) 👉 Detail21_2file.js /  find() 라는 ES6 신문법
+// (8) (9) 👉 Detail21_4.js /  find() 라는 ES6 신문법
 
 function App21() {
 
@@ -676,10 +678,16 @@ function App21() {
         <Route path="/detail/:id">
           <Detail21_file shoes={shoes}/>   
         </Route>
+        // (7)
+        <Route path="/detail/:id">
+          <Detail21_3 shoes={shoes}/>   
+        </Route>
+
+
 
         // (8) Detail21_2
         <Route path="/detail/:id">
-          <Detail21_2file shoes={shoes}/>   
+          <Detail21_4 shoes={shoes}/>   
         </Route>
       </switch>
    </div>
@@ -687,7 +695,7 @@ function App21() {
 }
 
 // 🦄22 styled-components를 이용한 class없는 CSS스타일링
-// ---> Detail22_file
+// --👉 Detail22_file
 
 function App22() {
 
@@ -720,7 +728,7 @@ function App22() {
 }
 
 //🦄 23 SASS를 쓰자 (SASS 문법 10분 총정리)
-// SASS 문법으로 작성한 뒤에  --> CSS로 컴파일
+// SASS 문법으로 작성한 뒤에  -👉 CSS로 컴파일
 // node-sass라는 라이브러리만 설치하시면 CSS로 컴파일 알아서 해줌
 // 설치: 터미널 에서 npm install node-sass  / yarn add node-sass
 
@@ -1070,7 +1078,7 @@ function App27() {
 }
 
 // 🦄28 Component를 3단계로 만들면 state 전달은 어떻게 하죠? props 두번 
-// <App> -> <Detail> -> <Info>
+// <App> 👉 <Detail> 👉 <Info>
 // 이렇게 컴포넌트를 여러개 만들어놨는데 <App>에 있는 state 데이터를 <Info>가 쓰거나 변경하고 싶으면 어떻게 하냐는 소리입니다.
 
 // 결론부터 말하자면 App에서 Detail, 그리고 Detail에서 Info로 state를 전송하면 됩니다.
@@ -1089,7 +1097,7 @@ function App27() {
 
 // (1-5)
 // props로 재고라는 state 데이터를 2번 전송했습니다.
-// <App> -> <Detail> -> <Info> 이런 순서로요.
+// <App> 👉 <Detail> 👉 <Info> 이런 순서로요.
 // 그럼 이제 Info라는 컴포넌트 내에서도 재고라는 state를 사용가능합니다.
 
 // 하위 컴포넌트가 많으면 많아질 수록 props의 양이 증가합니다.

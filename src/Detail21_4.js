@@ -26,22 +26,23 @@
 import React from 'react';
 import { useHistory, useParams } from 'react-router-dom';
 
-function Detail21_2file(props){
+function Detail21_4(props){
 
   let { id } = useParams();
+
   // (9)-1.2.3.4.
   let 찾은상품 = props.shoes.find(function(상품){      
     return 상품.id == id
   });
 
   return (
-    <div>  
-        <img src="https://codingapple1.github.io/shop/shoes1.jpg" width="10%" />
-         <h4 >{찾은상품.title}</h4>
-        <p>{찾은상품.content}</p>
-        <p>{찾은상품.price}원</p>               
+    <div>  (9)
+      <img src="https://codingapple1.github.io/shop/shoes1.jpg" width="10%" />
+       <h4 >{찾은상품.title}</h4>
+      <p>{찾은상품.content}</p>
+      <p>{찾은상품.price}원</p>               
      </div>  
   )
 };
 
-export default Detail21_2file
+export default Detail21_4
