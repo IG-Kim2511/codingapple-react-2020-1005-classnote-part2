@@ -651,51 +651,50 @@ function App21() {
       <Link to='/detail/2'>Detail2</Link>
      </nav>
     
-        <Route path="/">          
-          <h1>Hello, world!</h1>  
-        </Route>
+      <Route path="/">          
+        <h1>Hello, world!</h1>  
+      </Route>
 
-      <switch>
-        <Route path="/detail">
-          // (1)-3 (1)-4
-          <Detail21_file shoes={shoes}/>   
-        </Route>
-
-        // (3)
-        <Route path="/detail/0">
-          <Detail21_file shoes={shoes}/>   
-        </Route>
-
-        <Route path="/detail/1">
+    <switch>
+      <Route path="/detail">
+        // (1)-3 (1)-4
         <Detail21_file shoes={shoes}/>   
-        </Route>
+      </Route>
 
-        <Route path="/detail/2">
-          <Detail21_file shoes={shoes}/>   
-        </Route>
+      // (3)
+      <Route path="/detail/0">
+        <Detail21_file shoes={shoes}/>   
+      </Route>
 
-        // (4) (6) (7)
-        <Route path="/detail/:id">
-          <Detail21_file shoes={shoes}/>   
-        </Route>
-        // (7)
-        <Route path="/detail/:id">
-          <Detail21_3 shoes={shoes}/>   
-        </Route>
+      <Route path="/detail/1">
+      <Detail21_file shoes={shoes}/>   
+      </Route>
 
+      <Route path="/detail/2">
+        <Detail21_file shoes={shoes}/>   
+      </Route>
 
+      // (4) (6) (7)
+      <Route path="/detail/:id">
+        <Detail21_file shoes={shoes}/>   
+      </Route>
+      // (7)
+      <Route path="/detail/:id">
+        <Detail21_3 shoes={shoes}/>   
+      </Route>
 
-        // (8) Detail21_2
-        <Route path="/detail/:id">
-          <Detail21_4 shoes={shoes}/>   
-        </Route>
-      </switch>
+      // (8) Detail21_2
+      <Route path="/detail/:id">
+        <Detail21_4 shoes={shoes}/>   
+      </Route>
+    </switch>
    </div>
   );
 }
 
 // 🦄22 styled-components를 이용한 class없는 CSS스타일링
-// --👉 Detail22_file
+// 👉 Detail22_file
+// 그냥 일반 CSS가 편함
 
 function App22() {
 
@@ -709,19 +708,12 @@ function App22() {
     <nav className="ig_nav">
     <Link to='/'>Home</Link>
     <Link to='/detail'>Detail</Link>
-   </nav>
-    
-    <Route path="/">     
-    </Route>
+    </nav>
 
-      <switch>
-      👉  Detail22_file.js
+    👉  Detail22_file.js
       <Route path="/detail">
-      <Detail22_file />   
-    </Route>
- 
-    </switch>
-
+        <Detail22_file />   
+      </Route>
 
    </div>
   );

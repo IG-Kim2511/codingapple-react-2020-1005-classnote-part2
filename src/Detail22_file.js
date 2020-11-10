@@ -13,12 +13,12 @@
 
 //(2)🌈 일단 설치부터 해봅시다 터미널을 여시고
 // yarn add styled-components 혹은
-// npm install styled-components
+// ⚡npm install styled-components
 
 
 //(3)🌈
 // 그리고 사용하고 싶은 컴포넌트 맨위에 무언가를 import 해오셔야합니다.
-// import styled from 'styled-components'
+// 👆import styled from 'styled-components'
 
 // (4)🌈
 // '박스'Component with CSS가 만들어짐
@@ -87,11 +87,8 @@ function Detail22_file(props){
     color : ${ props =>props.색상}
     `;
 
-
-
-
     return(  
-      <div className="container">
+      <div>
 
       // (4)🌈 (4-2) (5)
       <박스><제목 색상={'red'}>  상세페이지 </제목>styled-components  </박스>

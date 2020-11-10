@@ -36,7 +36,7 @@ function Detail21_4(props){
   });
 
   return (
-    <div>  (9)
+    <div>  999
       <img src="https://codingapple1.github.io/shop/shoes1.jpg" width="10%" />
        <h4 >{찾은상품.title}</h4>
       <p>{찾은상품.content}</p>
