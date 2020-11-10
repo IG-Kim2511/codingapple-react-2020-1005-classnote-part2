@@ -1,5 +1,5 @@
 
-// (7) useParams  👉 공식으로 외워서 씀
+// (7) (프로그래밍) useParams  👉 공식으로 외워서 씀
 
 // 0. destructuring 문법
 // https://iankim2511.tistory.com/166
@@ -24,8 +24,7 @@
 // /detail/1로 접속하면 👉 url parameter는 {1} 👉destructuring 문법👉 1👉 변수(let id)에 저장함. 
 // /detail/3로 접속하면 👉 url parameter는 {3} 👉destructuring 문법👉 3👉 변수(let id)에 저장함. 
 
-// 3. ????? : 왜인지 모르지만 에러가 나서 일단 여기로 옮겨놓음
-
+// 3.{props.shoes[id].title}
 
 // (8) '가격순 정렬'같은 기능을 사용해서 순서가 바뀌었을때, array의 순서대로 보여주는 방식때문에 제대로 구현이 안될수 있음
 // /:id 자리에 입력한 값과 영구번호가 같은 {상품데이터}를 찾아서, 데이터바인딩해줘야 함. 
