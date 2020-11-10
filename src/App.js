@@ -717,7 +717,6 @@ function App22() {
       <Route path="/detail">
         <Detail22_file />   
       </Route>
-
    </div>
   );
 }
@@ -726,7 +725,6 @@ function App22() {
 // 👉 Detail23_file.js
 // 👉 Detail23.Sass
 // 👉_reset23.scss
-
 
 // SASS 문법으로 작성한 뒤에  -👉 CSS로 컴파일
 // node-sass라는 라이브러리만 설치하시면 CSS로 컴파일 알아서 해줌
@@ -745,8 +743,8 @@ function App23() {
       <Link to='/detail'>Detail</Link>
      </nav>
       
-  👉 Detail23_file.js
-  👉 Detail23.Scss  
+        👉 Detail23_file.js
+        👉 Detail23.Scss  
        <Route path="/detail">
         <Detail23_file />   
       </Route>   
@@ -754,7 +752,7 @@ function App23() {
     );
   }
 
-  // 🦄24 Lifecycle Hook (옛날사람) useEffect (요즘사람)
+  // 🦄24 Lifecycle Hook (옛날사람)(componentDidMount(.)) useEffect (요즘사람)
   //  👉🦄 Detail24_file.js  
 
 function App24() {
@@ -763,22 +761,22 @@ function App24() {
   
     return (
      <div className="App">
-      <p className="black-nav">🦄24 Lifecycle Hook (옛날사람) useEffect (요즘사람)</p>
-    <nav className="ig_nav">
-      <Link to='/'>Home</Link>
-      <Link to='/detail'>Detail</Link>
-     </nav>
-      
-      <Route path="/">  </Route>
-  
-       <switch>
-          👉🦄 Detail24_file.js  
-          <Route path="/detail">
-          <Detail24_file />   
-        </Route>   
-      </switch>  
-      
-     </div>
+        <p className="black-nav">🦄24 Lifecycle Hook (옛날사람)(componentDidMount(.)) useEffect (요즘사람)</p>
+        <nav className="ig_nav">
+          <Link to='/'>Home</Link>
+          <Link to='/detail'>Detail</Link>
+        </nav>
+        
+        <Route path="/">  </Route>
+    
+        <switch>
+            👉🦄 Detail24_file.js  
+            <Route path="/detail">
+            <Detail24_file />   
+          </Route>   
+        </switch>  
+        
+      </div>
     );
   }
 

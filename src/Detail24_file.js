@@ -66,9 +66,9 @@ class Detail2 extends React.Component {
 function Detail24_file(props){
 
     // (3-2, 3-3, 3-4, 3-5)
-        useEffect(()=>{ 
-                console.log( 'detail24');        
-                    });
+    useEffect(()=>{ 
+            console.log( 'detail24');        
+                });
     // (4) (5)
     useEffect(()=>{
         return function 어쩌구(){}
@@ -81,14 +81,11 @@ function Detail24_file(props){
 
     });
     return(  
-           <div className="container">      
+      <div >      
         <div className="my-alert">
-            <p>  my-alert </p>      
+        <p>  my-alert </p>      
         </div>
-  
-              
-    </div> 
-  
+       </div> 
     )
   }
 
