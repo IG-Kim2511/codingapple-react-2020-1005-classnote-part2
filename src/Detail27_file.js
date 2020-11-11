@@ -51,8 +51,7 @@ function Detail27_file(props){
 
     {inputData}
     
-    </div> 
-  
+    </div>   
     )
   }
 

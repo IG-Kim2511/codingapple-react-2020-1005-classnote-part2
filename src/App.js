@@ -798,7 +798,7 @@ function App25() {
     );
   }
 
-  // 🦄26 리액트에서의 Ajax 요청방법 & Ajax는 무엇인가
+  // 🦄26 Ajax.axios.get(URL).then(.).catch(.).fetch(URL).then(.) (리액트에서의 Ajax 요청방법 & Ajax는 무엇인가)
 
 // ● Ajax는 서버에 새로고침없이 요청을 할 수 있게 도와주는 일종의 자바스크립트 코드
 // 서버는 누군가 요청을 하면 데이터를 갖다주는 프로그램일 뿐
@@ -814,12 +814,11 @@ function App25() {
 // 근데 리액트 개발환경에선 axios 혹은 fetch()를 많이 사용합니다.
 // 우린 더 호환성이 좋고 참고할 문서도 많은 axios를 설치해서 이용합시다.
 
-// (2) 터미널에 npm install axios  / or / yarn add axios
-// 상단에 import 해오시면 axios로 ajax 요청할 준비는 끝입니다.
-// import axios from 'axios';
-
+// (2) 터미널에 👉npm install axios  / yarn add axios
+// 상단에 👆 import axios from 'axios';
 
 // (3) button, onClick 준비
+
 
 // (4) axios.get() 이라고 작성하면 GET요청을 새로고침 없이도 몰래 할 수 있습니다.
 // GET요청을 할 목적지 (URL)은 괄호안에 문자형태로 적어주시면 됩니다.
@@ -832,9 +831,11 @@ function App25() {
 //  .then(()=>{ 요청성공시실행할코드 })
 //  .catch(()=>{ 요청실패시실행할코드 })
  
-//   .get() 함수 바로 뒤에 쩜찍어서 저렇게 두개의 함수를 붙일 수 있습니다. 
+//  .get() 함수 바로 뒤에 쩜찍어서 저렇게 두개의 함수를 붙일 수 있습니다. 
 //  각각 요청성공/실패시 실행할 코드를 담을 수 있습니다. 
 //  더보기를 눌렀을 때 성공/실패메세지를 띄우고 싶다면 다 저런 함수안에 담으시면 됩니다.
+
+// onClick = { ( ) => {axios.get(URL).then(콜백함수).catch(콜백함수)} }
 
 // (5-2) 서버 없는 주소 때..console.log('실패했음');
 
@@ -866,21 +867,13 @@ function App26() {
   
     return (
      <div className="App">
-      <p className="black-nav">🦄26 리액트에서의 Ajax 요청방법 & Ajax는 무엇인가</p>
-      <nav className="ig_nav">
-      <Link to='/'>Home</Link>
-      <Link to='/detail'>Detail</Link>
-     </nav>
-  
-      <Route path="/detail">
-       <Detail25_file />   
-      </Route>   
-        
+      <p className="black-nav">🦄26 Ajax.axios.get(URL).then(.).catch(.).fetch(URL).then(.)    (리액트에서의 Ajax 요청방법 & Ajax는 무엇인가)</p>
+
       // (3)
-      <button className="btn btn-primary" onClick={()=>{  }}>더보기</button>
+      <button  onClick={()=>{  }}>더보기</button>
 
       // (4) console확인👉👉
-      <button className="btn btn-primary" onClick={()=>{
+      <button  onClick={()=>{
         axios.get('https://codingapple1.github.io/shop/data2.json')
          // (5)
         .then(()=>{
@@ -892,22 +885,20 @@ function App26() {
         }}>더보기</button>
 
       // (5-2)
-      <button className="btn btn-primary" onClick={()=>{
+      <button  onClick={()=>{
         axios.get('https://codingapple1.github.io/shop/data2222222222222.json')        
         .catch(()=>{
           console.log('실패했음');
         })  
         }}>더보기</button>
        
-      <button className="btn btn-primary" onClick={()=>{
+      <button  onClick={()=>{
         axios.get('https://codingapple1.github.io/shop/data2.json')
          // (6)
-         .then((result)=>{
-          console.log(result);
-        })
+         .then((result)=>{  console.log(result); })
         }}>더보기</button>
      
-      <button className="btn btn-primary" onClick={()=>{
+      <button  onClick={()=>{
         axios.get('https://codingapple1.github.io/shop/data2.json')
          .then((result)=>{
               // (6-2)
@@ -916,7 +907,7 @@ function App26() {
         }}>더보기</button>
         
         // (7)
-        <button className="btn btn-primary" onClick={()=>{
+        <button  onClick={()=>{
           fetch('https://codingapple1.github.io/shop/data2.json')
            .then((result)=>{              
             console.log(result.data);
@@ -927,6 +918,8 @@ function App26() {
   }
 
 //🦄 27 리액트에서의 Ajax 요청방법 2 & 숙제풀이
+// 👉 Detail27_file.js
+
 // 숙제해설 : 더보기 버튼을 클릭하면, 상품레이아웃 3개 추가하기 
 
 // (1)
@@ -1026,7 +1019,7 @@ function App27() {
       </div>
     </div>
 
-    <button className="btn btn-primary" onClick={()=>{
+    <button  onClick={()=>{
       // (3-4)
       axios.get('https://codingapple1.github.io/shop/data2.json')
        .then((result)=>{
@@ -1042,10 +1035,7 @@ function App27() {
       // axios.post('url',( id : 'codingapple', pw: 1234));
       // .then( (result)=>{}  )
       // .catch( ()=>{}  )
-      }}>더보기</button>
-      
-     
-
+      }}>더보기</button>   
    </div>
   );
 }
