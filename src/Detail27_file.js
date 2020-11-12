@@ -19,22 +19,24 @@ function Detail27_file(props){
 
     let [ alert, alert변경 ] = useState(true);
 
-     let [inputData,inputData변경]=useState('');
+    let [inputData,inputData변경]=useState('');
 
-        useEffect(()=>{  
+    useEffect(()=>{  
 
-        // (27-6)
-        Axios.get()
-        .then( (result)=>{}  )
-         .catch( ()=>{}  )
+    // (27-6)
+    Axios.get()
+    .then( (result)=>{}  )
+      .catch( ()=>{}  )
 
-        let 타이머 = setTimeout(() => {alert변경(false)}, 2000);     
-        console.log('업데이트(재랜더링)될 때도 저 useEffect 계속 실행됨');
-        return ()=>{ clearTimeout(타이머)}   }  ,[ ]);
+    let 타이머 = setTimeout(() => {alert변경(false)}, 2000);   
+
+    console.log('업데이트(재랜더링)될 때도 저 useEffect 계속 실행됨');
+
+    return ()=>{ clearTimeout(타이머)} }  ,[ ]);
     
 
     return(  
-           <div className="container">      
+        <div className="container">      
         <div className="my-alert">
             <p>  my-alert </p>      
         </div>  

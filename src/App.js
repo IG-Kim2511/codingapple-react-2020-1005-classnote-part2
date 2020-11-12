@@ -917,10 +917,10 @@ function App26() {
     );
   }
 
-//🦄 27 리액트에서의 Ajax 요청방법 2 & 숙제풀이
+//🦄 27 Ajax 요청방법 2 & axios.post('url',{보낼 data});
 // 👉 Detail27_file.js
 
-// 숙제해설 : 더보기 버튼을 클릭하면, 상품레이아웃 3개 추가하기 
+// 숙제해설 : Q: 버튼을 클릭하면, 서버에서 가져온 데이터 3개사용해서, 상품 추가하기 (기존상품3개 + 새로운상품3개)
 
 // (1)
 // 저번 시간에 상품 데이터 3개를 요청하는건 완료했습니다. 
@@ -984,7 +984,7 @@ function App26() {
 // 이전시간에 배운 리액트 html미리 만든 후,  if문 활용하기 문법 
 
 // (5) post : 서버에 데이터 보내기
-// axios.post('url',(보낼 데이터));
+// axios.post('url',{보낼 data});
 
 // (6) 👉 Detail27_file.js
 
@@ -994,7 +994,7 @@ function App27() {
 
   return (
    <div className="App">
-    <p className="black-nav">🦄27 리액트에서의 Ajax 요청방법 2 & 숙제풀이</p>
+    <p className="black-nav">🦄27 Ajax 요청방법 2 & axios.post('url',{보낼 data})</p>
 
     <nav className="ig_nav">
     <Link to='/'>Home</Link>
@@ -1030,12 +1030,14 @@ function App27() {
       .catch(()=>{
         console.log('실패했음');
       })  
+      }}>axios.get</button>   
 
-      // (5)
-      // axios.post('url',( id : 'codingapple', pw: 1234));
-      // .then( (result)=>{}  )
-      // .catch( ()=>{}  )
-      }}>더보기</button>   
+      <button onClick={()=>{
+        // (5)
+        // axios.post('url',( id : 'codingapple', pw: 1234));
+        // .then( (result)=>{}  )
+        // .catch( ()=>{}  )
+      }}> axios.post</button>
    </div>
   );
 }
