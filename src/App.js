@@ -994,7 +994,7 @@ function App27() {
 
   return (
    <div className="App">
-    <p className="black-nav">🦄27 Ajax 요청방법 2 & axios.post('url',{보낼 data})</p>
+    <p className="black-nav">🦄27 Ajax 요청방법 2 & axios.post()</p>
 
     <nav className="ig_nav">
     <Link to='/'>Home</Link>
