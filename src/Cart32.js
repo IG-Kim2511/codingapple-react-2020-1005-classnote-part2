@@ -23,6 +23,7 @@
 
 // 2. 그 다음에 맨 마지막 export default 하던 부분에 위와 같이 적으시면 됩니다.
 // (connect 함수는 위에서 import 해오셔야합니다)
+// ⚡import { connect } from 'react-redux';
 
 // (6)
 // 1 : 저 함수는 index.js의 store 안에 있던 state를 props로 바꾸는 함수
@@ -56,22 +57,23 @@ import { connect } from 'react-redux';
 // (6)-3
 function Cart(props){
     return(
-        <div>
+      <div>
         <Table responsive>
-        <tr>
-          <th>#</th>
-          <th>상품명</th>
-          <th>수량</th>
-          <th>변경</th>
-        </tr>
-        <tr>
-          <td>1</td>
-        //   (6-3)
-          <td>{ props.props작명[0].name }</td>
-          <td>Table cell</td>
-          <td>Table cell</td>
-        </tr>
-      </Table></div>
+          <tr>
+            <th>#</th>
+            <th>상품명</th>
+            <th>수량</th>
+            <th>변경</th>
+          </tr>
+          <tr>
+            <td>1</td>
+          //   (6-3)
+            <td>{ props.props작명[0].name }</td>
+            <td>Table cell</td>
+            <td>Table cell</td>
+          </tr>
+        </Table>
+      </div>
     )
 }
 // (5)-1 (6)-1

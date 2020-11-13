@@ -62,6 +62,8 @@ import Detail35_file from './Detail35_file.js'
 //👉🌈⚡🦄 ⭐😀👻👽🍉🍒🔥
 
 // 🦄 15 react bootstrap (쇼핑몰 프로젝트 : 프로젝트 생성 & Bootstrap 설치)
+// ⚡ npm install react-bootstrap bootstrap
+
 
 // (2) react bootstrap
 // react bootstrap이라고 구글 검색하면 맨 처음에 나오는 사이트로 들어갑시다. 
@@ -367,6 +369,7 @@ function App18() {
 
 // 🦄19 React Router 1: npm.import,BrowserRouter,path=""
 // 👉  index.js
+// ⚡npm install react-router-dom
 
 // (router 라우터 ((데이터 전송시의 최적 경로를 선택하는 장치)) ) (route 루트. 길)
 // React-Router 특징 : 각각 페이지마다 다른 HTML 파일을 보여주는게 아닙니다.
@@ -725,6 +728,7 @@ function App22() {
 // 👉 Detail23_file.js
 // 👉 Detail23.Sass
 // 👉_reset23.scss
+// ⚡ npm install node-sass 
 
 // SASS 문법으로 작성한 뒤에  -👉 CSS로 컴파일
 // node-sass라는 라이브러리만 설치하시면 CSS로 컴파일 알아서 해줌
@@ -798,7 +802,8 @@ function App25() {
     );
   }
 
-  // 🦄26 Ajax.axios.get(URL).then(.).catch(.).fetch(URL).then(.) (리액트에서의 Ajax 요청방법 & Ajax는 무엇인가)
+// 🦄26 Ajax.axios.get(URL).then(.).catch(.).fetch(URL).then(.) (리액트에서의 Ajax 요청방법 & Ajax는 무엇인가)
+// ⚡npm install axios 
 
 // ● Ajax는 서버에 새로고침없이 요청을 할 수 있게 도와주는 일종의 자바스크립트 코드
 // 서버는 누군가 요청을 하면 데이터를 갖다주는 프로그램일 뿐
@@ -814,7 +819,7 @@ function App25() {
 // 근데 리액트 개발환경에선 axios 혹은 fetch()를 많이 사용합니다.
 // 우린 더 호환성이 좋고 참고할 문서도 많은 axios를 설치해서 이용합시다.
 
-// (2) 터미널에 👉npm install axios  / yarn add axios
+// (2) 터미널에 ⚡npm install axios  / yarn add axios
 // 상단에 👆 import axios from 'axios';
 
 // (3) button, onClick 준비
@@ -1255,11 +1260,14 @@ function App31() {
    </div>
   );
 }
-// 🦄32 Redux 1 : props 싫으면 쓰세요
+
+
+// 🦄32 Redux 1 :Provider.createStore((.)=>{return [ { } ]}).connect (props 싫으면 쓰세요)
 // 👉 Cart32.js
 // 👉 index.js
+// ⚡ npm install redux react-redux
 
-//(1) Cart32.js만들고, import, export , route 
+// (1) Cart32.js만들고, import, export , route 
 
 // (3)
 // 데이터를 보관하기 위한 Redux 설치/셋팅 
@@ -1268,39 +1276,35 @@ function App31() {
 
 // redux는 데이터를 엄격하게 관리하는 기능, 
 // react-redux는 리덕스를 리액트에서 쓸 수 있게 도와주는 기능을 제공합니다
-// 터미널 : npm install redux react-redux /  yarn add redux react-redux  둘 중 하나 하시면 됩니다.
+// ⚡ 터미널 : npm install redux react-redux /  yarn add redux react-redux  둘 중 하나 하시면 됩니다.
 
-//(4) 👉👉 index.js
+//(4) 👉 index.js
 
 function App32() {
 
-  let [shoes,shoes변경] = useState(Data21);
-  
-
+  let [shoes,shoes변경] = useState(Data21);  
   let[재고state,재고state변경] = useState([10,11,12]);
 
   return (
    <div className="App">
-    <p className="black-nav">🦄32 세계최고로 쉬운 Redux 1 : props 싫으면 쓰세요</p> 
+    <p className="black-nav">🦄32 Redux 1: Provider.createStore().connect (props 싫으면 쓰세요)</p> 
       
-      <nav className="ig_nav">
+    <nav className="ig_nav">
         <Link to='/'>Home</Link>
-        <Link to='/detail'>Detail</Link>
         <Link to='/cart'>cart</Link>
     </nav>
 
-       //(1)
-      <Route path="/cart">
-        <Cart32></Cart32>
-      </Route>   
-    
+      //(1)
+    <Route path="/cart">
+      <Cart32/>
+    </Route>    
    </div>
   );
 }
 
 // 🦄33 Redux 2 : reducer/dispatch로 데이터 수정하는 법 
-// 👉👉 Cart33.js
-// 👉👉 index.js
+// 👉 Cart33.js
+// 👉 index.js
 
 function App33() {
 
@@ -1311,15 +1315,14 @@ function App33() {
    <div className="App">
     <p className="black-nav">🦄33 Redux 2 : reducer/dispatch로 데이터 수정하는 법</p>
     <nav className="ig_nav">
-    <Link to='/'>Home</Link>
-    <Link to='/detail'>Detail</Link>
-    <Link to='/cart'>cart</Link>
-</nav>
+      <Link to='/'>Home</Link>
+      <Link to='/detail'>Detail</Link>
+      <Link to='/cart'>cart</Link>
+    </nav>
      
       <Route path="/cart">
-        <Cart33></Cart33>
-      </Route>   
-    
+        <Cart33/>
+      </Route>       
    </div>
   );
 }
@@ -1497,10 +1500,11 @@ function App35() {
 // 🦄🦄🦄🦄🦄🦄
 // 🦄40 PWA : Progressive Web App 발행하기
 // 👉 캡쳐본 확인
+// ⚡npm run build
 
 // (1)
 // index.js에서 serviceWorker.register();
-// npm run build
+// ⚡npm run build
 
 // (2)
 // 👉 build/manifest.json

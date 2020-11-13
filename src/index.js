@@ -9,6 +9,8 @@ import {BrowserRouter} from 'react-router-dom'
 
 
 //🦄 32c-(4)
+// ⚡import {Provider, ReactReduxContext} from 'react-redux';
+
 // 그 다음 redux를 이용한 개발환경을 셋팅하시려면 index.js를 열어 다음과 같이 작성합니다.
 
 // 1 <Provider>라는걸 import 해오신 다음에 
@@ -110,10 +112,10 @@ import {BrowserRouter} from 'react-router-dom'
 
 
 // 🦄36
-// 👉👉 Detail35.js
+// 👉 Detail35.js
 
 // (2) B: 2번 버튼눌러도, 1번 목록이  변함
-// 👉👉 Cart36.js
+// 👉 Cart36.js
 // redux를 사용하고 있다면 여러분이 고쳐야할 곳은 … 90% 확률로 reducer 내부입니다.
 
 
