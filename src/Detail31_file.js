@@ -1,7 +1,9 @@
 
 
 // 31
-// 탭을 만들어봅시다
+// Q: 버튼을 클릭하면, 그에맞는 html을 보여줌
+
+// 탭을 만들어봅시다 (부트스트랩)
 // Detail.js에다가 HTML부터 짜보도록 합시다. 
 // 탭은 별거 아니고 그냥 버튼3개, div 3개가 있는 UI입니다.
 // 그리고 버튼을 누르면 각각 거기 맞는 div를 보여줄 뿐입니다. 
@@ -49,18 +51,19 @@
 
 // (5)-2
 // 라이브러리 설치 후 사용도 좋은 방법입니다. 
-// react-transition-group 이라는 라이브러리를 설치하시면 간단한 애니메이션 부여하기 쉽습니다.
+// ⚡react-transition-group 이라는 라이브러리를 설치하시면 간단한 애니메이션 부여하기 쉽습니다.
 
 // 터미널 
 // yarn add react-transition-group
-// npm install react-transition-group
+// ⚡npm install react-transition-group
 
 // 설치가 끝났다면 
-//  import {CSSTransition} from 'react-transition-group';
+// 👆 import {CSSTransition} from 'react-transition-group';
 
-// (5)-3 import './Detail31.scss'
+// (5)-3 👉 import './Detail31.scss'
 
-// (6) 2번째 탭 만듬...: clicked탭2 state, tab html, tabContent2 Component, props ...
+// (6) Q: CSS 애니메이션 넣기 
+// 2번째 탭 만듬...: clicked탭2 state, tab html, TabComponent2 Component, props ...
 
 // (6-2)
 // step1. <CSSTransition>으로 애니메이션 적용할 HTML들 감싸면 됩니다.
@@ -71,7 +74,7 @@
 
 // (6-3)
 // step3. 그럼 Detail.js에 딸려있는 CSS 파일로 가셔서 애니메이션을 하나 디자인해주시면 됩니다.
-// 👉👉Detail31.scss
+// 👉Detail31.scss
 
 // (6-4)
 // step4. 평소엔 in={true} 이걸 false로 해놨다가 원할 때 true로 바꿔주시면 됩니다. 
@@ -120,94 +123,99 @@ function Detail31_file(props){
   let [스위치,스위치변경] = useState(false);
 
   return(  
-  <div className="container">    
-
+  <div >    
     <Info 재고state={props.재고state}/>
 
-    <button className='btn btn-danger' onClick={ () => { props.재고state변경([9,11,12]) }  }> 주문하기 </button>
+    <button onClick={ () => { props.재고state변경([9,11,12]) }  }> 주문하기 </button>
 
     <p>재고context2 :{재고c}</p>
-  
-    // (2) (2)-2 (3)-2
-    <Nav className="mt-5"  variant="tabs" defaultActiveKey="link-0">
-        <Nav.Item>
-          <Nav.Link eventKey="link-0" onClick={()=>{clicked탭변경(0)}} >Active</Nav.Link>
-        </Nav.Item>
-        <Nav.Item>
-          <Nav.Link eventKey="link-1" onClick={()=>{clicked탭변경(1)}}>Option 2</Nav.Link>
-        </Nav.Item>
-        <Nav.Item>
-          <Nav.Link eventKey="link-1" onClick={()=>{clicked탭변경(2)}}>Option 3</Nav.Link>
-        </Nav.Item>
-     </Nav>
 
-    //  (4)
-      <TabContent clicked탭p={clicked탭}/>
+
+   // (2) (2)-2 (3)-2
+    <button onClick={()=>{clicked탭변경(0)}}>Active</button>
+    <button onClick={()=>{clicked탭변경(1)}}>Option2</button>
+    <button onClick={()=>{clicked탭변경(2)}}>Option3</button>
+
+  //  (4)
+      <TabComponent clicked탭p={clicked탭}/>
       
-      // (6) (6-7)
-      <Nav className="mt-5"  variant="tabs" defaultActiveKey="link-0">
-      <Nav.Item>
-        <Nav.Link eventKey="link-0" onClick={()=>{스위치변경(false); clicked탭변경2(0)}} >Active</Nav.Link>
-      </Nav.Item>
-      <Nav.Item>
-        <Nav.Link eventKey="link-1" onClick={()=>{스위치변경(false); clicked탭변경2(1)}}>Option 2</Nav.Link>
-      </Nav.Item>
-      <Nav.Item>
-        <Nav.Link eventKey="link-1" onClick={()=>{스위치변경(false); clicked탭변경2(2)}}>Option 3</Nav.Link>
-      </Nav.Item>
-   </Nav>
+   // (6) (6-7)  Q : CSS 애니메이션 넣기 , 버튼 0,1,2 클릭하면, html0,1,2이 표시됨
+   <button onClick={()=>{스위치변경(false); clicked탭변경2(0)}}>Active</button>
+   <button onClick={()=>{스위치변경(false); clicked탭변경2(1)}}>Option2</button>
+   <button onClick={()=>{스위치변경(false); clicked탭변경2(2)}}>Option3</button>
 
-  //  (6-2)  (6-4)   (6-6)
-  <CSSTransition in={스위치} classNames="wow"  timeout={500}>
-    <TabContent2 clicked탭p2={clicked탭2} 스위치변경p={스위치변경}/>
-   </CSSTransition>
-
-  </div>   
-
-  )
-
-  
+  //  (6-2)  (6-4) (6-6) Q : 내용표시할때 애니메이션 효과 나옴  
+    <CSSTransition in={스위치} classNames="wow"  timeout={500}>
+      <TabComponent2 clicked탭p2={clicked탭2} 스위치변경p={스위치변경}/>
+    </CSSTransition>
+  </div>  
+  )  
 }
 
 // (4) 
-function TabContent(props){
+function TabComponent(props){
   // (4-2)
   if (props.clicked탭p === 0){
-    return <div>내용0</div>
+    return <div>내용0 입니다. </div>
+
   } else if (props.clicked탭p === 1){
-    return <div>내용1</div>
+    return <div>내용1 입니다.</div>
+
   } else if (props.clicked탭p === 2){
-    return <div>내용2</div>
+    return <div>내용2 입니다.</div>
   }
 }
 
 // (6)
-function TabContent2(props){
+function TabComponent2(props){
 // (6-5) (6-6)
   useEffect(()=>{
     props.스위치변경p(true);
   });
 
   if (props.clicked탭p2 === 0){
-    return <div>내용0</div>
+    return <div>내용0 입니다.</div>
+
   } else if (props.clicked탭p2 === 1){
-    return <div>내용1</div>
+    return <div>내용1 입니다.</div>
+
   } else if (props.clicked탭p2 === 2){
-    return <div>내용2</div>
+    return <div>내용2 입니다.</div>
   }
 }
-
-
-
-
 
 function Info(props){
 return(
   <div>  
-
-   <p> 재고 :  {props.재고state[0]}</p>     
+     <p> 재고 :  {props.재고state[0]}</p>     
   </div>
 )
 }
 
 export default Detail31_file;
+
+  // 삭제한 내용들... 만약을 위해 남겨둠
+  //   // (2) (2)-2 (3)-2
+  //   <Nav className="mt-5"  variant="tabs" defaultActiveKey="link-0">
+  //       <Nav.Item>
+  //         <Nav.Link eventKey="link-0" onClick={()=>{clicked탭변경(0)}} >Active</Nav.Link>
+  //       </Nav.Item>
+  //       <Nav.Item>
+  //         <Nav.Link eventKey="link-1" onClick={()=>{clicked탭변경(1)}}>Option 2</Nav.Link>
+  //       </Nav.Item>
+  //       <Nav.Item>
+  //         <Nav.Link eventKey="link-1" onClick={()=>{clicked탭변경(2)}}>Option 3</Nav.Link>
+  //       </Nav.Item>
+  //    </Nav>
+  //    // (6) (6-7)
+  //    <Nav className="mt-5"  variant="tabs" defaultActiveKey="link-0">
+  //    <Nav.Item>
+  //      <Nav.Link eventKey="link-0" onClick={()=>{스위치변경(false); clicked탭변경2(0)}} >Active</Nav.Link>
+  //    </Nav.Item>
+  //    <Nav.Item>
+  //      <Nav.Link eventKey="link-1" onClick={()=>{스위치변경(false); clicked탭변경2(1)}}>Option 2</Nav.Link>
+  //    </Nav.Item>
+  //    <Nav.Item>
+  //      <Nav.Link eventKey="link-1" onClick={()=>{스위치변경(false); clicked탭변경2(2)}}>Option 3</Nav.Link>
+  //    </Nav.Item>
+  // </Nav>

@@ -1226,8 +1226,9 @@ function Card30(props){
   )
 }
 
-// 🦄31 Tab 만들기와 리액트에서의 애니메이션 (react-transition-group)
-// 👉👉 Detail31.js
+// 🦄31 버튼을 클릭하면, 그에맞는 html을 보여줌.(CSSTransition.in.classNames.timeout) (Tab 만들기와 리액트에서의 애니메이션 )
+// 👉 Detail31.js
+// 👉 Detail31.scss
 
 function App31() {
 
@@ -1238,7 +1239,7 @@ function App31() {
 
   return (
    <div className="App">
-    <p className="black-nav">🦄31 Tab 만들기와 리액트에서의 애니메이션 (react-transition-group)</p>
+    <p className="black-nav">🦄31 버튼을 클릭하면, 그에맞는 html을 보여줌.(CSSTransition.in.classNames.timeout) (Tab 만들기와 리액트에서의 애니메이션 ) </p>
    
     <nav className="ig_nav">
       <Link to='/'>Home</Link>
@@ -1251,13 +1252,12 @@ function App31() {
         <Detail31_file shoes={shoes} 재고state={재고state} 재고state변경={재고state변경}/>   
       </Route>   
     </switch>  
-    
    </div>
   );
 }
 // 🦄32 Redux 1 : props 싫으면 쓰세요
-// 👉👉 Cart32.js
-// 👉👉 index.js
+// 👉 Cart32.js
+// 👉 index.js
 
 //(1) Cart32.js만들고, import, export , route 
 
@@ -1281,8 +1281,7 @@ function App32() {
 
   return (
    <div className="App">
-    <p className="black-nav">🦄32 세계최고로 쉬운 Redux 1 : props 싫으면 쓰세요</p>
-  
+    <p className="black-nav">🦄32 세계최고로 쉬운 Redux 1 : props 싫으면 쓰세요</p> 
       
       <nav className="ig_nav">
         <Link to='/'>Home</Link>
