@@ -1042,7 +1042,9 @@ function App27() {
   );
 }
 
-// 🦄28 Component를 3단계로 만들면 state 전달은 어떻게 하죠? props 두번 
+// 🦄28 Props 2번 전달하기 (Component를 3단계로 만들면 state 전달은 어떻게 하죠?)
+// 👉 Detail28_file
+
 // <App> 👉 <Detail> 👉 <Info>
 // 이렇게 컴포넌트를 여러개 만들어놨는데 <App>에 있는 state 데이터를 <Info>가 쓰거나 변경하고 싶으면 어떻게 하냐는 소리입니다.
 
@@ -1084,7 +1086,7 @@ function App28() {
 
   return (
    <div className="App">
-    <p className="black-nav">🦄28 Component를 3단계로 만들면 state 전달은 어떻게?props 두번 </p>
+    <p className="black-nav">🦄28 Props 2번 전달하기 (Component를 3단계로 만들면 state 전달은 어떻게 하죠?)</p>
     <p className="black-nav">🦄29 👉 캡쳐정리</p>
 
     <nav className="ig_nav">
