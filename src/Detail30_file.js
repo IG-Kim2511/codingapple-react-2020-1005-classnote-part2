@@ -18,16 +18,13 @@ function Detail30_file(props){
   let 재고c = useContext(재고context2);
 
   return(  
-  <div className="container">    
+    <div >    
+      <Info 재고state={props.재고state}/>
 
-    <Info 재고state={props.재고state}/>
-
-    <button className='btn btn-danger' onClick={ () => { props.재고state변경([9,11,12]) }  }> 주문하기 </button>
-    // (3)-5
-    <p>재고context2 :{재고c}</p>
-  
-
-  </div>   
+      <button onClick={ () => { props.재고state변경([9,11,12]) }  }> 주문하기 </button>
+      // (3)-5
+      <p>재고context2 :{재고c}</p>  
+    </div>   
   )
 }
 
@@ -35,7 +32,6 @@ function Detail30_file(props){
 function Info(props){
 return(
   <div>  
-
    <p> 재고 :  {props.재고state[0]}</p>     
   </div>
 )

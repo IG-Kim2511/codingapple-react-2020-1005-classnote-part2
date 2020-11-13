@@ -1107,12 +1107,13 @@ function App28() {
 }
 
 // 🦄29 만든 리액트 사이트 build & Github Pages로 배포해보기
+// 👉 package.json 
 // 👉 캡쳐 정리
-// npm run build / yarn build
+// ⚡npm run build / yarn build
 
 // 1. 깃헙에 저장소 만듬 + 배포 주소 확인
 // 2. 👉 package.json 에 깃헙에 만든 저장소 배포 주소 추가
-// "homepage": "https://ig-kim2511.github.io/test1024_2/"
+// ⚡"homepage": "https://ig-kim2511.github.io/test1024_2/"
 
 // 예시:
 // {
@@ -1128,7 +1129,9 @@ function App29() {}
 
 
 // 🦄🦄🦄🦄🦄🦄🦄🦄🦄🦄🦄🦄🦄🦄🦄🦄🦄🦄🦄🦄🦄🦄🦄🦄🦄🦄🦄🦄🦄🦄🦄
-// 🦄 30 컴포넌트 많을 때 props 쓰기 싫으면 Context API 
+// 🦄🦄30 React.createContext(.).Provider.useContext(props가 더 편함) (컴포넌트 많을 때 props 대신 Context API)
+// 👉Detail30.js
+
 // props 전송 없이도 하위 컴포넌트들 끼리 state 값들을 똑같이 공유할 수 있습니다.
 // 리액트 기본 문법 Context API 사용법에 대해 알아봅시다.
 // (물론 중첩된 컴포넌트가 몇개 없으면 props가 가장 간단하고 좋습니다)
@@ -1136,12 +1139,14 @@ function App29() {}
 
 // (2)
 // 1. 일단 같은 state 값을 공유하고 싶으면 context부터 만드십시오. 
-// createContext()라는 함수...변수로 만듬
+// ⚡createContext()라는 함수...변수로 만듬
+// ⚡ import React, {useContext} from 'react';
+
 // 여러개 만들 수 있음
 // function 바깥에 만듬
 
 // 2. 아까만든 특별한 컴포넌트로 state 값 공유를 원하는 컴포넌트들을 <범위></범위>로 전부 감쌉니다.
-// 그리고 value={state이름} 이렇게 공유할 state를 집어넣으면 됩니다. 끝!
+// 그리고 ⚡value={state이름} 이렇게 공유할 state를 집어넣으면 됩니다. 끝!
 // 그럼 이제 <범위></범위> 안에 있는 모든 HTML & 컴포넌트는 재고 state를 이용가능합니다.
 
 // 3. state를 사용하고 싶으면 useContext() 라는 훅을 이용해서 사용을 원하는 context를 불러오셔야합니다.
@@ -1150,14 +1155,15 @@ function App29() {}
 // 여기까지가 props 전송없이 state를 쓰는 법이라 보시면 되겠습니다.
 // (그리고 useContext 훅을 쓰려면 상단에 ‘react’ 로부터 import 해오시면 됩니다. 쓰는순간 import에 자동 추가됨)
 
-// 4. 데이터바인딩. [ ]array활용
+// 4. 데이터바인딩. [ ] array활용
 
-// (3)
+// (3)👉Detail30.js
 // Detail.js 라는 곳에서 재고라는 state를 쓰고싶으면 ,  그냥 똑같이 하시면 됩니다. 
 // 1,2 : 똑같음.  
 // 3: Route 감싸는법. 확인 ↓ 
 
-// 4 근데 Detail.js에서 3번 말대로 useContext(범위)를 쓰려고 했으나, 재고context is not defined 라는 에러가 뜨네요.
+// 4 👉Detail30.js
+// 근데 Detail.js에서 3번 말대로 useContext(범위)를 쓰려고 했으나, 재고context is not defined 라는 에러가 뜨네요.
 // 왜냐면 재고context 라는 변수는 App.js에 있으니까요.  
 // 변수를 App.js에서 export하고 Detail.js에서 import 해주시면 됩니다. 각각 export와 import 하나씩 추가해주었습니다.
 
@@ -1175,9 +1181,8 @@ function App30() {
   let[재고state,재고state변경] = useState([10,11,12]);
 
   return (
-   <div className="App">
-    <p className="black-nav">🦄30 컴포넌트 많을 때 props 쓰기 싫으면 Context API  </p>
-
+   <div>
+    <p className="black-nav">🦄30 React.createContext(.).Provider.useContext(props가 더 편함) (컴포넌트 많을 때 props 대신 Context API) </p>
 
     <nav className="ig_nav">
       <Link to='/'>Home</Link>
@@ -1185,27 +1190,22 @@ function App30() {
      </nav>
 
   // (2)-2. (3-2)
-      <재고context.Provider value={재고state}>
-        <div className="row">
-        {
-          shoes.map( (a,i)=>{       
-            return  <Card30 shoes={shoes[i]} i={i}></Card30>        
-          }  )
-        }
-        </div>
-      </재고context.Provider>
-
-
-      <switch>
-     <Route path="/"></Route>
-      <Route path="/detail">
+    <재고context.Provider value={재고state}>
+      <div >
+      {
+        shoes.map( (a,i)=>{       
+          return  <Card30 shoes={shoes[i]} i={i}></Card30>        
+        }  )
+      }
+      </div>
+    </재고context.Provider>
+    
+    <Route path="/detail">
       // (3)-3
       <재고context2.Provider value={재고state}>
         <Detail30_file shoes={shoes} 재고state={재고state} 재고state변경={재고state변경}/>
-        </재고context2.Provider>   
-      </Route>   
-    </switch>  
-    
+      </재고context2.Provider>   
+    </Route>        
    </div>
   );
 }
@@ -1213,16 +1213,13 @@ function App30() {
 function Card30(props){
   // (2)-3
   let 재고c = useContext(재고context);
-  return(
-   <div className="col-md-4">
-   <img src={"https://codingapple1.github.io/shop/shoes"+(props.i+1)+".jpg"} width="100%" />
-   <h4> {props.shoes.title} </h4> 
-   <p>{props.shoes.content} & {props.shoes.price}  </p>   
 
+  return(
+   <div>
    // (2)-4
    <div className="useContext">
     <p>재고context: {재고c}👻</p>
-    <p>재고context: {재고c[1]}👻</p>
+    <p>재고context: {재고c[2]}👻</p>
     <p>재고context: {재고c[props.i]}👻</p>
    </div>
  </div>
