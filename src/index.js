@@ -132,7 +132,7 @@ import {combineReducers, createStore} from 'redux';
 // let store = createStore(()=>{ return[{ id : 0, name : '멋진신발', quan : 2 }]   });
 
 
-//🦄 33c-(4)
+//🦄 33c-(4) 기본형식
 // function reducer(){
 //   return [{id : 0, name : '멋진신발', quan : 2}, { id : 1, name : '멋진신발22', quan : 3 }]
 // }

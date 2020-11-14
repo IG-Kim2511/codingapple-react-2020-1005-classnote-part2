@@ -16,7 +16,7 @@
 // 1. 데이터의 수정방법을 미리 정의해놓으셔야합니다. 
 // 2. 그 다음에 데이터 수정방법에 따라서만 수정하셔야합니다.
 
-// 33 -(4)(5)(6)👉👉 index.js
+// 33 -(4)(5)(6)👉 index.js
 
 // (7) dispatch({데이터바인딩}) 
 // dispatch() 를 쓰시면 HTML 안에서 reducer함수를 동작시킬 수 있음
@@ -42,53 +42,37 @@ import { connect } from 'react-redux';
 
 function Cart(props){
     return(
-        <div>
-        <Table responsive>
-        <tr>
-          <th>#</th>
-          <th>상품명</th>
-          <th>수량</th>
-          <th>변경</th>
-        </tr>
+     <div>
+      <Table responsive>
+
             // (2)
         { props.props작명.map((a,i)=>{
-            return (
+         return (
             <tr key={i}>
               <td>{a.id}</td>
               <td>{a.name}</td>
               <td>{a.quan}</td>
-            //   (7)
+            // (7)
               <td>
-              <button onClick={()=>{ props.dispatch  (  { type:'수량증가' } )}}> + </button>
+              <button onClick={()=>{ props.dispatch({type:'수량증가'})}}> + </button>
 
-            //   (8)
-              <button onClick={ ()=>{ props.dispatch( {type:'수량감소'} )  } } > - </button>
+            // (8)
+              <button onClick={ ()=>{ props.dispatch({type:'수량감소'})}}> - </button>
               </td>
-            </tr>
+              </tr>
             )
           })  }
-
-
-      </Table>
-
-      
-      
-      
-      </div>
+        </Table> 
+       </div>
     )
 }
-
-
 
 function index의store의state를props로바꿔주는함수(state){
     return{
       props작명 : state.reducer
       //원래는... props작명 : state
     }
-
 }
-
-
 
 // export default Cart;
 
