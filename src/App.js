@@ -1302,7 +1302,7 @@ function App32() {
   );
 }
 
-// 🦄33 Redux 2 : reducer/dispatch로 데이터 수정하는 법 
+// 🦄33 Redux2 reducer.dispatch.createStore(combineReducers({reducer, reducer2})) (Redux 2 : reducer/dispatch로 데이터 수정하는 법 )
 // 👉 Cart33.js
 // 👉 index.js
 
@@ -1313,10 +1313,9 @@ function App33() {
 
   return (
    <div className="App">
-    <p className="black-nav">🦄33 Redux 2 : reducer/dispatch로 데이터 수정하는 법</p>
+    <p className="black-nav">🦄Redux2 reducer.dispatch.createStore(combineReducers(.)) (Redux 2 : reducer/dispatch로 데이터 수정하는 법)</p>
     <nav className="ig_nav">
       <Link to='/'>Home</Link>
-      <Link to='/detail'>Detail</Link>
       <Link to='/cart'>cart</Link>
     </nav>
      
@@ -1340,20 +1339,19 @@ function App34() {
    <div className="App">
     <p className="black-nav">🦄34 Redux 3 : state와 reducer가 더 필요하면</p>    
     <nav className="ig_nav">
-      <Link to='/'>Home</Link>
-      <Link to='/detail'>Detail</Link>
+      <Link to='/'>Home</Link> 
       <Link to='/cart'>cart</Link>
     </nav>     
       <Route path="/cart">
-        <Cart34></Cart34>
+        <Cart34/>
       </Route>       
    </div>
   );
 }
+
 // 🦄35 Redux 4 : dispatch할 때 데이터 실어보낼 수 있음
 // 👉 index.js
 // 👉 Detail35.js
-
 
 function App35() {
 
@@ -1377,6 +1375,7 @@ function App35() {
    </div>
   );
 }
+
 // 🦄36 장바구니 기능 완성하기 - 일단 지나쳤던 코딩 마무리
 // 👉 캡쳐 확인
 // 👉 index.js

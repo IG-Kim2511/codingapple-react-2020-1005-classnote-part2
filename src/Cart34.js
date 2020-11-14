@@ -11,7 +11,7 @@
 // (일반 컴포넌트에선 useState()를 하나 더 쓰시면 됩니다.)
 // 그래서 state + reducer 세트를 하나 더 만들어서 여기에 UI의 true/false 값을 저장해봅시다.
 
-// (2) 👉👉 index.js
+// (2) 👉 index.js
 
 // (3)
 // reducer 2개 만든거 사용하기
@@ -53,53 +53,46 @@ import {Table} from 'react-bootstrap'
 import { connect } from 'react-redux';
 
 function Cart(props){
-    return(
-     <div>
-        <Table responsive>
-        <tr>
-          <th>#</th>
-          <th>상품명</th>
-          <th>수량</th>
-          <th>변경</th>
-        </tr>
+  return(
+    <div>
+      <Table responsive>
 
-        { props.props작명.map((a,i)=>{
-            return (
-            <tr key={i}>
-              <td>{a.id}</td>
-              <td>{a.name}</td>
-              <td>{a.quan}</td>          
-              <td>
-              <button onClick={()=>{ props.dispatch  (  { type:'수량증가' } )}}> + dispatch </button>
-              <button onClick={ ()=>{ props.dispatch( {type:'수량감소'} )  } } > - dispatch </button>
-              
-              // 35-(2)
-              <button onClick={()=>{ props.dispatch  (  { type:'수량증가', payload: { name:'kim'  }} )}}> + payload </button>
-                 </td>
-            </tr>
-            )
-          })  }
-        </Table>
-        // (1) 
-        <div className="my-alert2">
+      { props.props작명.map((a,i)=>{
+          return (
+          <tr key={i}>
+            <td>{a.id}</td>
+            <td>{a.name}</td>
+            <td>{a.quan}</td>          
+            <td>
+            <button onClick={()=>{ props.dispatch  (  { type:'수량증가' } )}}> + dispatch </button>
+            <button onClick={ ()=>{ props.dispatch( {type:'수량감소'} )  } } > - dispatch </button>
+            
+            // 35-(2)
+            <button onClick={()=>{ props.dispatch  (  { type:'수량증가', payload: { name:'kim'  }} )}}> + payload </button>
+                </td>
+          </tr>
+          )
+        })  }
+      </Table>
+
+      // (1) 
+      <div className="my-alert2">
         <p>지금 구매하시면 20% 할인</p>
         <button>alert닫기</button>
       </div>   
-        (4)
-        {   props.props작명2 === true
-           ? (<div className="my-alert2">
-              <p>지금 구매하시면 20% 할인</p>
-              // (5) (5)-3
-              <button onClick={()=>{ props.dispatch({type:'alert닫기'}) }}>alert닫기</button>
-            </div>   )
-            : null
-          }
-       
-      </div>
-    )
+
+      (4)
+      {   props.props작명2 === true
+          ? (<div className="my-alert2">
+            <p>지금 구매하시면 20% 할인</p>
+            // (5) (5)-3
+            <button onClick={()=>{ props.dispatch({type:'alert닫기'}) }}>alert닫기</button>
+          </div>   )
+          : null
+        }       
+    </div >
+  )
 }
-
-
 
 function index의store의state를props로바꿔주는함수(state){
     return{
@@ -107,10 +100,7 @@ function index의store의state를props로바꿔주는함수(state){
       props작명 : state.reducer,     
       props작명2 : state.reducer2     
     }
-
 }
-
-
 
 // export default Cart;
 

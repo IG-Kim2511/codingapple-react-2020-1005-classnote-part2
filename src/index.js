@@ -160,6 +160,8 @@ else if (액션.type ==='수량감소'){
   return state}
   }
 
+// 👇let store = createStore(combineReducers({reducer,reducer2,reducer35}));
+
 //🦄 34-(2)-1
 let initialState34 = true;
 
@@ -188,8 +190,6 @@ if(action.type === '항목추가35'){
   return state
 } 
 }
-
-
 
 // ⚡ store
 // 32c
