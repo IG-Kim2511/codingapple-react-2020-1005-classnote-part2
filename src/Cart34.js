@@ -104,4 +104,4 @@ function index의store의state를props로바꿔주는함수(state){
 
 // export default Cart;
 
-export default connect(index의store의state를props로바꿔주는함수)(Cart)
+export default connect(index의store의state를props로바꿔주는함수)(Cart);

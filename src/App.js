@@ -1349,7 +1349,7 @@ function App34() {
   );
 }
 
-// 🦄35 Redux 4 : dispatch할 때 데이터 실어보낼 수 있음
+// 🦄35 Redux 4 : dispatch할 때 데이터 실어보낼 수 있음.push
 // 👉 index.js
 // 👉 Detail35.js
 
@@ -1360,16 +1360,16 @@ function App35() {
 
   return (
    <div className="App">
-    <p className="black-nav">🦄35 Redux 4 : dispatch할 때 데이터 실어보낼 수 있음</p>    
+    <p className="black-nav">🦄35 Redux 4 : dispatch할 때 데이터 실어보낼 수 있음.push</p>    
     <nav className="ig_nav">
-    <Link to='/'>Home</Link>
-    <Link to='/detail'>Detail</Link>
-    <Link to='/cart'>cart</Link>
+      <Link to='/'>Home</Link>
+      <Link to='/detail'>Detail</Link>
+      <Link to='/cart'>cart</Link>
     </nav>     
-      <Route path="/cart">
-        <Cart34></Cart34>
-      </Route>       
-      <Route path="/detail">
+    <Route path="/cart">
+      <Cart34></Cart34>
+    </Route>       
+    <Route path="/detail">
       <Detail35_file shoes={shoes} 재고state={재고state} 재고state변경={재고state변경}/>   
     </Route>   
    </div>
