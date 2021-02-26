@@ -77,7 +77,8 @@ function Cart(props){
     )
 }
 // (5)-1 (6)-1
-function index의store의state를props로바꿔주는함수(state){
+// index의store의state를props로바꿔주는함수
+function mapDispatchToProps (state){
     return{
       props작명 : state.reducer
       //원래는... props작명 : state
@@ -89,4 +90,4 @@ function index의store의state를props로바꿔주는함수(state){
 // export default Cart;
 
 // (5)-2 (6)-2
-export default connect(index의store의state를props로바꿔주는함수)(Cart)
+export default connect(mapDispatchToProps)(Cart)

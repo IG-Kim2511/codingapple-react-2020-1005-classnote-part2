@@ -1,4 +1,8 @@
 
+import React, {useEffect, useState} from 'react';
+import { useHistory ,useParams } from 'react-router-dom';
+import styled from 'styled-components'
+
 // Q 저번시간 숙제 : Detail 페이지 방문 후 2초 후에 alert 박스가 사라지게 하기
 
 // (1) UI만들기
@@ -58,18 +62,30 @@
 // 이렇게 쓰시면 타이머를 바로 해제할 수 있습니다.
 
 
-import React, {useEffect, useState} from 'react';
-import { useHistory ,useParams } from 'react-router-dom';
-import styled from 'styled-components'
+{/*  24  
+🚀UI만들기
+
+1. UI 보이고/안보이고 상태... state로 저장
+
+2. if문으로 state가 true일때 보여줌
+
+3. setState값 변경하는 함수 설정 (ex.  button ,  setTimeout)
+
+*/}
+
+
+
 
 function Detail25_file(props){
 
+    {/*  24 -1 */}
     // (1)-1 (3-2)
     let [ alert, alert변경 ] = useState(true);
 
    // (2)-2
     let [inputData,inputData변경]=useState('');
 
+    {/*  24-3 */}
     useEffect(()=>{ 
     // (1)-2 (2)
             let 타이머 = setTimeout(() => {alert변경(false)}, 2000);  
@@ -102,6 +118,7 @@ function Detail25_file(props){
             <p>  my-alert </p>      
         </div>
 
+            {/*  24-2*/}
          //(1)-2 if문
         {
             alert === true
@@ -110,6 +127,10 @@ function Detail25_file(props){
               </div>)
             : null
           }
+
+        {/*  24-3  */}
+        <button onClick={()=>{ alert변경(true) }}>show</button>
+        <button onClick={()=>{ alert변경(false) }}>hide</button>
               
      //(2-2)
          <input onChange={(e)=>{inputData변경(e.target.value)}} />

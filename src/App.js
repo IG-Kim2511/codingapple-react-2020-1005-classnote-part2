@@ -91,7 +91,7 @@ function App15() {
   return (
    <div className="App">
       <p className="black-nav">🦄15 react bootstrap (쇼핑몰 프로젝트 : 프로젝트 생성 & Bootstrap 설치)</p>
-      // (2)-3
+     {/*(2)-3  */}
       <button type="button" class="btn btn-primary">Primary</button>
     </div>
   );
@@ -147,7 +147,7 @@ function App16() {
           </Nav>        
       </Navbar.Collapse>
 
-   // (2) Jumbotron
+    {/* (2) Jumbotron */}
      <Jumbotron >
         <h1>Hello, world!</h1>
         <p>

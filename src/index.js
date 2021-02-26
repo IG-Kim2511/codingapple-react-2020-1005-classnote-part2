@@ -202,9 +202,9 @@ let store = createStore(combineReducers({reducer,reducer2,reducer35}));
 ReactDOM.render(  
   //🦄 19-(2)-0
   <React.StrictMode>
-  //🦄 19-(2)-2
+    {/* 🦄 19-(2)-2 */}
     <BrowserRouter>
-    //🦄 32c-(4)-2 . 32c-(4)-4
+  {/*🦄 32c-(4)-2 . 32c-(4)-4 */}    
       <Provider store={store}>
         <App />
       </Provider>    
